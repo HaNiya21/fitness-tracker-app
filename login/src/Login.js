@@ -10,11 +10,28 @@ const Login = () => {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    const {validate} = require("./Validate");
+    
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
     };
+    const validate = (values) => {
+        let errors = {};
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!values.email) {
+            errors.email = "Email is required";
+        } else if (!emailRegex.test(values.email)) {
+            errors.email = "Please enter a valid email";
+        }
+        if (!values.password) {
+            errors.password = "Password is required";
+        } else if (values.password.length < 6) {
+            errors.password = "Password must be more than 6 characters";
+        }
+        return errors;
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,6 +65,7 @@ const Login = () => {
                             value={formValues.password}
                             onChange={handleChange}
                         />
+
                     </div>
                     <button className="fluid ui button blue">Login</button>
                 </div>
