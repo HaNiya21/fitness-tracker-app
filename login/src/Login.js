@@ -10,14 +10,13 @@ const Login = () => {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const {validate} = require("./Validate");
-    
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
     };
-    const validate = (values) => {
+
+    const validate = (values) => { // Keeping local validate function
         let errors = {};
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!values.email) {
@@ -31,13 +30,32 @@ const Login = () => {
             errors.password = "Password must be more than 6 characters";
         }
         return errors;
-    }
+    };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add validation logic if needed
-        console.log(formValues);
-        setIsSubmit(true);
+        setFormErrors(validate(formValues));
+        
+        if (Object.keys(formErrors).length === 0) {
+            try {
+                const response = await fetch('http://localhost:5000/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formValues),
+                });
+    
+                const data = await response.json();
+                if (data.success) {
+                    console.log('Login Successful:', data.token);
+                } else {
+                    console.log('Login Failed:', data.err);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
     };
 
     return (
@@ -65,7 +83,6 @@ const Login = () => {
                             value={formValues.password}
                             onChange={handleChange}
                         />
-
                     </div>
                     <button className="fluid ui button blue">Login</button>
                 </div>
