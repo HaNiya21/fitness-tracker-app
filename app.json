@@ -31,6 +31,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "fonts": {
+      "Koulen": "./assets/fonts/Koulen-Regular.ttf" 
     }
   }
 }
