@@ -70,6 +70,12 @@ const styles = StyleSheet.create({
         padding: 20
     },
     // Background Image
+    BackgroundImage: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        },
+
     image: {
         width: '100%',
         height: '100%', // Adjust height as needed
@@ -89,6 +95,7 @@ const styles = StyleSheet.create({
     },
 
     //Line 2
+
     title2: {
         fontSize: 26,
         alignItems: 'center',
@@ -175,7 +182,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         padding: 10,
         borderRadius: 10,
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
         color: '#8D8D8D'
         
     },
@@ -196,7 +203,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         textDecorationLine: 'underline',
         textAlign: 'center',
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
 
 // Sign Up Page
@@ -212,7 +219,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         marginBottom: 20,
         fontWeight: 'bold',
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
 
     SignUpButton: { 
@@ -220,36 +227,134 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 5,
         marginBottom: 20,
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
 
     SignUpText: {
         color: '#FFF',
         fontSize: 18,
         textAlign: 'center',
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
 
     text: {
         color: '#FFF',
         fontSize: 16,
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
 
     LoginLink: {
         color: '#FFF',
         textDecorationLine: 'underline',
         textAlign: 'center',
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
 
     error: {
         color: '#e64b43',
-        fontFamily: 'Koulen_400Regular',
+        fontFamily: 'Koulen-Regular',
     },
+    
+
+waterTitle: {
+    fontSize: 40,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'Trebuchet MS',
+    color: '#0F2951',
+    marginRight: 30,
+},
+// needs to be aligned left
+
+waterText: {
+    fontSize: 20,
+    marginBottom: 5,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 80,
+    marginBottom: 10,
+    fontFamily: 'Trebuchet MS',
+
+
+
+},
+amountOz: { 
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10, 
+
+},
+
+waterOz: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#0F2951',
+    marginLeft: 5,
+    marginRight: 5,
+    marginBottom: 10,
+},
+
+
+// waterContainer: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     padding: 20,
+//     backgroundColor: 'transparent',
+
+// },
+
+waterSubmit: {
+    backgroundColor: '#D7D7D7',
+    padding: 15,
+    borderRadius: 10,
+    width: '147px',
+    textAlign: 'center',
+    marginTop: 50,
+
+},
+
+waterInput: {
+    backgroundColor: '#ECECEC',
+    padding: 15,
+    borderRadius: 10,
+    color: 'black',
+    marginBottom: 10,
+    width: '70%',
+},
+
+waterAmountCont: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+},
+
+timeIconCont: { 
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10,
+},
+
+clockIcon: {
+    marginLeft: 5,
+},
+
+footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    backgroundColor: '#4BA5E3',
+    padding: 15,
+    bottom: 0,
+    position: 'absolute',
+},
 
 // 
-    
+
 });
 
 
