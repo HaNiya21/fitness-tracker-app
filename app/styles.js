@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 
+// Login Page
+
     loginContainer: {
         flex: 1,
         justifyContent: 'center',
@@ -92,6 +94,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Koulen_400Regular',
     },
 
+// Sign Up Page
     SignUpContainer: {  
         flex: 1,
         justifyContent: 'center',
@@ -139,8 +142,11 @@ const styles = StyleSheet.create({
         color: '#e64b43',
         fontFamily: 'Koulen_400Regular',
     },
+
+// 
     
 });
+
 
 
 export default styles;
