@@ -1,17 +1,14 @@
-// App.js
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './LandingPage';
 import Login from './Login';
 import SignUp from './SignUp';
 import ToggleSwitch from './ToggleSwitch';
 
-import 'react-native-gesture-handler';
+import WaterIntake from './WaterIntake';
+import footer from './footer';
 
-const Stack = createNativeStackNavigator();
-
-const App = () => {
+function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
@@ -22,6 +19,6 @@ const App = () => {
             </Stack.Navigator>
         </NavigationContainer>  
     );
-};
+}
 
 export default App;
