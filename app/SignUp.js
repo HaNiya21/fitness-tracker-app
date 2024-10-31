@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
 import styles from "./styles";
@@ -69,7 +69,11 @@ const SignUp = () => {
             {Object.keys(formErrors).length === 0 && isSubmit ? (
                 <Text style={styles.successMessage}>Signed up successfully</Text>
             ) : null}
-            <Text style={styles.SignUpTitle}>Sign Up</Text>
+            {/* <Text style={styles.SignUpTitle}>Sign Up</Text> */}
+            <View style={styles.box1}>
+                        <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
+                        <Text style={styles.headerText}>GYMWOLF</Text>    
+            </View> 
             <View style={styles.form}>
                 <View style={styles.field}>
                     <TextInput
