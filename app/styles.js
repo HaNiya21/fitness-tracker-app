@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     logo: {
         width: 80,
         height: 80,
-        color: 'white',
+        shadowColor: '#4BA5E3'
     },
 // Landing Page Styles
     box1: {
@@ -52,9 +52,22 @@ const styles = StyleSheet.create({
         //flex: 1,
         // display: 'flex',
         // flexDirection: 'row',
-         justifyContent: 'flex-end',
+        
+
          alignItems: 'center',
         // padding: 20,
+    },
+    box3: {
+        //flex: 2,
+        width: '100%',
+        height: '50%',
+        //backgroundColor: 'white',
+        //flex: 1,
+        // display: 'flex',
+        // flexDirection: 'row',
+         justifyContent: 'flex-end',
+        alignItems: 'center',
+        padding: 20
     },
     // Background Image
     image: {
@@ -67,7 +80,7 @@ const styles = StyleSheet.create({
     title1: {
         fontSize: 26,
         alignItems: 'center',
-        //marginVertical: 5,
+        marginVertical: 5,
         paddingRight: 40,
         paddingLeft: 40,
         color: 'white',

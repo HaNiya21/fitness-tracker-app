@@ -44,19 +44,22 @@ const LandingPage = () => {
                         
                     <View style={styles.box2}>
                         <Text style={styles.title1}>GYMWOLF IS THE BEST TOOL TO  </Text>
-                        <Text style={styles.title2}>TRACK YOUR WORKOUTs </Text>
-                        <Text style={styles.title3}>ONLINE. </Text>
+                        <Text style={styles.title1}>TRACK YOUR WORKOUTs </Text>
+                        <Text style={styles.title1}>ONLINE. </Text>
                         <Pressable style={styles.GetStartedButton} onPress={() => navigation.navigate('SignUp')}>
                             <Text style={styles.buttonText}>Get Started</Text>
                         </Pressable>
+            
                         <Pressable style={styles.LoginButton} onPress={() => navigation.navigate('Login')}>
                             <Text style={styles.buttonText}>Login</Text>
                         </Pressable>
                         {/* <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                                 <Text style={styles.LoginLink}>Login</Text>
                         </TouchableOpacity> */}
+                        <View style={styles.box3}>
                         <View style={styles.languageToggle}>
                             <ToggleSwitch />
+                            </View>
                         </View>
                     </View>
                 </LinearGradient>
