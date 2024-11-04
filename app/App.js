@@ -6,6 +6,8 @@ import SignUp from './SignUp';
 import ToggleSwitch from './ToggleSwitch';
 
 import WaterIntake from './WaterIntake';
+import AddExercise from './AddExercise';
+import AddSleep from './AddSleep';
 import footer from './footer';
 
 function App() {

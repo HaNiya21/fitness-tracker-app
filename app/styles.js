@@ -352,9 +352,133 @@ footer: {
     bottom: 0,
     position: 'absolute',
 },
+// add exercise page
+// Title for the Add Exercise screen, similar to waterTitle
+exerciseTitle: {
+    fontSize: 40,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'Trebuchet MS',
+    color: '#0F2951',
+    marginRight: 30,
+    alignSelf: 'flex-start',
+},
 
-// 
+// Label text for each input field, similar to waterText
+exerciseText: {
+    fontSize: 20,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 80,
+    marginBottom: 10,
+    fontFamily: 'Trebuchet MS',
+},
 
+// Container for each input field to keep layout similar to amountOz
+exerciseFieldContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10,
+},
+
+// Input field style, similar to waterInput
+exerciseInput: {
+    backgroundColor: '#ECECEC',
+    padding: 15,
+    borderRadius: 10,
+    color: 'black',
+    marginBottom: 10,
+    width: '70%',
+},
+
+// Submit button style, similar to waterSubmit
+exerciseSubmit: {
+    backgroundColor: '#D7D7D7',
+    padding: 15,
+    borderRadius: 10,
+    width: 147,
+    textAlign: 'center',
+    marginTop: 50,
+    fontSize: 20,
+    color: '#0F2951',
+    fontWeight: 'bold',
+},
+
+// Container for Date and Time input fields with icon, similar to timeIconCont
+dateIconCont: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10,
+},
+
+// Icon styling for clock and calendar icons
+calendarIcon: {
+    marginLeft: 5,
+},
+clockIcon: {
+    marginLeft: 5,
+},
+
+// Footer similar to waterFooter
+footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    backgroundColor: '#4BA5E3',
+    padding: 15,
+    bottom: 0,
+    position: 'absolute',
+},
+
+// Sleep Component
+sleepTitle: {
+    fontSize: 40,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'Trebuchet MS',
+    color: '#0F2951',
+    marginRight: 30,
+},
+
+sleepText: {
+    fontSize: 20,
+    marginBottom: 5,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 80,
+    marginBottom: 10,
+    fontFamily: 'Trebuchet MS',
+},
+
+sleepInput: {
+    backgroundColor: '#ECECEC',
+    padding: 15,
+    borderRadius: 10,
+    color: 'black',
+    marginBottom: 10,
+    width: '70%',
+},
+
+sleepHours: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#0F2951',
+    marginLeft: 5,
+    marginRight: 5,
+    marginBottom: 10,
+},
+
+sleepSubmit: {
+    backgroundColor: '#D7D7D7',
+    padding: 15,
+    borderRadius: 10,
+    width: '147px',
+    textAlign: 'center',
+    marginTop: 50,
+},
 });
 
 
