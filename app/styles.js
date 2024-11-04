@@ -344,7 +344,7 @@ clockIcon: {
 
 footer: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-around',
     width: '100%',
     backgroundColor: '#4BA5E3',
@@ -353,8 +353,49 @@ footer: {
     position: 'absolute',
 },
 
-// 
+footerIcons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+},
 
+footerText: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+},
+iconTextd: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+    marginLeft: 5,
+},
+
+iconText: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconTexta: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+    marginRight: 12,
+},
+
+iconTexte: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+    marginLeft: 12,
+},
 });
 
 
