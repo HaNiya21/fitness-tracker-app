@@ -4,9 +4,9 @@ import LandingPage from './LandingPage';
 import Login from './Login';
 import SignUp from './SignUp';
 import ToggleSwitch from './ToggleSwitch';
-
 import WaterIntake from './WaterIntake';
 import footer from './footer';
+import Pedometer from './Pedometer';
 
 function App() {
     return (
@@ -15,6 +15,7 @@ function App() {
                 <Stack.Screen name="Home" component={LandingPage} />
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="SignUp" component={SignUp} />
+                <Stack.Screen name="Pedometer" component={Pedometer} />
                 <Stack.Screen name="ToggleSwitch" component={ToggleSwitch} />
             </Stack.Navigator>
         </NavigationContainer>  

@@ -353,7 +353,29 @@ footer: {
     position: 'absolute',
 },
 
-// 
+//profile
+ProfileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#4BA5E3',
+    padding: 12,
+}, 
+
+ProfileValueContainer: {
+    marginRight: 50,
+    marginVertical: 10,
+},
+
+ProfileLabel: {
+    color: 'white',
+    fontSize: 20,
+},
+
+ProfileValue: {
+    fontSize: 35,
+    fontWeight: '500',
+},
 
 });
 
