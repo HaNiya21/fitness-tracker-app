@@ -23,6 +23,7 @@ const RingProgress = ({
   }));
 
   useEffect(() => {
+    //console.log("progress updated;", progress);
     fill.value = withTiming(progress, { duration: 1000 });
   }, [progress]);
 

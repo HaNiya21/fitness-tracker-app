@@ -1,54 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
+import { Pedometer } from 'expo-sensors';
 import styles from './styles';
 import RingProgress from './RingProgress';
-import AppleHealthKit, { HealthKitPermissions } from 'react-native-health';
-import { useState } from 'react';``
 
-/*const permissions: HealthKitPermissions = {
-    permissions: {
-        read: [AppleHealthKit.Constants.Permissions.Steps],
-        write: []
-    },
-} */
-
-const Pedometer = () => {
-    /*const [hasPermissions, setHasPermissions] = useState(false);
+const StepCounter = () => {
+    const [isPedometerAvailable, setIsPedometerAvailable] = useState('checking');
+    const [stepCount, setStepCount] = useState(0);
 
     useEffect(() => {
-        AppleHealthKit.initHealthKit(permissions, (err) => {
-            if (err) {
-                console.log("error getting permissions");
-                return;
-            } 
-            setHasPermissions(true);
-        });
-    }, []); 
+        Pedometer.isAvailableAsync().then(
+            result => {
+                setIsPedometerAvailable(String(result));
+            },
+            error => {
+                setIsPedometerAvailable('Could not get isPedometerAvailable: ' + error);
+            }
+        );
+    }, []);
 
-    useEffect(() => {}, []);   */ 
+    useEffect(() => {
+        const subscription = Pedometer.watchStepCount(result => {
+            setStepCount(result.steps);
+        });
+
+        return () => {
+            subscription.remove();
+        };
+    }, []);
 
     return (
         <View style={styles.ProfileContainer}>
-            <RingProgress radius={150} strokeWidth={40} progress={0.7} />
-
+            <RingProgress radius={150} strokeWidth={40} progress={stepCount / 100} /> {/* 100 is a placeholder for the goal */}
             <View style={{ flexDirection: 'row'}}>
-                <View style ={styles.ProfileValueContainer}>
+                <View style={styles.ProfileValueContainer}>
                     <Text style={styles.ProfileLabel}>Steps</Text>
-                    <Text style={styles.ProfileValue}>1219</Text>
+                    <Text style={styles.ProfileValue}>{stepCount}</Text>
                 </View>
-
                 <View style={styles.ProfileValueContainer}>
                     <Text style={styles.ProfileLabel}>Distance</Text>
-                    <Text style={styles.ProfileValue}>0,75 km</Text>
+                    <Text style={styles.ProfileValue}>0.75 km</Text>
                 </View>
             </View>
-
             <View style={styles.ProfileValueContainer}>
                 <Text style={styles.ProfileLabel}>Flights Climbed</Text>
                 <Text style={styles.ProfileValue}>12</Text>
+                <Text>Pedometer available: {isPedometerAvailable}</Text>
+
             </View>
         </View>
     );
 };
 
-export default Pedometer;
+export default StepCounter;
