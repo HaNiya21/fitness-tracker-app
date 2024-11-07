@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import { View, TextInput, ImageBackground, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
@@ -8,11 +7,8 @@ const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function WaterChart({ route }) {
 
-    useEffect(() => {
-        console.log('Route object mounted', route);
-    }, [route]);
 
-    const { amount = 'No amount provided!', time = 'No time provided!' } = route?.params || {};
+    const { amount = 'No amount provided', time = 'No time provided' } = route?.params || {};
     console.log('Amount:', amount);
     console.log('Time:', time);
 
