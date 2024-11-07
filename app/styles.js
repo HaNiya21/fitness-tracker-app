@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
         //flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Koulen-Regular',
         //padding: 20,
     },
 
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
         //flex: 1,
         // display: 'flex',
         // flexDirection: 'row',
-        
+        justifyContent: 'end',
 
          alignItems: 'center',
         // padding: 20,
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     box3: {
         //flex: 2,
         width: '100%',
-        height: '50%',
+        height: '15%',
         //backgroundColor: 'white',
         //flex: 1,
         // display: 'flex',
@@ -364,7 +365,6 @@ exerciseTitle: {
     alignSelf: 'flex-start',
 },
 
-<<<<<<< HEAD
 // Label text for each input field, similar to waterText
 exerciseText: {
     fontSize: 20,
@@ -424,21 +424,10 @@ clockIcon: {
 
 // Footer similar to waterFooter
 footer: {
-=======
-footerIcons: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
-},
-
-footerText: {
->>>>>>> f1a83aeb4d1d8951772ba7715b12806284b10752
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-<<<<<<< HEAD
     backgroundColor: '#4BA5E3',
     padding: 15,
     bottom: 0,
@@ -490,38 +479,6 @@ sleepSubmit: {
     width: '147px',
     textAlign: 'center',
     marginTop: 50,
-=======
-},
-iconTextd: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-    marginLeft: 5,
-},
-
-iconText: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-},
-
-iconTexta: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-    marginRight: 12,
-},
-
-iconTexte: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-    marginLeft: 12,
->>>>>>> f1a83aeb4d1d8951772ba7715b12806284b10752
 },
 });
 

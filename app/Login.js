@@ -69,6 +69,7 @@ const Login = () => {
 
     return (
         <View style={styles.loginContainer}>
+            {/* <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/> */}
             <Text style={styles.LoginTitle}>GYMWOLF</Text>
             <Text style={styles.paragraph}>Welcome Back!</Text>
             <View style={styles.form}>

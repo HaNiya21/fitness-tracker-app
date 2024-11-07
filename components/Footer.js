@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import styles from "./styles";
+import styles from "../app/styles";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -58,10 +58,6 @@ const Footer = () => {
                 </View>
 
             </ImageBackground>
-
-
-
-
 
     );
 }
