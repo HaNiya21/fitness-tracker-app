@@ -3,6 +3,7 @@ import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-
 import Icon from 'react-native-vector-icons/FontAwesome'; // or any other icon set
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Footer from '../components/Footer';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
@@ -59,20 +60,18 @@ const SleepIntake = () => {
     };
 
     return (
-        <ImageBackground 
-            source={backgroundImage} 
-            style={styles.BackgroundImage} 
-            resizeMode="stretch"
-        >
-            <Text style={styles.sleepTitle}>Add Sleep</Text>
-            
+    <View style={styles.content}>
+        <ImageBackground source={backgroundImage} style={styles.image}>
+            <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('SleepChart')} />
             <Text style={styles.sleepText}>Duration</Text>
             <View style={styles.amountOz}>
-                <TextInput
-                    style={styles.sleepInput}
-                    value={formValues.duration}
-                    onChangeText={(text) => handleChange('duration', text)}
-                />
+            <TextInput
+            style={styles.sleepInput}
+            value={formValues.duration}
+            onChangeText={(text) => handleChange('duration', text)}
+            placeholder="Enter duration"
+            keyboardType="numeric"
+/>
                 <Text style={styles.sleepHours}>hrs</Text>
             </View>
             {formErrors.duration && <Text style={styles.error}>{formErrors.duration}</Text>}
@@ -91,8 +90,9 @@ const SleepIntake = () => {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.sleepSubmit}>Save</Text>
             </TouchableOpacity>
+            </ImageBackground>
             <Footer />
-        </ImageBackground>
+        </View>
         ); 
 }
 

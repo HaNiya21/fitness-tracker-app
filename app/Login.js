@@ -106,6 +106,17 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('ExerciseList')}>
                     <Text style={styles.linkText}>Exercise Page</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('WaterIntake')}>
+                    <Text style={styles.linkText}>WaterIntake</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('AddSleep')}>
+                    <Text style={styles.linkText}>Add Sleep</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('AddExercise')}>
+                    <Text style={styles.linkText}>AddExercise</Text>
+                    </TouchableOpacity>
+                    
+
             </View>
         </View>
     );
