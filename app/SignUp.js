@@ -65,65 +65,66 @@ const SignUp = () => {
     };
 
     return (
-        <View style={styles.SignUpContainer}>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <Text style={styles.successMessage}>Signed up successfully</Text>
-            ) : null}
-            {/* <Text style={styles.SignUpTitle}>Sign Up</Text> */}
-            <View style={styles.box1}>
-                        <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
-                        <Text style={styles.headerText}>GYMWOLF</Text>    
-            </View> 
-            <View style={styles.form}>
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Choose a username"
-                        value={formValues.username}
-                        onChangeText={(value) => handleChange('username', value)}
-                    />
-                    {formErrors.username && <Text style={styles.error}>{formErrors.username}</Text>}
+            <View style={styles.SignUpContainer}>
+                {Object.keys(formErrors).length === 0 && isSubmit ? (
+                    <Text style={styles.successMessage}>Signed up successfully</Text>
+                ) : null}
+                {/* <Text style={styles.SignUpTitle}>Sign Up</Text> */}
+                <View style={styles.box1}>
+                            <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
+                            <Text style={styles.headerText}>GYMWOLF</Text>    
+                </View> 
+                <View style={styles.form}>
+                    <View style={styles.field}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Choose a username"
+                            value={formValues.username}
+                            onChangeText={(value) => handleChange('username', value)}
+                        />
+                        {formErrors.username && <Text style={styles.error}>{formErrors.username}</Text>}
+                    </View>
+                    <View style={styles.field}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Email"
+                            value={formValues.email}
+                            onChangeText={(value) => handleChange('email', value)}
+                        />
+                        {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
+                    </View>
+                    <View style={styles.field}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Password"
+                            secureTextEntry
+                            value={formValues.password}
+                            onChangeText={(value) => handleChange('password', value)}
+                        />
+                        {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
+                    </View>
+                    <View style={styles.field}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Confirm password"
+                            secureTextEntry
+                            value={formValues.confirmPassword}
+                            onChangeText={(value) => handleChange('confirmPassword', value)}
+                        />
+                        {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
+                    </View>
+                    <TouchableOpacity style={styles.SignUpButton} onPress={handleSubmit}>
+                        <Text style={styles.SignUpText}>Sign Up</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Email"
-                        value={formValues.email}
-                        onChangeText={(value) => handleChange('email', value)}
-                    />
-                    {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
-                </View>
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Password"
-                        secureTextEntry
-                        value={formValues.password}
-                        onChangeText={(value) => handleChange('password', value)}
-                    />
-                    {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
-                </View>
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Confirm password"
-                        secureTextEntry
-                        value={formValues.confirmPassword}
-                        onChangeText={(value) => handleChange('confirmPassword', value)}
-                    />
-                    {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
-                </View>
-                <TouchableOpacity style={styles.SignUpButton} onPress={handleSubmit}>
-                    <Text style={styles.SignUpText}>Sign Up</Text>
-                </TouchableOpacity>
+                <Text style={styles.text}>
+                    Already have an account? 
+                </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.LoginLink}>Login</Text>
+                    </TouchableOpacity>
             </View>
-            <Text style={styles.text}>
-                Already have an account? 
-            </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.LoginLink}>Login</Text>
-                </TouchableOpacity>
-        </View>
+        
     );
 };
 

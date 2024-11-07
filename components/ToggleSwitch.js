@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {View, Text, Pressable, LayoutAnimation} from 'react-native';
-import styles from "./styles";
+import styles from "../app/styles";
 
 
 const ToggleSwitch = () => {

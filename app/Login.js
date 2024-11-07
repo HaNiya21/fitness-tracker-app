@@ -69,6 +69,7 @@ const Login = () => {
 
     return (
         <View style={styles.loginContainer}>
+            {/* <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/> */}
             <Text style={styles.LoginTitle}>GYMWOLF</Text>
             <Text style={styles.paragraph}>Welcome Back!</Text>
             <View style={styles.form}>
@@ -101,6 +102,9 @@ const Login = () => {
                 <Text>Don't have an account? </Text>
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.linkText}>Sign Up</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('ExerciseList')}>
+                    <Text style={styles.linkText}>Exercise Page</Text>
                 </TouchableOpacity>
             </View>
         </View>
