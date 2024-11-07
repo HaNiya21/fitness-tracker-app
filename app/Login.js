@@ -103,6 +103,9 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.linkText}>Sign Up</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('ExerciseList')}>
+                    <Text style={styles.linkText}>Exercise Page</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );

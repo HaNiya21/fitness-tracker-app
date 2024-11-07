@@ -3,7 +3,7 @@ import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-
 import Icon from 'react-native-vector-icons/FontAwesome'; // for date and time icons
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
-import Footer from '../components/footer';
+//import Footer from '../components/footer';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -128,8 +128,6 @@ const AddExercise = () => {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.exerciseSubmit}>Save</Text>
             </TouchableOpacity>
-
-            <Footer />
         </ImageBackground>
     );
 }
