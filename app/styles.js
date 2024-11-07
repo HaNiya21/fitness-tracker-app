@@ -255,16 +255,32 @@ const styles = StyleSheet.create({
         fontFamily: 'Koulen-Regular',
     },
     
+    backIcon: {
+    marginTop: 100,
+    marginLeft: 20,
+},
 
 waterTitle: {
+    fontFamily: 'KoHo-Bold',
     fontSize: 40,
-    marginBottom: 20,
+    marginLeft: 40,
+    marginTop: 20,
     fontWeight: 'bold',
-    fontFamily: 'Trebuchet MS',
     color: '#0F2951',
-    marginRight: 30,
+
 },
-// needs to be aligned left
+
+inputCont: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+},
+
+
+clockIcon: {
+    marginLeft: 5,
+},
 
 waterText: {
     fontSize: 20,
@@ -274,10 +290,25 @@ waterText: {
     marginLeft: 80,
     marginBottom: 10,
     fontFamily: 'Trebuchet MS',
+},
 
+waterSubmitButton: {
+    backgroundColor: '#D7D7D7',
+    padding: 10,
+    borderRadius: 10,
+    width: 135,
+    alignSelf: 'center',
+    marginTop: 50,
 
 
 },
+
+waterButtonText: {
+    color: '#0F2951',
+    fontSize: 20,
+    textAlign: 'center',
+},
+
 amountOz: { 
     flexDirection: 'row',
     alignItems: 'center',
@@ -340,6 +371,79 @@ timeIconCont: {
 
 clockIcon: {
     marginLeft: 5,
+
+},
+
+droplets: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignSelf: 'center',
+    marginTop: 30,
+},
+
+goalText: {
+    fontSize: 30,  
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 50,
+    marginTop: 150,
+    fontFamily: 'KoHo-Regular',
+},
+
+goalInput: {
+    backgroundColor: '#ECECEC',
+    padding: 10,  
+    borderRadius: 10,
+},
+ 
+setGoalButton: {
+    backgroundColor: '#4BA5E3',
+    padding: 10,
+    borderRadius: 20,
+    marginLeft: 5, 
+},
+goalButtonText: {
+    color: 'white',
+},
+
+waterChart: {
+    marginTop: 70,
+    
+},
+
+waterChartText: {
+    fontWeight: 'bold',
+    color: 'black',
+},
+// goalText: {
+//     fontSize: 20,
+//     color: '#0F2951',
+//     fontFamily: 'KoHo-Regular',
+//     textAlign: 'center',
+// }, 
+ 
+waterChartTitle: {
+    fontSize: 20,
+    color: '#0F2951',
+    fontFamily: 'KoHo-Regular',
+    fontWeight: 'bold',
+    textAlign: 'center',
+},
+
+waterChartTitles: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 10,
+    marginBottom: 10,
+},
+
+waterChartValues: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: 20, 
 },
 
 footer: {
@@ -351,7 +455,49 @@ footer: {
     padding: 15,
     bottom: 0,
     position: 'absolute',
+    
 },
+
+footerIcons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+},
+
+footerText: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+},
+
+iconTextd: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconText: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconTexta: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconTexte: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
 // add exercise page
 // Title for the Add Exercise screen, similar to waterTitle
 exerciseTitle: {
@@ -363,8 +509,7 @@ exerciseTitle: {
     marginRight: 30,
     alignSelf: 'flex-start',
 },
-
-<<<<<<< HEAD
+ 
 // Label text for each input field, similar to waterText
 exerciseText: {
     fontSize: 20,
@@ -423,27 +568,7 @@ clockIcon: {
 },
 
 // Footer similar to waterFooter
-footer: {
-=======
-footerIcons: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-},
 
-footerText: {
->>>>>>> f1a83aeb4d1d8951772ba7715b12806284b10752
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-<<<<<<< HEAD
-    backgroundColor: '#4BA5E3',
-    padding: 15,
-    bottom: 0,
-    position: 'absolute',
-},
 
 // Sleep Component
 sleepTitle: {
@@ -490,38 +615,6 @@ sleepSubmit: {
     width: '147px',
     textAlign: 'center',
     marginTop: 50,
-=======
-},
-iconTextd: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-    marginLeft: 5,
-},
-
-iconText: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-},
-
-iconTexta: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-    marginRight: 12,
-},
-
-iconTexte: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
-    marginLeft: 12,
->>>>>>> f1a83aeb4d1d8951772ba7715b12806284b10752
 },
 });
 
