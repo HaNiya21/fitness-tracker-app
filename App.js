@@ -11,6 +11,7 @@ import LandingPage from './app/LandingPage';
 import Login from './app/Login';
 import SignUp from './app/SignUp';
 import ExerciseList from './app/ExerciseList';
+import WaterChart from './app/WaterChart';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ function App() {
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="WaterIntake" component={WaterIntake} />
+                <Stack.Screen name="WaterChart" component={WaterChart} />
                 <Stack.Screen name="AddExercise" component={AddExercise} />
                 <Stack.Screen name="AddSleep" component={AddSleep} />
                 <Stack.Screen name="ExerciseList" component={ExerciseList} />
