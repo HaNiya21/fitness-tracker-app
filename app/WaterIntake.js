@@ -4,8 +4,7 @@ import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from "./styles";
-import Footer from "./Footer";
-
+import Footer from '../components/Footer';
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function WaterIntake() {

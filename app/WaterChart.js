@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { View, TextInput, ImageBackground, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
-import Footer from "./Footer";
-
+import Footer from '../components/Footer.js';
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function WaterChart({ route }) {
