@@ -4,15 +4,9 @@ const styles = StyleSheet.create({
 
     content: {
         flex: 1,
-        //justifyContent: 'center',
-        //alignItems: 'center',
-        //padding: 20,
-        //display: 'flex',
-        //flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily: 'Koulen-Regular',
-        //padding: 20,
     },
 
     // Header Styles
@@ -24,53 +18,52 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: 1, height: 1 }, 
         textShadowRadius: 10, 
         letterSpacing: 1,
-        //padding: 20,
     },
 
-    logo: {
+    logoLanding: {
+        marginTop: 80,
         width: 80,
         height: 80,
         shadowColor: '#4BA5E3'
     },
+    
+
+    logoSL: {
+        width: 80,
+        height: 80,
+        shadowColor: '#4BA5E3'
+    },
+    signInButton: {
+        backgroundColor: '#3C68AA',
+        padding: 5,
+        borderRadius: 5,
+        marginBottom: 20,
+        fontFamily: 'Koulen-Regular',
+    },
 // Landing Page Styles
     box1: {
-        //flex: 1,
         width: '100%',
-        height: '35%', // Adjust height as needed
-        //backgroundColor: 'red',
-        //flex: 1,
-        // display: 'flex',
-        // flexDirection: 'row',
-        //justifyContent: 'flex-end',
         alignItems: 'center',
         paddingTop: 20,
+        marginBottom : 50,
+
     },
     box2: {
-        //flex: 2,
         width: '100%',
-        height: '50%',
-        //backgroundColor: 'white',
-        //flex: 1,
-        // display: 'flex',
-        // flexDirection: 'row',
         justifyContent: 'end',
-
-         alignItems: 'center',
-        // padding: 20,
+        alignItems: 'center',
+        marginTop: 120,
+        marginBottom: 100,
     },
+
     box3: {
-        //flex: 2,
         width: '100%',
         height: '15%',
-        //backgroundColor: 'white',
-        //flex: 1,
-        // display: 'flex',
-        // flexDirection: 'row',
-         justifyContent: 'flex-end',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         padding: 20
     },
-    // Background Image
+
     BackgroundImage: {
         flex: 1,
         justifyContent: 'center',
@@ -87,7 +80,7 @@ const styles = StyleSheet.create({
     title1: {
         fontSize: 26,
         alignItems: 'center',
-        marginVertical: 5,
+        marginVertical: 3,
         paddingRight: 40,
         paddingLeft: 40,
         color: 'white',
@@ -187,17 +180,14 @@ const styles = StyleSheet.create({
         color: '#8D8D8D'
         
     },
-    SignInButton:{
+    SignInText:{
         color: '#FFF',
         fontSize: 15,
         textAlign: 'center',
         fontFamily: 'Koulen-Regular',
         backgroundColor: '#3C68AA',
-        borderRadius: 15,
         width: '120px',
         alignSelf: 'center',
-        padding: 10,
-
     },
 
     linkText: {
@@ -225,7 +215,7 @@ const styles = StyleSheet.create({
 
     SignUpButton: { 
         backgroundColor: '#3C68AA',
-        padding: 15,
+        padding: 5,
         borderRadius: 5,
         marginBottom: 20,
         fontFamily: 'Koulen-Regular',
@@ -233,7 +223,7 @@ const styles = StyleSheet.create({
 
     SignUpText: {
         color: '#FFF',
-        fontSize: 18,
+        fontSize: 15,
         textAlign: 'center',
         fontFamily: 'Koulen-Regular',
     },
