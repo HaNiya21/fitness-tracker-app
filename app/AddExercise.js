@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'; // for date and time i
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
 import Footer from './Footer';
+//import Footer from '../components/footer';
+
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const AddExercise = () => {

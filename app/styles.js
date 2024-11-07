@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
         //flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Koulen-Regular',
         //padding: 20,
     },
 
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
         //flex: 1,
         // display: 'flex',
         // flexDirection: 'row',
-        
+        justifyContent: 'end',
 
          alignItems: 'center',
         // padding: 20,
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     box3: {
         //flex: 2,
         width: '100%',
-        height: '50%',
+        height: '15%',
         //backgroundColor: 'white',
         //flex: 1,
         // display: 'flex',

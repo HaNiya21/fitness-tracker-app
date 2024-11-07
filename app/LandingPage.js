@@ -8,7 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 // import ToggleSwitch from 'toggle-switch-react-native';
 import* as Font from 'expo-font';
 
-import ToggleSwitch from './ToggleSwitch';
+import ToggleSwitch from '../components/ToggleSwitch';
 
 
 
@@ -38,7 +38,7 @@ const LandingPage = () => {
                     end = {{x: 1, y: 1}}
                     >       
                     <View style={styles.box1}>
-                        <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
+                        <Image source={require('../assets/images/wolf_logo.png')} style={styles.logo}/>
                         <Text style={styles.headerText}>GYMWOLF</Text>    
                     </View> 
                         
@@ -56,10 +56,11 @@ const LandingPage = () => {
                         {/* <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                                 <Text style={styles.LoginLink}>Login</Text>
                         </TouchableOpacity> */}
-                        <View style={styles.box3}>
+                    </View>                   
+                    
+                    <View style={styles.box3}>
                         <View style={styles.languageToggle}>
                             <ToggleSwitch />
-                            </View>
                         </View>
                     </View>
                 </LinearGradient>
