@@ -353,7 +353,7 @@ footer: {
     position: 'absolute',
 },
 
-//profile
+//pedometer
 ProfileContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -375,6 +375,32 @@ ProfileLabel: {
 ProfileValue: {
     fontSize: 35,
     fontWeight: '500',
+},
+
+ring: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+},
+
+middleRing: {
+    postion: 'absolute',
+    top: 0,
+    left: 0,
+},
+
+innerRing: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+},
+
+ringContainer: {
+    width: 300,
+    height: 300,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
 },
 
 });

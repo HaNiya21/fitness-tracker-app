@@ -30,7 +30,7 @@ const RingProgress = ({
   
 
   return (
-    <View style={{ width: radius * 2, height: radius * 2, alignSelf: 'center'}}>
+    <View style={{ width: radius * 2, height: radius * 2, position: 'absolute'}}>
 
       <SVG>
         {/* Outer Circle */}
