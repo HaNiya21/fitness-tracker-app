@@ -480,12 +480,8 @@ footerIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
-
-    backgroundColor: '#4BA5E3',
-    padding: 15,
-    bottom: 0,
-    position: 'absolute',
 },
+
 
 iconTextd: {
     color: 'white',
