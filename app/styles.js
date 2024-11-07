@@ -455,6 +455,14 @@ footer: {
     padding: 15,
     bottom: 0,
     position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    width: '100%',
+    backgroundColor: '#4BA5E3',
+    padding: 15,
+    bottom: 0,
+    position: 'absolute',
     
 },
 
@@ -462,12 +470,20 @@ footerIcons: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    width: '100%',
 },
 
-footerText: {
+
+    footerText: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    width: '100%',
+
+    backgroundColor: '#4BA5E3',
+    padding: 15,
+    bottom: 0,
+    position: 'absolute',
 },
 
 iconTextd: {
@@ -499,7 +515,6 @@ iconTexte: {
 },
 
 // add exercise page
-// Title for the Add Exercise screen, similar to waterTitle
 exerciseTitle: {
     fontSize: 40,
     marginBottom: 20,
@@ -509,7 +524,7 @@ exerciseTitle: {
     marginRight: 30,
     alignSelf: 'flex-start',
 },
- 
+
 // Label text for each input field, similar to waterText
 exerciseText: {
     fontSize: 20,
@@ -615,7 +630,9 @@ sleepSubmit: {
     width: '147px',
     textAlign: 'center',
     marginTop: 50,
+
 },
+
 });
 
 

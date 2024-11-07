@@ -93,7 +93,7 @@ const SleepIntake = () => {
             </TouchableOpacity>
             <Footer />
         </ImageBackground>
-    );
+        ); 
 }
 
 export default SleepIntake;
