@@ -351,9 +351,16 @@ footer: {
     padding: 15,
     bottom: 0,
     position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    width: '100%',
+    backgroundColor: '#4BA5E3',
+    padding: 15,
+    bottom: 0,
+    position: 'absolute',
 },
 // add exercise page
-// Title for the Add Exercise screen, similar to waterTitle
 exerciseTitle: {
     fontSize: 40,
     marginBottom: 20,
@@ -363,8 +370,6 @@ exerciseTitle: {
     marginRight: 30,
     alignSelf: 'flex-start',
 },
-
-<<<<<<< HEAD
 // Label text for each input field, similar to waterText
 exerciseText: {
     fontSize: 20,
@@ -422,9 +427,6 @@ clockIcon: {
     marginLeft: 5,
 },
 
-// Footer similar to waterFooter
-footer: {
-=======
 footerIcons: {
     display: 'flex',
     flexDirection: 'row',
@@ -433,12 +435,11 @@ footerIcons: {
 },
 
 footerText: {
->>>>>>> f1a83aeb4d1d8951772ba7715b12806284b10752
+
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
-<<<<<<< HEAD
     backgroundColor: '#4BA5E3',
     padding: 15,
     bottom: 0,
@@ -490,7 +491,6 @@ sleepSubmit: {
     width: '147px',
     textAlign: 'center',
     marginTop: 50,
-=======
 },
 iconTextd: {
     color: 'white',
@@ -521,7 +521,7 @@ iconTexte: {
     fontFamily: 'KoHo-Regular',
     textAlign: 'center',
     marginLeft: 12,
->>>>>>> f1a83aeb4d1d8951772ba7715b12806284b10752
+
 },
 });
 

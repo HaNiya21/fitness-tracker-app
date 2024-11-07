@@ -3,7 +3,6 @@ import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-
 import Icon from 'react-native-vector-icons/FontAwesome'; // or any other icon set
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
-
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const SleepIntake = () => {
@@ -91,7 +90,7 @@ const SleepIntake = () => {
                 <Text style={styles.sleepSubmit}>Save</Text>
             </TouchableOpacity>
         </ImageBackground>
-    );
+        ); 
 }
 
 export default SleepIntake;
