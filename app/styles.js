@@ -354,25 +354,25 @@ footer: {
 },
 
 //pedometer
-ProfileContainer: {
+PedometerContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#4BA5E3',
+    backgroundColor: '#FFFFFF',
     padding: 12,
 }, 
 
-ProfileValueContainer: {
+PedometerValueContainer: {
     marginRight: 50,
     marginVertical: 10,
 },
 
-ProfileLabel: {
-    color: 'white',
+PedometerLabel: {
+    color: 'black',
     fontSize: 20,
 },
 
-ProfileValue: {
+PedometerValue: {
     fontSize: 35,
     fontWeight: '500',
 },
