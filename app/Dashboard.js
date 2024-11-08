@@ -8,10 +8,14 @@ import styles from "./styles";
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import { FlatList } from 'react-native-gesture-handler';
+import AddPopup from '../components/AddPopup';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const Dashboard = () => {
+    // State to control popup visibility
+    const [isPopupVisible, setPopupVisible] = useState(false);
+
     // Mock data for testing    
     const exerciseData = [
         { name: 'Push-up', time: '10 min' },
@@ -31,9 +35,14 @@ const Dashboard = () => {
         { date: '2021-09-03', amount: '6 cups' },
     ];
 
-    // Function to add a new exercise (just for testing)
-    const addExercise = (exercise) => {
-        exerciseData.push(exercise);
+    // Function to open popup
+    const openPopup = () => {
+        setPopupVisible(true);
+    };
+
+    // Function to close popup
+    const closePopup = () => {
+        setPopupVisible(false);
     };
 
     // Function to render each item in the list
@@ -52,46 +61,53 @@ const Dashboard = () => {
             </View>
         );
     };
-    
+
     return (
         <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
           <View style={styles.container}>
             {/* Add the Menu component */}
             <Menu />
-    
+
             <Text style={styles.title}>Dashboard</Text>
-    
+
             <Text style={styles.subtitle}>Exercises:</Text>
             <FlatList
               data={exerciseData}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => renderItem(item, 'Exercise')}
             />
-    
+
             <Text style={styles.subtitle}>Sleep Records:</Text>
             <FlatList
               data={sleepData}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => renderItem(item, 'Sleep')}
             />
-    
+
             <Text style={styles.subtitle}>Water Intake:</Text>
             <FlatList
               data={waterData}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => renderItem(item, 'Water')}
             />
-    
+
+            {/* Button to add a new exercise (just for testing) */}
             <TouchableOpacity style={styles.addButton} onPress={() => addExercise({ name: 'Push-up', time: '10 min' })}>
               <Text style={styles.buttonText}>Add Exercise</Text>
             </TouchableOpacity>
-    
+
+            {/* Floating Button to open the popup */}
+            <TouchableOpacity style={styles.floatingButton} onPress={openPopup}>
+              <Text style={styles.floatingButtonText}>+</Text>
+            </TouchableOpacity>
+
+            {/* Add Popup */}
+            <AddPopup visible={isPopupVisible} onClose={closePopup} />
+
             <Footer />
           </View>
         </ImageBackground>
       );
-    };
-     
+};
 
 export default Dashboard;
-

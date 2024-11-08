@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from './styles'; // Assuming you already have a styles file
+import styles from '../app/styles'; // Assuming you already have a styles file
 
 import ToggleSwitch from '../components/ToggleSwitch';
 
@@ -27,16 +27,9 @@ const Menu = () => {
           <Text style={styles.menuItem}>Progress</Text>
           <Text style={styles.menuItem}>Logout</Text>
 
-          {/* Language toggle */}
-          <View style={styles.languageToggle}>
-            <TouchableOpacity>
-              <Text style={styles.languageButton}>EN</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={styles.languageButton}>ES</Text>
-            </TouchableOpacity>
-          </View>
+            <ToggleSwitch />
         </View>
+    
       )}
     </View>
   );
