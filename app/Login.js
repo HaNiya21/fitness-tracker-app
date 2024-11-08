@@ -115,8 +115,12 @@ const Login = () => {
                     <TouchableOpacity onPress={() => navigation.navigate('AddExercise')}>
                     <Text style={styles.linkText}>AddExercise</Text>
                     </TouchableOpacity>
-                    
-
+                    <TouchableOpacity onPress={() => navigation.navigate('WaterChart')}>
+                    <Text style={styles.linkText}>WaterChart</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+                    <Text style={styles.linkText}>Dashboard</Text>  
+                  </TouchableOpacity>
             </View>
         </View>
     );

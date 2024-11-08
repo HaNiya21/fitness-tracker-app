@@ -71,7 +71,7 @@ const SleepIntake = () => {
             onChangeText={(text) => handleChange('duration', text)}
             placeholder="Enter duration"
             keyboardType="numeric"
-/>
+            />
                 <Text style={styles.sleepHours}>hrs</Text>
             </View>
             {formErrors.duration && <Text style={styles.error}>{formErrors.duration}</Text>}

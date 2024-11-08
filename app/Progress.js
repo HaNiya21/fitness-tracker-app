@@ -8,11 +8,7 @@ import Footer from "../components/Footer";
 
 const backgroundImage = require("../assets/images/GymwolfBackground.jpeg");
 
-export default function SleepChart({ route }) {
-    
-    const { data = [] } = route?.params || {};
-    console.log('Data:', data);
-    
+const Progress = () => {
     const navigation = useNavigation();
 
     const chartConfig = {
@@ -28,13 +24,13 @@ export default function SleepChart({ route }) {
     return (
         <View style={styles.container}>
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-                <Text style={styles.title}>Sleep Chart</Text>
+                <Text style={styles.title}>Progress Chart</Text>
                 <LineChart
                     data={{
-                        labels: data.map((item) => item.date),
+                        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
                         datasets: [
                             {
-                                data: data.map((item) => item.hours),
+                                data: [5, 10, 15, 20],
                             },
                         ],
                     }}
@@ -49,4 +45,4 @@ export default function SleepChart({ route }) {
         </View>
     );
 };
-
+export default Progress;

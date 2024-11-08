@@ -7,7 +7,7 @@ import styles from "./styles";
 const SignUp = () => {
 
     let [fontsLoaded] = useFonts({
-        Koulen_400Regular, // Registering the font
+        Koulen_400Regular, 
     });
 
     const navigation = useNavigation();
