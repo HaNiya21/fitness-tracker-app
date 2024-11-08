@@ -19,7 +19,7 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Landing">
-                <Stack.Screen name="Landing" component={LandingPage}/>
+                <Stack.Screen name="Landing" component={LandingPage} options={{ headerShown: false }}/>
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="WaterIntake" component={WaterIntake} />
