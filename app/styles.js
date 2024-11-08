@@ -765,8 +765,19 @@ PedometerContainer: {
     padding: 12,
 }, 
 
+pedLabelsCont: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20,
+    borderRadius: 15,
+    padding: 10,
+    backgroundColor: '#ECECEC',
+    
+},
+
 PedometerValueContainer: {
-    marginRight: 50,
+    margin: 20,
     marginVertical: 10,
 },
 
@@ -778,6 +789,7 @@ PedometerLabel: {
 PedometerValue: {
     fontSize: 35,
     fontWeight: '500',
+    textAlign: 'center',
 },
 
 ring: {

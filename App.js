@@ -13,6 +13,8 @@ import SignUp from './app/SignUp';
 import ExerciseList from './app/ExerciseList';
 import WaterChart from './app/WaterChart';
 import Dashboard from './app/Dashboard'; 
+import StepCounter from './app/Pedometer';
+
 
 
 const Stack = createStackNavigator();
@@ -30,6 +32,7 @@ function App() {
                 <Stack.Screen name="AddSleep" component={AddSleep} />
                 <Stack.Screen name="ExerciseList" component={ExerciseList} />
                 <Stack.Screen name="Dashboard" component={Dashboard} />
+                <Stack.Screen name="StepCounter" component={StepCounter} />
                 
             </Stack.Navigator>
         </NavigationContainer>  

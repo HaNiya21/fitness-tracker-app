@@ -43,7 +43,7 @@ const StepCounter = () => {
                 <RingProgress radius={100} strokeWidth={20} strokeColor='#729DDD' progress={calories / 500} style={styles.middleRing} />
                 <RingProgress radius={80} strokeWidth={20} strokeColor='#72D7DD' progress={distance / 5} style={styles.innerRing} />
             </View>
-            <View style={{ flexDirection: 'row'}}>
+            <View style={styles.pedLabelsCont}>
                 <View style={styles.PedometerValueContainer}>
                     <Text style={[styles.PedometerLabel, { color: '#3C68AA' }]}>Steps</Text>
                     <Text style={styles.PedometerValue}>{stepCount}</Text>
@@ -52,10 +52,10 @@ const StepCounter = () => {
                     <Text style={[styles.PedometerLabel, { color: '#729DDD' }]}>Calories</Text>
                     <Text style={styles.PedometerValue}>{calories.toFixed(2)}</Text>
                 </View>
-            </View>
-            <View style={styles.PedometerValueContainer}>
-                <Text style={[styles.PedometerLabel, { color: '#72D7DD' }]}>Distance</Text>
-                <Text style={styles.PedometerValue}>{distance.toFixed(2)}</Text>
+                <View style={styles.PedometerValueContainer}>
+                    <Text style={[styles.PedometerLabel, { color: '#72D7DD' }]}>Distance</Text>
+                    <Text style={styles.PedometerValue}>{distance.toFixed(2)}</Text>
+                </View>
             </View>
         </View>
     );
