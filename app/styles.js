@@ -420,6 +420,7 @@ waterChartTitle: {
     fontFamily: 'KoHo-Regular',
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 20,
 },
 
 waterChartTitles: {
@@ -427,7 +428,9 @@ waterChartTitles: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 15,
+    width: '70%',
+    alignSelf: 'center',
 },
 
 waterChartValues: {
@@ -435,6 +438,11 @@ waterChartValues: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     marginBottom: 20, 
+    borderBottomColor: '#ECECEC',
+    borderBottomWidth: 1,
+    paddingBottom: 5,
+    width: '70%',
+    alignSelf: 'center',
 },
 
 footer: {
