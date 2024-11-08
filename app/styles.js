@@ -4,14 +4,9 @@ const styles = StyleSheet.create({
 
     content: {
         flex: 1,
-        //justifyContent: 'center',
-        //alignItems: 'center',
-        //padding: 20,
-        //display: 'flex',
-        //flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        //padding: 20,
+        fontFamily: 'Koulen-Regular',
     },
 
     // Header Styles
@@ -23,53 +18,52 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: 1, height: 1 }, 
         textShadowRadius: 10, 
         letterSpacing: 1,
-        //padding: 20,
     },
 
-    logo: {
+    logoLanding: {
+        marginTop: 80,
         width: 80,
         height: 80,
         shadowColor: '#4BA5E3'
     },
+    
+
+    logoSL: {
+        width: 80,
+        height: 80,
+        shadowColor: '#4BA5E3'
+    },
+    signInButton: {
+        backgroundColor: '#3C68AA',
+        padding: 5,
+        borderRadius: 5,
+        marginBottom: 20,
+        fontFamily: 'Koulen-Regular',
+    },
 // Landing Page Styles
     box1: {
-        //flex: 1,
         width: '100%',
-        height: '35%', // Adjust height as needed
-        //backgroundColor: 'red',
-        //flex: 1,
-        // display: 'flex',
-        // flexDirection: 'row',
-        //justifyContent: 'flex-end',
         alignItems: 'center',
         paddingTop: 20,
+        marginBottom : 50,
+
     },
     box2: {
-        //flex: 2,
         width: '100%',
-        height: '50%',
-        //backgroundColor: 'white',
-        //flex: 1,
-        // display: 'flex',
-        // flexDirection: 'row',
-        
-
-         alignItems: 'center',
-        // padding: 20,
+        justifyContent: 'end',
+        alignItems: 'center',
+        marginTop: 120,
+        marginBottom: 100,
     },
+
     box3: {
-        //flex: 2,
         width: '100%',
-        height: '50%',
-        //backgroundColor: 'white',
-        //flex: 1,
-        // display: 'flex',
-        // flexDirection: 'row',
-         justifyContent: 'flex-end',
+        height: '15%',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         padding: 20
     },
-    // Background Image
+
     BackgroundImage: {
         flex: 1,
         justifyContent: 'center',
@@ -86,7 +80,7 @@ const styles = StyleSheet.create({
     title1: {
         fontSize: 26,
         alignItems: 'center',
-        marginVertical: 5,
+        marginVertical: 3,
         paddingRight: 40,
         paddingLeft: 40,
         color: 'white',
@@ -186,17 +180,14 @@ const styles = StyleSheet.create({
         color: '#8D8D8D'
         
     },
-    SignInButton:{
+    SignInText:{
         color: '#FFF',
         fontSize: 15,
         textAlign: 'center',
         fontFamily: 'Koulen-Regular',
         backgroundColor: '#3C68AA',
-        borderRadius: 15,
         width: '120px',
         alignSelf: 'center',
-        padding: 10,
-
     },
 
     linkText: {
@@ -224,7 +215,7 @@ const styles = StyleSheet.create({
 
     SignUpButton: { 
         backgroundColor: '#3C68AA',
-        padding: 15,
+        padding: 5,
         borderRadius: 5,
         marginBottom: 20,
         fontFamily: 'Koulen-Regular',
@@ -232,7 +223,7 @@ const styles = StyleSheet.create({
 
     SignUpText: {
         color: '#FFF',
-        fontSize: 18,
+        fontSize: 15,
         textAlign: 'center',
         fontFamily: 'Koulen-Regular',
     },
@@ -255,16 +246,32 @@ const styles = StyleSheet.create({
         fontFamily: 'Koulen-Regular',
     },
     
+    backIcon: {
+    marginTop: 100,
+    marginLeft: 20,
+},
 
 waterTitle: {
+    fontFamily: 'KoHo-Bold',
     fontSize: 40,
-    marginBottom: 20,
+    marginLeft: 40,
+    marginTop: 20,
     fontWeight: 'bold',
-    fontFamily: 'Trebuchet MS',
     color: '#0F2951',
-    marginRight: 30,
+
 },
-// needs to be aligned left
+
+inputCont: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+},
+
+
+clockIcon: {
+    marginLeft: 5,
+},
 
 waterText: {
     fontSize: 20,
@@ -274,10 +281,25 @@ waterText: {
     marginLeft: 80,
     marginBottom: 10,
     fontFamily: 'Trebuchet MS',
+},
 
+waterSubmitButton: {
+    backgroundColor: '#D7D7D7',
+    padding: 10,
+    borderRadius: 10,
+    width: 135,
+    alignSelf: 'center',
+    marginTop: 50,
 
 
 },
+
+waterButtonText: {
+    color: '#0F2951',
+    fontSize: 20,
+    textAlign: 'center',
+},
+
 amountOz: { 
     flexDirection: 'row',
     alignItems: 'center',
@@ -340,19 +362,392 @@ timeIconCont: {
 
 clockIcon: {
     marginLeft: 5,
+
+},
+
+droplets: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignSelf: 'center',
+    marginTop: 30,
+},
+
+goalText: {
+    fontSize: 30,  
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 50,
+    marginTop: 150,
+    fontFamily: 'KoHo-Regular',
+},
+
+goalInput: {
+    backgroundColor: '#ECECEC',
+    padding: 10,  
+    borderRadius: 10,
+},
+ 
+setGoalButton: {
+    backgroundColor: '#4BA5E3',
+    padding: 10,
+    borderRadius: 20,
+    marginLeft: 5, 
+},
+goalButtonText: {
+    color: 'white',
+},
+
+waterChart: {
+    marginTop: 70,
+    
+},
+
+waterChartText: {
+    fontWeight: 'bold',
+    color: 'black',
+},
+// goalText: {
+//     fontSize: 20,
+//     color: '#0F2951',
+//     fontFamily: 'KoHo-Regular',
+//     textAlign: 'center',
+// }, 
+ 
+waterChartTitle: {
+    fontSize: 20,
+    color: '#0F2951',
+    fontFamily: 'KoHo-Regular',
+    fontWeight: 'bold',
+    textAlign: 'center',
+},
+
+waterChartTitles: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 10,
+    marginBottom: 10,
+},
+
+waterChartValues: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: 20, 
 },
 
 footer: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-around',
     width: '100%',
     backgroundColor: '#4BA5E3',
     padding: 15,
     bottom: 0,
     position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    width: '100%',
+    backgroundColor: '#4BA5E3',
+    padding: 15,
+    bottom: 0,
+    position: 'absolute',
+    
 },
 
+footerIcons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+},
+
+
+    footerText: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+},
+
+
+iconTextd: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconText: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconTexta: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+iconTexte: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: 'KoHo-Regular',
+    textAlign: 'center',
+},
+
+// add exercise page
+exerciseContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: 'transparent',
+},
+exerciseTitle:
+{
+    fontSize: 40,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'KoHo-Bold',
+    color: '#0F2951',
+    marginRight: 30,
+},
+
+// Label text for each input field, similar to waterText
+
+exerciseText: {
+    fontSize: 20,
+    marginBottom: 5,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 80,
+    marginBottom: 10,
+    fontFamily: 'Trebuchet MS',
+},
+
+// Container for each input field to keep layout similar to amountOz
+exerciseFieldContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10,
+},
+
+// Input field style, similar to waterInput
+exerciseInput: {
+    backgroundColor: '#ECECEC',
+    padding: 15,
+    borderRadius: 10,
+    color: 'black',
+    marginBottom: 10,
+    width: '70%',
+},
+
+// Submit button style, similar to waterSubmit
+exerciseSubmit: {
+    backgroundColor: '#D7D7D7',
+    padding: 15,
+    borderRadius: 10,
+    width: '147px',
+    textAlign: 'center',
+    marginTop: 50,
+
+},
+
+
+// Container for Date and Time input fields with icon, similar to timeIconCont
+dateIconCont: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10,
+},
+
+// Icon styling for clock and calendar icons
+calendarIcon: {
+    marginLeft: 5,
+},
+clockIcon: {
+    marginLeft: 5,
+},
+
+
+// Sleep Component
+sleepTitle: {
+    fontFamily: 'KoHo-Bold',
+    fontSize: 40,
+    marginLeft: 40,
+    marginTop: 20,
+    fontWeight: 'bold',
+    color: '#0F2951',
+},
+
+sleepText: {
+    fontSize: 20,
+    marginBottom: 5,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 80,
+    marginBottom: 10,
+    fontFamily: 'Trebuchet MS',
+},
+
+sleepInput: {
+    backgroundColor: '#ECECEC',
+    padding: 15,
+    borderRadius: 10,
+    color: 'black',
+    marginBottom: 10,
+    width: '70%',
+},
+
+sleepHours: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#0F2951',
+    marginLeft: 5,
+    marginRight: 5,
+    marginBottom: 10,
+},
+
+sleepSubmit: {
+    backgroundColor: '#D7D7D7',
+    padding: 15,
+    borderRadius: 10,
+    width: '147px',
+    textAlign: 'center',
+    marginTop: 50,
+
+},
+// Dashboard Component
+backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
+
+container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: 'transparent',
+},
+
+title: {
+    fontSize: 40,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'KoHo-Bold',
+    color: '#0F2951',
+},
+
+subtitle: {
+    fontSize: 20,
+    marginBottom: 10,
+    fontWeight: 'bold',
+    color: '#0F2951',
+},
+
+item: {
+    padding: 10,
+    marginVertical: 5,
+    backgroundColor: '#D7D7D7',
+    borderRadius: 10,
+    width: '70%',
+},
+
+itemText: {
+    fontSize: 16,
+    color: '#0F2951',
+    fontFamily: 'KoHo-Regular',
+},
+
+// Sleep Chart Component
+scrollView: {
+    flex: 1,
+    backgroundColor: 'transparent',
+},
+
+
+// menu styles
+menuContainer: {
+    position: 'absolute',
+    top: 40,
+    right: 20,
+  },
+  burgerButton: {
+    padding: 10,
+  },
+  menuDropdown: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 5,
+    marginTop: 10,
+    elevation: 5, // For shadow on Android
+    shadowColor: '#000', // For shadow on iOS
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+  },
+  menuItem: {
+    fontSize: 16,
+    marginVertical: 10,
+  },
+  languageToggle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  languageButton: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+// popup styles
+modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    width: '80%',
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  modalButton: {
+    backgroundColor: '#3498db',
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderRadius: 5,
+    marginVertical: 10,
+  },
+  modalButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  closeButton: {
+    marginTop: 20,
+  },
+  closeButtonText: {
+    color: '#e74c3c',
+    fontSize: 16,
+  },
 //pedometer
 PedometerContainer: {
     flex: 1,
@@ -403,8 +798,8 @@ ringContainer: {
     position: 'relative',
 },
 
+
+
 });
-
-
 
 export default styles;
