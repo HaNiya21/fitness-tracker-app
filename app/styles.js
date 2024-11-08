@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
 },
 
 waterTitle: {
-    fontFamily: 'KoHo-Bold',
+    fontFamily: 'Koulen-Regular',
     fontSize: 40,
     marginLeft: 40,
     marginTop: 20,
@@ -280,7 +280,7 @@ waterText: {
     alignSelf: 'flex-start',
     marginLeft: 80,
     marginBottom: 10,
-    fontFamily: 'Trebuchet MS',
+    fontFamily: 'Koulen-Regular',
 },
 
 waterSubmitButton: {
@@ -417,7 +417,7 @@ waterChartText: {
 waterChartTitle: {
     fontSize: 20,
     color: '#0F2951',
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
@@ -500,6 +500,7 @@ iconTexta: {
     fontSize: 10,
     fontFamily: 'KoHo-Regular',
     textAlign: 'center',
+    marginRight: 10,
 },
 
 iconTexte: {
@@ -674,7 +675,7 @@ item: {
 itemText: {
     fontSize: 16,
     color: '#0F2951',
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
 },
 
 // Sleep Chart Component
@@ -818,7 +819,63 @@ ringContainer: {
     position: 'relative',
 },
 
+// articles page
+ArticlePageTitle: {
+    fontSize: 30,
+    marginTop: 130,
+    fontWeight: 'bold',
+    fontFamily: 'Koulen-Regular',
+    color: '#0F2951',
+    textAlign: 'center',
+},
 
+articleContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 20,
+},
+
+article: {
+    backgroundColor: '#ECECEC',
+
+    padding: 10,
+    margin: 10,
+    borderRadius: 10,
+    // width: 300,
+    height: 'auto',
+},
+
+fullWidth: {
+    width: '94%',
+},
+halfWidth: {
+    width: '44%', // Roughly half-width, with some margin
+    height: 400,
+},
+articleImage: {
+    width: '100%',
+    height: 150,
+    borderRadius: 10,
+},
+
+articleTitle: { 
+    fontSize: 20,
+    color: 'Black',
+    fontWeight: 'bold',
+    fontFamily: 'Koulen-Regular',
+    lineHeight: 26,
+    marginTop: 10,
+},
+
+articleLink: {
+    color: '#4BA5E3',
+    fontFamily: 'Koulen-Regular',
+},
 
 });
 
