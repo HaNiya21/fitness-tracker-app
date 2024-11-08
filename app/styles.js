@@ -502,19 +502,28 @@ iconTexte: {
 },
 
 // add exercise page
-exerciseTitle: {
+exerciseContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: 'transparent',
+},
+exerciseTitle:
+{
     fontSize: 40,
     marginBottom: 20,
     fontWeight: 'bold',
-    fontFamily: 'Trebuchet MS',
+    fontFamily: 'KoHo-Bold',
     color: '#0F2951',
     marginRight: 30,
-    alignSelf: 'flex-start',
 },
 
 // Label text for each input field, similar to waterText
+
 exerciseText: {
     fontSize: 20,
+    marginBottom: 5,
     color: '#0F2951',
     alignSelf: 'flex-start',
     marginLeft: 80,
@@ -545,13 +554,12 @@ exerciseSubmit: {
     backgroundColor: '#D7D7D7',
     padding: 15,
     borderRadius: 10,
-    width: 147,
+    width: '147px',
     textAlign: 'center',
     marginTop: 50,
-    fontSize: 20,
-    color: '#0F2951',
-    fontWeight: 'bold',
+
 },
+
 
 // Container for Date and Time input fields with icon, similar to timeIconCont
 dateIconCont: {
@@ -569,17 +577,15 @@ clockIcon: {
     marginLeft: 5,
 },
 
-// Footer similar to waterFooter
-
 
 // Sleep Component
 sleepTitle: {
+    fontFamily: 'KoHo-Bold',
     fontSize: 40,
-    marginBottom: 20,
+    marginLeft: 40,
+    marginTop: 20,
     fontWeight: 'bold',
-    fontFamily: 'Trebuchet MS',
     color: '#0F2951',
-    marginRight: 30,
 },
 
 sleepText: {
@@ -619,9 +625,91 @@ sleepSubmit: {
     marginTop: 50,
 
 },
+// Dashboard Component
+backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
 
+container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: 'transparent',
+},
+
+title: {
+    fontSize: 40,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'KoHo-Bold',
+    color: '#0F2951',
+},
+
+subtitle: {
+    fontSize: 20,
+    marginBottom: 10,
+    fontWeight: 'bold',
+    color: '#0F2951',
+},
+
+item: {
+    padding: 10,
+    marginVertical: 5,
+    backgroundColor: '#D7D7D7',
+    borderRadius: 10,
+    width: '70%',
+},
+
+itemText: {
+    fontSize: 16,
+    color: '#0F2951',
+    fontFamily: 'KoHo-Regular',
+},
+
+// Sleep Chart Component
+scrollView: {
+    flex: 1,
+    backgroundColor: 'transparent',
+},
+
+
+// menu styles
+menuContainer: {
+    position: 'absolute',
+    top: 40,
+    right: 20,
+  },
+  burgerButton: {
+    padding: 10,
+  },
+  menuDropdown: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 5,
+    marginTop: 10,
+    elevation: 5, // For shadow on Android
+    shadowColor: '#000', // For shadow on iOS
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+  },
+  menuItem: {
+    fontSize: 16,
+    marginVertical: 10,
+  },
+  languageToggle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  languageButton: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#000',
+  },
 });
-
-
 
 export default styles;

@@ -1,10 +1,12 @@
+
 import { useState } from "react";
 import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome'; 
+import Icon from 'react-native-vector-icons/FontAwesome'; // for date and time icons
 import { useNavigation } from '@react-navigation/native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from "./styles";
 import Footer from '../components/Footer';
-//import DateTimePicker from '@react-native-community/datetimepicker'; // Uncommented for use
+import DateTimePicker from '@react-native-community/datetimepicker'; // for date/time pickers
 import { AntDesign } from "@expo/vector-icons";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
@@ -144,13 +146,12 @@ const AddExercise = () => {
                 />
                 {formErrors.distance && <Text style={styles.error}>{formErrors.distance}</Text>}
 
-                <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
+                <TouchableOpacity style={styles.Button} onPress={handleSubmit}>
                     <Text style={styles.submitButtonText}>Submit</Text>
                 </TouchableOpacity>
-
+                </ImageBackground>
                 <Footer />
-            </ImageBackground>
-        </View>
+            </View>
     );
 };
 
