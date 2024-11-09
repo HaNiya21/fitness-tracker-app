@@ -69,7 +69,7 @@ const Login = () => {
 
     return (
         <View style={styles.loginContainer}>
-            <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
+            <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
             <Text style={styles.LoginTitle}>GYMWOLF</Text>
             <Text style={styles.paragraph}>Welcome Back!</Text>
             <View style={styles.form}>
@@ -94,8 +94,8 @@ const Login = () => {
                     />
                     {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
                 </View>
-                <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                    <Text style={styles.SignInButton}>Sign In</Text>
+                <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
+                    <Text style={styles.SignInText}>Sign In</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.textContainer}>
@@ -105,6 +105,24 @@ const Login = () => {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('ExerciseList')}>
                     <Text style={styles.linkText}>Exercise Page</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('WaterIntake')}>
+                    <Text style={styles.linkText}>WaterIntake</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('AddSleep')}>
+                    <Text style={styles.linkText}>Add Sleep</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('AddExercise')}>
+                    <Text style={styles.linkText}>AddExercise</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('WaterChart')}>
+                    <Text style={styles.linkText}>WaterChart</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+                    <Text style={styles.linkText}>Dashboard</Text>  
+                </TouchableOpacity>
+                 <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
+                    <Text style={styles.linkText}>Pedometer</Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -1,21 +1,15 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import { View, TextInput, ImageBackground, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
-import Footer from "../components/Footer";
-
+import Footer from '../components/Footer.js';
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function WaterChart({ route }) {
 
-    useEffect(() => {
-        console.log('Route object mounted', route);
-    }, [route]);
 
-    const { amount = 'No amount provided!', time = 'No time provided!' } = route?.params || {};
-    console.log('Amount:', amount);
-    console.log('Time:', time);
+    const { waterLog = [] } = route.params || {};
+
 
     console.log('Route object:', route);
 
@@ -32,9 +26,6 @@ export default function WaterChart({ route }) {
         }
     };
 
-    // const handlePrint = () => {
-    //     console.log(goal); // Log the current value of goal
-    // };
 
     const navigation = useNavigation();
 
@@ -66,18 +57,18 @@ export default function WaterChart({ route }) {
         )}
 
         <View style={styles.waterChart}>
-            <View>
                 <Text style={styles.waterChartTitle}>Water Chart</Text>
                 <View style={styles.waterChartTitles}>
                     <Text style={styles.waterChartText}>Time</Text>
                     <Text style={styles.waterChartText}>Amount (oz)</Text>
                 </View>
-                <View style={styles.waterChartValues}>
-                    <Text>{time}</Text>
-                    <Text>{amount}</Text>
-                </View> 
+                {waterLog.map((log, index) => ( 
+                <View key={index} style={styles.waterChartValues}>
+                    <Text style={styles.waterTimeText}>{log.time}</Text>
+                    <Text style={styles.waterAmountText}>{log.amount}</Text>
+                </View>      
+                ))}              
             </View>
-        </View> 
 
         <TouchableOpacity style={styles.waterSubmitButton} onPress={() => navigation.navigate('WaterIntake')}>
             <Text style={styles.waterButtonText}>Add Water</Text>

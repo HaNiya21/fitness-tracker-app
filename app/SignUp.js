@@ -71,7 +71,7 @@ const SignUp = () => {
                 ) : null}
                 {/* <Text style={styles.SignUpTitle}>Sign Up</Text> */}
                 <View style={styles.box1}>
-                            <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
+                            <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
                             <Text style={styles.headerText}>GYMWOLF</Text>    
                 </View> 
                 <View style={styles.form}>

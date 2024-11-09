@@ -4,15 +4,15 @@ import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from "./styles";
-import Footer from "../components/Footer";
-
+import Footer from '../components/Footer';
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function WaterIntake() {
     const navigation = useNavigation();
     const [amount, setAmount] = useState('');  // Water intake amount
+    const [waterLog, setWaterLog] = useState([]);  // Store water intake logs in an array
     const [time, setTime] = useState('');      // Time of intake
-    const [errors, setErrors] = useState({});  // Store validation errors
+    const [errors, setErrors] = useState({});  // Storing validation errors
 
     // Validation logic for amount and time
     const validateInputs = () => {
@@ -25,12 +25,13 @@ export default function WaterIntake() {
 
 
     const handleSubmit = () => {
-        if (!validateInputs) return;
-
+        if (!validateInputs()) return;
+        
+        setWaterLog([...waterLog, { amount, time }]);
         //pass the amount and time to the WaterChart screen
         console.log('Navigating with:', { amount, time });  // Add this line for debugging
-        
-        navigation.navigate('WaterChart', { amount, time });
+
+        navigation.navigate('WaterChart', {waterLog: [...waterLog, { amount, time }]});
         
         // clear input fields for next entry
         setAmount('');
