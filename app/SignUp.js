@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
+import * as Font from 'expo-font';
 import styles from "./styles";
 
 const SignUp = () => {
 
-    let [fontsLoaded] = useFonts({
-        Koulen_400Regular, // Registering the font
+    const [fontsLoaded] = Font.useFonts({
+        'Koulen-Regular': require('../assets/fonts/Koulen-Regular.ttf'),
     });
 
     const navigation = useNavigation();

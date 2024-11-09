@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, TouchableOpacity, Text, TextInput } from "react-native";
+import { View, TouchableOpacity, Text, TextInput, Image } from "react-native";
 import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
@@ -69,7 +69,7 @@ const Login = () => {
 
     return (
         <View style={styles.loginContainer}>
-            {/* <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/> */}
+            <Image source={require('../assets/images/wolf.svg')} style={styles.logo}/>
             <Text style={styles.LoginTitle}>GYMWOLF</Text>
             <Text style={styles.paragraph}>Welcome Back!</Text>
             <View style={styles.form}>

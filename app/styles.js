@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         marginBottom: 20,
         outlineStyle: '#FFF',
+        fontFamily: 'Koulen-Regular',
     },
 
     input: {
