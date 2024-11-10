@@ -15,6 +15,7 @@ import WaterChart from './app/WaterChart';
 import Dashboard from './app/Dashboard'; 
 import StepCounter from './app/Pedometer';
 import Articles from './app/Articles';
+import Menu from './components/Menu';
 
 
 
@@ -35,6 +36,7 @@ function App() {
                 <Stack.Screen name="Dashboard" component={Dashboard} />
                 <Stack.Screen name="StepCounter" component={StepCounter} />
                 <Stack.Screen name="Articles" component={Articles} />
+                <Stack.Screen name="Menu" component={Menu} />
                 
             </Stack.Navigator>
         </NavigationContainer>  

@@ -124,6 +124,12 @@ const Login = () => {
                  <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
                     <Text style={styles.linkText}>Pedometer</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+                    <Text style={styles.linkText}>Menu</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Footer')}>
+                    <Text style={styles.linkText}>Footer</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
