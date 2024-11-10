@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
+import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen";
 import styles from "./styles";
 
 const SignUp = () => {
-
     let [fontsLoaded] = useFonts({
         Koulen_400Regular, 
     });
@@ -21,23 +20,47 @@ const SignUp = () => {
 
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
+    const [signupSuccess, setSignupSuccess] = useState(false); // State to track signup success
+    const [signupError, setSignupError] = useState(""); // State to track signup errors
 
     const handleChange = (name, value) => {
         setFormValues({ ...formValues, [name]: value });
     };
 
-    const handleSubmit = () => {
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-    };
+    const handleSubmit = async () => {
+        const errors = validate(formValues);  // Validate form values
+        setFormErrors(errors);  // Set errors if any
+        setSignupError("");  // Reset any previous error message
 
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-            // Handle successful signup (e.g., API call here)
+        if (Object.keys(errors).length === 0) {
+            try {
+                const response = await fetch('http://172.20.9.103:5000/api/SignUp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formValues),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('Signup Successful:', data.token);
+                    setSignupSuccess(true);  // Set signup success to true
+                    setTimeout(() => {
+                        navigation.navigate('Login');  // Navigate to Login after a brief delay
+                    }, 1000);  // You can adjust the delay as needed
+                } else {
+                    // Handle server-side error response
+                    console.log('Signup Failed:', data.msg);
+                    setSignupError(data.msg || "Signup failed. Please try again.");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                setSignupError('Something went wrong. Please try again!');
+            }
         }
-    }, [formErrors, formValues, isSubmit]);
+    };
 
     const validate = (values) => {
         const errors = {};
@@ -65,66 +88,79 @@ const SignUp = () => {
     };
 
     return (
-            <View style={styles.SignUpContainer}>
-                {Object.keys(formErrors).length === 0 && isSubmit ? (
-                    <Text style={styles.successMessage}>Signed up successfully</Text>
-                ) : null}
-                {/* <Text style={styles.SignUpTitle}>Sign Up</Text> */}
-                <View style={styles.box1}>
-                            <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
-                            <Text style={styles.headerText}>GYMWOLF</Text>    
-                </View> 
-                <View style={styles.form}>
-                    <View style={styles.field}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Choose a username"
-                            value={formValues.username}
-                            onChangeText={(value) => handleChange('username', value)}
-                        />
-                        {formErrors.username && <Text style={styles.error}>{formErrors.username}</Text>}
-                    </View>
-                    <View style={styles.field}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Email"
-                            value={formValues.email}
-                            onChangeText={(value) => handleChange('email', value)}
-                        />
-                        {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
-                    </View>
-                    <View style={styles.field}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            secureTextEntry
-                            value={formValues.password}
-                            onChangeText={(value) => handleChange('password', value)}
-                        />
-                        {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
-                    </View>
-                    <View style={styles.field}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Confirm password"
-                            secureTextEntry
-                            value={formValues.confirmPassword}
-                            onChangeText={(value) => handleChange('confirmPassword', value)}
-                        />
-                        {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
-                    </View>
-                    <TouchableOpacity style={styles.SignUpButton} onPress={handleSubmit}>
-                        <Text style={styles.SignUpText}>Sign Up</Text>
-                    </TouchableOpacity>
-                </View>
-                <Text style={styles.text}>
-                    Already have an account? 
-                </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                        <Text style={styles.LoginLink}>Login</Text>
-                    </TouchableOpacity>
+        <View style={styles.SignUpContainer}>
+            {signupSuccess && (
+                <Text style={styles.successMessage}>Signed up successfully</Text>
+            )}
+
+            {signupError && (
+                <Text style={styles.errorMessage}>{signupError}</Text> // Display signup error
+            )}
+
+            <View style={styles.box1}>
+                <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL} />
+                <Text style={styles.headerText}>GYMWOLF</Text>
             </View>
-        
+
+            <View style={styles.form}>
+                <View style={styles.field}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Choose a username"
+                        value={formValues.username}
+                        onChangeText={(value) => handleChange('username', value)}
+                    />
+                    {formErrors.username && <Text style={styles.error}>{formErrors.username}</Text>}
+                </View>
+
+                <View style={styles.field}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Email"
+                        value={formValues.email}
+                        onChangeText={(value) => handleChange('email', value)}
+                        autoCapitalize="none"
+                    />
+                    {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
+                </View>
+
+                <View style={styles.field}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Password"
+                        secureTextEntry
+                        value={formValues.password}
+                        onChangeText={(value) => handleChange('password', value)}
+                        autoCapitalize="none"
+                    />
+                    {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
+                </View>
+
+                <View style={styles.field}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Confirm password"
+                        secureTextEntry
+                        value={formValues.confirmPassword}
+                        onChangeText={(value) => handleChange('confirmPassword', value)}
+                        autoCapitalize="none"
+                    />
+                    {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
+                </View>
+
+                <TouchableOpacity style={styles.SignUpButton} onPress={handleSubmit}>
+                    <Text style={styles.SignUpText}>Sign Up</Text>
+                </TouchableOpacity>
+            </View>
+
+            <Text style={styles.text}>
+                Already have an account?
+            </Text>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <Text style={styles.LoginLink}>Login</Text>
+            </TouchableOpacity>
+        </View>
     );
 };
 

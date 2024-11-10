@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, ScrollView, ImageBackground } from "react-native";
-import { LineChart } from "react-native-chart-kit";
+//import { LineChart } from "react-native-chart-kit";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import AntDesign from "react-native-vector-icons/AntDesign";
