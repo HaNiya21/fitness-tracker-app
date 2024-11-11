@@ -53,8 +53,8 @@ const Footer = () => {
                 </View>
 
                 <View style={styles.footerText}>
-                    <Text style={styles.iconTextd}>Dashboard</Text>
-                    <Text style={styles.iconTexte}>Excercises</Text>
+                    <Text style={styles.iconText}>Dashboard</Text>
+                    <Text style={styles.iconText}>Excercises</Text>
                     <Text style={styles.iconText}>Personal Trainer</Text>
                     <Text style={styles.iconTexta}>Articles</Text>
                 </View>
