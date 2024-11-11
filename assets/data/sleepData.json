@@ -1,0 +1,15 @@
+{
+    "weeklySleepDetails": {
+      "weekRange": "SEPT 15 - 21",
+      "days": [
+        { "day": "Monday", "hours": 7.5 },
+        { "day": "Tuesday", "hours": 8 },
+        { "day": "Wednesday", "hours": 6.5 },
+        { "day": "Thursday", "hours": 7 },
+        { "day": "Friday", "hours": 7.8 },
+        { "day": "Saturday", "hours": 8.2 },
+        { "day": "Sunday", "hours": 6.9 }
+      ]
+    }
+  }
+  

@@ -143,8 +143,24 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
                     <Text style={styles.linkText}>Dashboard</Text>  
                 </TouchableOpacity>
+
                 <TouchableOpacity onPress={() => navigation.navigate('AddSleep')}>
                     <Text style={styles.linkText}>Add Sleep</Text>
+
+                 <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
+                    <Text style={styles.linkText}>Pedometer</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Progress')}>
+                    <Text style={styles.linkText}>Progress</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('ExerciseChart')}>
+                    <Text style={styles.linkText}>ExerciseChart</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
+                    <Text style={styles.linkText}>SleepChart</Text> 
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+                    <Text style={styles.linkText}>Menu</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
                     <Text style={styles.linkText}>Sleep Chart</Text>
