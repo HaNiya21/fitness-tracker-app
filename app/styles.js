@@ -745,52 +745,44 @@ sleepChartTitle: {
 },
 
 // Dashboard Component
-backgroundImage: {
+dashboardContainer: {
     flex: 1,
     justifyContent: 'center',
-
-    marginLeft: 5,
-    fontSize: 16,
-    color: '#6b7280',
-},
-amountOz: {
-    flexDirection: 'row',
-
     alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+dashboardTitle: {
+    fontSize: 40,
     marginBottom: 20,
-    width: '90%',
+    fontWeight: 'bold',
+    fontFamily: 'Koulen-Regular',
 },
-timeIconCont: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#d1d5db',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    width: '90%',
-    backgroundColor: '#ffffff', // White background for the time input
+
+dashboardButton: {
+    backgroundColor: '#3C68AA',
+    padding: 5,
+    borderRadius: 5,
+    marginBottom: 20,
+    fontFamily: 'Koulen-Regular',
 },
-clockIcon: {
-    marginLeft: 10,
+
+dashboardText: {
+    color: '#FFF',
+    fontSize: 15,
+    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
 },
-button: {
-    backgroundColor: '#4f46e5', // Custom blue button color
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginTop: 20,
-    alignItems: 'center',
+
+dashboardLink: {
+    color: '#FFF',
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
 },
-sleepSubmit: {
-    color: '#ffffff',
-    fontSize: 18,
-    fontWeight: '600',
-},
-error: {
-    color: '#f87171', // Red color for error messages
-    fontSize: 14,
-    marginBottom: 10,
-},
+
+
 
 // Sleep Chart Component
 scrollView: {
@@ -1052,6 +1044,42 @@ profileText: {
     fontSize: 16,
     marginVertical: 5,
 },
+// profile page
+profileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+profileBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    position: 'relative',
+    elevation: 5, // for shadow effect on Android
+},
+
+logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10,
+},
+
+logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+},
+
+editIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+},
+
+
 
 
 
