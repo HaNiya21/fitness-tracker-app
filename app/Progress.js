@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, ImageBackground } from "react-native";
+import { View, Text, ImageBackground, Image } from "react-native";
 import styles from "./styles";
 import { LineChart } from "react-native-chart-kit"; // Ensure you import this
 import Footer from "../components/Footer";
+
+import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen";
+import { useNavigation } from "@react-navigation/native";
+
 
 const backgroundImage = require("../assets/images/GymwolfBackground.jpeg");
 

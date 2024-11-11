@@ -1014,6 +1014,45 @@ articleLink: {
     color: '#4BA5E3',
     fontFamily: 'Koulen-Regular',
 },
+//profile page
+profileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+profileBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    position: 'relative',
+    elevation: 5, // for shadow effect on Android
+},
+logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10,
+},
+logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+},
+editIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+},
+profileContent: {
+    alignItems: 'flex-start',
+},
+profileText: {
+    fontSize: 16,
+    marginVertical: 5,
+},
+
 
 
 
