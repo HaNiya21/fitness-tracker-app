@@ -146,7 +146,7 @@ const Login = () => {
 
                 <TouchableOpacity onPress={() => navigation.navigate('AddSleep')}>
                     <Text style={styles.linkText}>Add Sleep</Text>
-
+                </TouchableOpacity>
                  <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
                     <Text style={styles.linkText}>Pedometer</Text>
                 </TouchableOpacity>

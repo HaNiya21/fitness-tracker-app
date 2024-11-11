@@ -19,7 +19,6 @@ import Progress from './app/Progress';
 import SleepChart from './app/SleepChart';
 import styles from './app/ExerciseChart';
 import Menu from './components/Menu';
-import SleepChart from './app/SleepChart';
 
 
 
