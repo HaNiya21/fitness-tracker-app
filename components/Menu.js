@@ -14,7 +14,7 @@ const Menu = () => {
   };
 
   return (
-    <View style={styles.menuContainer}>
+    <View style={[styles.menuContainer, menuVisible ? styles.burgerButtonPressed : styles.burgerButtonUnpressed]}>
       {/* Burger button */}
       <TouchableOpacity onPress={toggleMenu} style={styles.burgerButton}>
         <Icon name="bars" size={24} color="#000" />
@@ -27,7 +27,7 @@ const Menu = () => {
           <Text style={styles.menuItem}>Progress</Text>
           <Text style={styles.menuItem}>Logout</Text>
 
-            <ToggleSwitch />
+            <ToggleSwitch style={styles.bbToggle}/>
         </View>
     
       )}

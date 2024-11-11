@@ -657,26 +657,50 @@ scrollView: {
 // menu styles
 menuContainer: {
     position: 'absolute',
-    top: 40,
-    right: 20,
+    // top: 20,
+    right: 0,
   },
-  burgerButton: {
-    padding: 10,
-  },
-  menuDropdown: {
+
+burgerButtonPressed: {
     backgroundColor: '#fff',
     padding: 15,
-    borderRadius: 5,
-    marginTop: 10,
+        // marginTop: 10,
     elevation: 5, // For shadow on Android
     shadowColor: '#000', // For shadow on iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 5,
-  },
-  menuItem: {
-    fontSize: 16,
+    zIndex: 1,
+    },
+
+burgerButtonUnpressed: {
+        position: 'absolute',
+        right: 20,
+        top: 20,
+    },
+
+    burgerButton: {
+    paddingBottom: 10,
+},
+
+menuDropdown: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: 200,
+    height: 700,
+},
+
+menuItem: {
+    fontSize: 30,
     marginVertical: 10,
+    fontFamily: 'Koulen-Regular',
+    borderBottomColor: '#ECECEC',
+    borderBottomWidth: 1,
+
+bbToggle: {
+    marginBottom: 10,
+},
+
   },
   languageToggle: {
     flexDirection: 'row',

@@ -3,6 +3,8 @@ import { View, TextInput, ImageBackground, TouchableOpacity, Text } from "react-
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
 import Footer from '../components/Footer.js';
+import Menu from '../components/Menu.js';
+
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function WaterChart({ route }) {
@@ -24,7 +26,8 @@ export default function WaterChart({ route }) {
 
   return (
     <View style={styles.content}>
-      <ImageBackground source={backgroundImage} style={styles.image}>
+        <ImageBackground source={backgroundImage} style={styles.image}>
+        <Menu />    
         {!goalSet ? (
           <>
             <Text style={styles.goalText}>Log Water Intake</Text>
