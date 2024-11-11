@@ -15,6 +15,9 @@ import WaterChart from './app/WaterChart';
 import Dashboard from './app/Dashboard'; 
 import StepCounter from './app/Pedometer';
 import Articles from './app/Articles';
+import Progress from './app/Progress';
+import SleepChart from './app/SleepChart';
+import styles from './app/ExerciseChart';
 
 
 
@@ -35,6 +38,10 @@ function App() {
                 <Stack.Screen name="Dashboard" component={Dashboard} />
                 <Stack.Screen name="StepCounter" component={StepCounter} />
                 <Stack.Screen name="Articles" component={Articles} />
+                <Stack.Screen name="Progress" component={Progress} />
+                <Stack.Screen name="SleepChart" component={SleepChart} />
+                <Stack.Screen name="ExerciseChart" component={styles} />
+
                 
             </Stack.Navigator>
         </NavigationContainer>  

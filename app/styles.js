@@ -588,94 +588,63 @@ clockIcon: {
 
 
 // Sleep Component
-sleepTitle: {
-    fontFamily: 'KoHo-Bold',
-    fontSize: 40,
-    marginLeft: 40,
-    marginTop: 20,
-    fontWeight: 'bold',
-    color: '#0F2951',
-},
-
 sleepText: {
     fontSize: 20,
-    marginBottom: 5,
-    color: '#0F2951',
-    alignSelf: 'flex-start',
-    marginLeft: 80,
+    fontWeight: '600',
+    color: '#1f2937',
     marginBottom: 10,
-    fontFamily: 'Trebuchet MS',
 },
-
 sleepInput: {
-    backgroundColor: '#ECECEC',
-    padding: 15,
+    borderWidth: 1,
+    borderColor: '#d1d5db',
     borderRadius: 10,
-    color: 'black',
-    marginBottom: 10,
-    width: '70%',
-},
-
-sleepHours: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#0F2951',
-    marginLeft: 5,
-    marginRight: 5,
-    marginBottom: 10,
-},
-
-sleepSubmit: {
-    backgroundColor: '#D7D7D7',
-    padding: 15,
-    borderRadius: 10,
-    width: '147px',
-    textAlign: 'center',
-    marginTop: 50,
-
-},
-// Dashboard Component
-backgroundImage: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-},
-
-container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: 'transparent',
-},
-
-title: {
-    fontSize: 40,
-    marginBottom: 20,
-    fontWeight: 'bold',
-    fontFamily: 'KoHo-Bold',
-    color: '#0F2951',
-},
-
-subtitle: {
-    fontSize: 20,
-    marginBottom: 10,
-    fontWeight: 'bold',
-    color: '#0F2951',
-},
-
-item: {
     padding: 10,
-    marginVertical: 5,
-    backgroundColor: '#D7D7D7',
-    borderRadius: 10,
-    width: '70%',
-},
-
-itemText: {
+    marginBottom: 20,
     fontSize: 16,
-    color: '#0F2951',
-    fontFamily: 'Koulen-Regular',
+    width: '90%',
+    backgroundColor: '#ffffff', // White background for the input
+},
+sleepHours: {
+    marginLeft: 5,
+    fontSize: 16,
+    color: '#6b7280',
+},
+amountOz: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    width: '90%',
+},
+timeIconCont: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#d1d5db',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    width: '90%',
+    backgroundColor: '#ffffff', // White background for the time input
+},
+clockIcon: {
+    marginLeft: 10,
+},
+button: {
+    backgroundColor: '#4f46e5', // Custom blue button color
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginTop: 20,
+    alignItems: 'center',
+},
+sleepSubmit: {
+    color: '#ffffff',
+    fontSize: 18,
+    fontWeight: '600',
+},
+error: {
+    color: '#f87171', // Red color for error messages
+    fontSize: 14,
+    marginBottom: 10,
 },
 
 // Sleep Chart Component
