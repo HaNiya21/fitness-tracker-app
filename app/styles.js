@@ -31,8 +31,11 @@ const styles = StyleSheet.create({
     logoSL: {
         width: 80,
         height: 80,
-        shadowColor: '#4BA5E3'
+        shadowColor: '#4BA5E3',
+        marginTop: 20,
     },
+
+
     signInButton: {
         backgroundColor: '#3C68AA',
         padding: 5,
@@ -140,6 +143,17 @@ const styles = StyleSheet.create({
         color: 'white',
     },
 
+    form: {
+        // width: '70%',
+        // padding: 20,
+        // height: 'auto',
+        // borderColor: '#ECECEC',
+        // borderWidth: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        width: '70%',
+        alignContent: 'center',
+        },
 
     label:{
         fontSize: 16,
@@ -177,7 +191,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         fontFamily: 'Koulen-Regular',
-        color: '#8D8D8D'
+        color: '#8D8D8D',
+        
         
     },
     SignInText:{
@@ -204,6 +219,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         backgroundColor: '#4BA5E3',
+
     },
 
     SignUpTitle: { 
@@ -217,7 +233,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#3C68AA',
         padding: 5,
         borderRadius: 5,
-        marginBottom: 20,
         fontFamily: 'Koulen-Regular',
     },
 
@@ -262,10 +277,12 @@ waterTitle: {
 },
 
 inputCont: {
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'left',
     marginBottom: 10,
+    marginLeft: 40,
 },
 
 
@@ -278,7 +295,7 @@ waterText: {
     marginBottom: 5,
     color: '#0F2951',
     alignSelf: 'flex-start',
-    marginLeft: 80,
+    marginLeft: 45,
     marginBottom: 10,
     fontFamily: 'Koulen-Regular',
 },
@@ -362,7 +379,6 @@ timeIconCont: {
 
 clockIcon: {
     marginLeft: 5,
-
 },
 
 droplets: {
@@ -406,6 +422,7 @@ waterChart: {
 waterChartText: {
     fontWeight: 'bold',
     color: 'black',
+    fontFamily: 'Koulen-Regular',
 },
 // goalText: {
 //     fontSize: 20,
@@ -431,6 +448,7 @@ waterChartTitles: {
     marginBottom: 15,
     width: '70%',
     alignSelf: 'center',
+    fontFamily: 'Koulen-Regular',
 },
 
 waterChartValues: {
@@ -588,29 +606,142 @@ clockIcon: {
 
 
 // Sleep Component
+
+sleepTitle: {
+    fontFamily: 'Koulen-Regular',
+    fontSize: 40,
+    marginLeft: 40,
+    marginTop: 20,
+    fontWeight: 'bold',
+    color: '#0F2951',
+},
+
+sleepText: {
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 45,
+    marginBottom: 10,
+    fontFamily: 'Koulen-Regular',
+},
+
+sleepInputText:{
+    fontSize: 20,
+    marginTop: 5,
+    color: '#0F2951',
+    alignSelf: 'flex-start',
+    marginLeft: 45,
+    fontFamily: 'Koulen-Regular',
+    left: 10,
+},
+
+radioButton: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    marginLeft: 50,
+},
+
+radioButtonOutline: {
+    padding: 0.5,             // Space between radio button and the outline
+    borderRadius: 30,       // Match the radio button's circular shape
+    borderWidth: 1.5,         // Outline thickness
+    borderColor: '#8D8D8D',
+    marginRight: 5,
+    marginBottom: 5,
+},
+
+rblabel: {
+    fontSize: 20,
+    color: '#0F2951',
+    fontFamily: 'Koulen-Regular',
+},
+
+inputSleepCont:{
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'left',
+    marginBottom: 10,
+    marginLeft: 40,
+
+},
+
+
 sleepText: {
     fontSize: 20,
     fontWeight: '600',
     color: '#1f2937',
     marginBottom: 10,
 },
+
 sleepInput: {
     borderWidth: 1,
     borderColor: '#d1d5db',
     borderRadius: 10,
+
+    color: 'black',
+    marginBottom: 5,
+    width: '65%',
+    left: 10,
+
     padding: 10,
     marginBottom: 20,
     fontSize: 16,
     width: '90%',
     backgroundColor: '#ffffff', // White background for the input
+
 },
 sleepHours: {
+
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#0F2951',
+    marginLeft: 20,
+    marginBottom: 10,
+},
+
+sleepSubmit: {
+    backgroundColor: '#D7D7D7',
+    padding: 10,
+    borderRadius: 10,
+    width: 135,
+    alignSelf: 'center',
+    marginTop: 50,
+},
+
+sleepSubmitText:{
+    color: 'white',
+    fontSize: 15,
+    textAlign: 'center',
+
+},
+
+//sleepChart
+
+sleepChartTitle: {
+    fontSize: 20,
+    color: '#0F2951',
+    fontFamily: 'Koulen-Regular',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
+    marginTop: 70,
+},
+
+// Dashboard Component
+backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+
     marginLeft: 5,
     fontSize: 16,
     color: '#6b7280',
 },
 amountOz: {
     flexDirection: 'row',
+
     alignItems: 'center',
     marginBottom: 20,
     width: '90%',
@@ -869,6 +1000,8 @@ articleLink: {
     color: '#4BA5E3',
     fontFamily: 'Koulen-Regular',
 },
+
+
 
 });
 

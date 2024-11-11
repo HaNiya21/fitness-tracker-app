@@ -2,6 +2,8 @@ import { useState } from "react";
 import { View, TouchableOpacity, Text, TextInput, Image } from "react-native";
 import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
 import { useNavigation } from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import styles from "./styles";
 
 const Login = () => {
@@ -93,6 +95,7 @@ const Login = () => {
     <TextInput
         style={styles.input}
         placeholder="Enter Email"
+        placeholderTextColor="#8D8D8D"
         value={formValues.email}
         onChangeText={(value) => handleChange('email', value)}
         keyboardType="email-address"
@@ -104,6 +107,7 @@ const Login = () => {
     <TextInput
         style={styles.input}
         placeholder="Enter Password"
+        placeholderTextColor="#8D8D8D"
         value={formValues.password}
         onChangeText={(value) => handleChange('password', value)}
         secureTextEntry={true}
@@ -139,6 +143,10 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
                     <Text style={styles.linkText}>Dashboard</Text>  
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('AddSleep')}>
+                    <Text style={styles.linkText}>Add Sleep</Text>
+
                  <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
                     <Text style={styles.linkText}>Pedometer</Text>
                 </TouchableOpacity>
@@ -154,8 +162,8 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
                     <Text style={styles.linkText}>Menu</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Footer')}>
-                    <Text style={styles.linkText}>Footer</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
+                    <Text style={styles.linkText}>Sleep Chart</Text>
                 </TouchableOpacity>
             </View>
         </View>

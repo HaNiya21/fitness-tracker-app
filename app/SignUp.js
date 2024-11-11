@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen";
 import styles from "./styles";
@@ -102,11 +102,12 @@ const SignUp = () => {
                 <Text style={styles.headerText}>GYMWOLF</Text>
             </View>
 
-            <View style={styles.form}>
+            <ScrollView style={styles.form} contentContainerStyle={{ justifyContent: 'center'}}>
                 <View style={styles.field}>
                     <TextInput
                         style={styles.input}
                         placeholder="Choose a username"
+                        placeholderTextColor="#8D8D8D"
                         value={formValues.username}
                         onChangeText={(value) => handleChange('username', value)}
                     />
@@ -117,6 +118,7 @@ const SignUp = () => {
                     <TextInput
                         style={styles.input}
                         placeholder="Email"
+                        placeholderTextColor="#8D8D8D"
                         value={formValues.email}
                         onChangeText={(value) => handleChange('email', value)}
                         autoCapitalize="none"
@@ -128,6 +130,8 @@ const SignUp = () => {
                     <TextInput
                         style={styles.input}
                         placeholder="Password"
+                        placeholderTextColor="#8D8D8D"
+
                         secureTextEntry
                         value={formValues.password}
                         onChangeText={(value) => handleChange('password', value)}
@@ -140,6 +144,8 @@ const SignUp = () => {
                     <TextInput
                         style={styles.input}
                         placeholder="Confirm password"
+                        placeholderTextColor="#8D8D8D"
+
                         secureTextEntry
                         value={formValues.confirmPassword}
                         onChangeText={(value) => handleChange('confirmPassword', value)}
@@ -151,15 +157,17 @@ const SignUp = () => {
                 <TouchableOpacity style={styles.SignUpButton} onPress={handleSubmit}>
                     <Text style={styles.SignUpText}>Sign Up</Text>
                 </TouchableOpacity>
-            </View>
 
-            <Text style={styles.text}>
+                <Text style={styles.text}>
                 Already have an account?
             </Text>
 
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.LoginLink}>Login</Text>
             </TouchableOpacity>
+            </ScrollView>
+
+
         </View>
     );
 };
