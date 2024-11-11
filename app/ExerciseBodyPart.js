@@ -1,20 +1,44 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, ImageBackground, Text } from 'react-native';
-import Card from '../components/Card';
+import { View, ScrollView, StyleSheet, ImageBackground, Text, FlatList, Pressable, Image } from 'react-native';
+// import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+// import Card from '../components/Card';
 import styles from "./styles";
+import Footer from '../components/Footer';
+import BodyPartCard from '../components/BodyPartCard';
+import { bodyParts } from '../constants/bodyParts';
+import Menu from '../components/Menu';
+//import { LinearGradient } from 'expo-linear-gradient';
+
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
-export default function ExerciseList() {
+export default function ExerciseBodyPart() {
   return (
+    <>
      <ImageBackground 
             source={backgroundImage} 
             style={styles.image} 
             resizeMode="cover"
-    > 
-      <Text style={style.exerciseTitle}>Exercise List</Text>
-        <ScrollView contentContainerStyle={style.container}>
-     
+     > 
+     <Menu />
+        <Text style={style.exerciseTitle}>Exercises</Text>
+
+        <View style={{flex: 1, marginHorizontal: 20}}>
+            <FlatList
+            data={bodyParts}
+            numColumns={2}
+            keyExtractor={item => item.name}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{paddingBottom: 100, paddingTop: 20}}
+            columnWrapperStyle={{
+                justifyContent: 'space-between'
+            }}
+            renderItem={({ item, index }) => <BodyPartCard item={item} index={index} />}
+            />
+        </View>
+      
+ {/*     <ScrollView contentContainerStyle={style.exerciseContainer}>
+      
         
         <View style={style.row} >
             <Card
@@ -67,11 +91,22 @@ export default function ExerciseList() {
                 image="../assets/images/cardio_exercise.jpg"
             />
         </View>
-      
-      </ScrollView>
+        <View style={{paddingBottom: 70}}>
+
+        </View> 
+      </ScrollView> */}
     </ImageBackground>
+    <View>
+        <Footer />
+    </View>
+    
+    </>
   );
 }
+
+
+
+
 
 const style = StyleSheet.create({
   container: {
@@ -86,9 +121,9 @@ const style = StyleSheet.create({
 
   exerciseTitle: {
       fontSize: 35,
-      paddingTop: 150,
+      paddingTop: 100,
       marginBottom: 5,
-      //fontWeight: 'bold',
+      fontWeight: 'semibold',
       fontFamily: 'Koulen-Regular',
       color: '#0F2951',
       marginTop: 30,

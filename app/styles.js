@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
         paddingRight: 40,
         paddingLeft: 40,
         color: 'white',
+        lineHeight:33,
         //fontWeight: 'bold',
         fontFamily: 'Koulen-Regular',
     },
@@ -248,8 +249,16 @@ const styles = StyleSheet.create({
     },
     
     backIcon: {
-    marginTop: 100,
+    marginTop: 90,
     marginLeft: 20,
+    marginBottom: 20,
+    backgroundColor: '#4BA5E3',
+    width: 40,  // Set width to make a circular or rounded shape
+    height: 40, // Set height equal to width for a circle
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+
 },
 
 waterTitle: {
@@ -455,14 +464,14 @@ footer: {
     padding: 15,
     bottom: 0,
     position: 'absolute',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    width: '100%',
-    backgroundColor: '#4BA5E3',
-    padding: 15,
-    bottom: 0,
-    position: 'absolute',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'space-around',
+    // width: '100%',
+    // backgroundColor: '#4BA5E3',
+    // padding: 15,
+    // bottom: 0,
+    // position: 'absolute',
     
 },
 
@@ -485,23 +494,25 @@ footerIcons: {
 iconTextd: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     textAlign: 'center',
 },
 
 iconText: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     textAlign: 'center',
+    letterSpacing: 1,
 },
 
 iconTexta: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     textAlign: 'center',
     marginRight: 10,
+    letterSpacing: 1,
 },
 
 iconTexte: {
@@ -514,19 +525,21 @@ iconTexte: {
 // add exercise page
 exerciseContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: 'transparent',
+    marginHorizontal: 4,
+    //justifyContent: 'center',
+    //alignItems: 'center',
+    //padding: 20,
+    //backgroundColor: 'transparent',
 },
 exerciseTitle:
 {
-    fontSize: 40,
+    fontSize: 30,
     marginBottom: 20,
-    fontWeight: 'bold',
-    fontFamily: 'KoHo-Bold',
+    fontWeight: 'semibold',
+    fontFamily: 'Koulen-Regular',
     color: '#0F2951',
-    marginRight: 30,
+    marginRight: 15,
+    letterSpacing: 1,
 },
 
 // Label text for each input field, similar to waterText
@@ -689,7 +702,7 @@ scrollView: {
 // menu styles
 menuContainer: {
     position: 'absolute',
-    top: 40,
+    top: 30,
     right: 20,
   },
   burgerButton: {

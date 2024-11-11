@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-native";
+import React, { useState, useRef } from "react";
+import { View, ImageBackground, TouchableOpacity, Text, Animated } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -7,8 +7,11 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from "./styles";
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
-import { FlatList } from 'react-native-gesture-handler';
+import StepCounter from "./Pedometer";
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import AddPopup from '../components/AddPopup';
+import { Pedometer } from "expo-sensors";
+//import { useRef } from "react";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -45,12 +48,35 @@ const Dashboard = () => {
         setPopupVisible(false);
     };
 
+    const scrollY = useRef(new Animated.Value(0)).current;
+
+    const flatListRefs = [useRef(null), useRef(null)];
+
+    const syncScroll = (index) => {
+      return Animated.event(
+        [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+        {
+          useNativeDriver: false,
+          listener: (event) => {
+            const offset = event.nativeEvent.contentOffset.y;
+            flatListRefs.forEach((ref, i) => {
+              if (i !== index && ref.current) {
+                ref.current.scrollToOffset({ offset, animated: false });
+              }
+            });
+          },
+        }
+      );
+    };
+
     // Function to render each item in the list
     const renderItem = (item, type) => {
         return (
             <View style={styles.item}>
                 {type === 'Exercise' && (
-                    <Text style={styles.itemText}>{item.name} - {item.time}</Text>
+                    <Text style={styles.subtitle}>Exercises:</Text>
+                ) && (
+                  <Text style={styles.itemText}>{item.name} - {item.time}</Text>
                 )}
                 {type === 'Sleep' && (
                     <Text style={styles.itemText}>{item.date} - {item.hours} hours</Text>
@@ -62,16 +88,33 @@ const Dashboard = () => {
         );
     };
 
+    const renderList = (data, index, type) => (
+      <Animated.FlatList
+        ref={flatListRefs[index]}
+        data={data}
+        renderItem={({ item }) => renderItem(item, type)}
+        keyExtractor={(item) => item}
+        style={styles.flatList}
+        onScroll={syncScroll(index)}
+        scrollEventThrottle={16}
+      />
+    );
+
     return (
-        <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-          <View style={styles.container}>
+      <View style={styles.content}>
+        <ImageBackground source={backgroundImage} style={styles.image}>
             {/* Add the Menu component */}
             <Menu />
-
             <Text style={styles.title}>Dashboard</Text>
-
+            {/* <FlatList> */}
+              <StepCounter />
+            
             <Text style={styles.subtitle}>Exercises:</Text>
-            <FlatList
+            {renderList(exerciseData, 0, 'Exercise')}
+            {renderList(sleepData, 1, 'Sleep')}
+            {renderList(waterData, 2, 'Water')}
+
+            {/* <FlatList
               data={exerciseData}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => renderItem(item, 'Exercise')}
@@ -91,11 +134,18 @@ const Dashboard = () => {
               renderItem={({ item }) => renderItem(item, 'Water')}
             />
 
+            <Text style={styles.subtitle}>Water Intake:</Text>
+            <FlatList
+              data={waterData}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => renderItem(item, 'Water')}
+            /> */}
+
             {/* Button to add a new exercise (just for testing) */}
             <TouchableOpacity style={styles.addButton} onPress={() => addExercise({ name: 'Push-up', time: '10 min' })}>
               <Text style={styles.buttonText}>Add Exercise</Text>
             </TouchableOpacity>
-
+            
             {/* Floating Button to open the popup */}
             <TouchableOpacity style={styles.floatingButton} onPress={openPopup}>
               <Text style={styles.floatingButtonText}>+</Text>
@@ -103,11 +153,11 @@ const Dashboard = () => {
 
             {/* Add Popup */}
             <AddPopup visible={isPopupVisible} onClose={closePopup} />
-
-            <Footer />
-          </View>
-        </ImageBackground>
-      );
+            {/* </FlatList> */}
+          </ImageBackground>
+        <Footer />
+      </View>
+  );
 };
 
 export default Dashboard;

@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from "./styles";
 import Footer from '../components/Footer';
 //import Footer from '../components/footer';
-import Footer from '../components/Footer';
+
 import DateTimePicker from '@react-native-community/datetimepicker'; // for date/time pickers
 import { AntDesign } from "@expo/vector-icons";
 
