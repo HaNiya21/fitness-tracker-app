@@ -168,6 +168,9 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
                     <Text style={styles.linkText}>Sleep Chart</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                    <Text style={styles.linkText}>Profile</Text>  
+                </TouchableOpacity>     
             </View>
         </View>
     );
