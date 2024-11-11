@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView, ImageBackground } from "react-native";
-import { LineChart } from "react-native-chart-kit";
+import React from "react";
+import { View, Text, ImageBackground } from "react-native";
 import styles from "./styles";
-import { useNavigation } from "@react-navigation/native";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { LineChart } from "react-native-chart-kit"; // Ensure you import this
 import Footer from "../components/Footer";
 
 const backgroundImage = require("../assets/images/GymwolfBackground.jpeg");
 
 const Progress = () => {
-    const navigation = useNavigation();
-
     const chartConfig = {
         backgroundGradientFrom: "#1E2923",
         backgroundGradientFromOpacity: 0,
         backgroundGradientTo: "#08130D",
         backgroundGradientToOpacity: 0.5,
-        color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-        strokeWidth: 2, // optional, default 3
+        color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,  // Valid function for color
+        strokeWidth: 2,
         barPercentage: 0.5,
+    };
+
+    const chartData = {
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
+        datasets: [
+            {
+                data: [5, 10, 15, 20, 25, 30, 35, 40],
+            },
+        ],
     };
 
     return (
@@ -26,14 +31,7 @@ const Progress = () => {
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
                 <Text style={styles.title}>Progress Chart</Text>
                 <LineChart
-                    data={{
-                        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-                        datasets: [
-                            {
-                                data: [5, 10, 15, 20],
-                            },
-                        ],
-                    }}
+                    data={chartData}
                     width={400}
                     height={220}
                     chartConfig={chartConfig}
@@ -45,4 +43,5 @@ const Progress = () => {
         </View>
     );
 };
+
 export default Progress;

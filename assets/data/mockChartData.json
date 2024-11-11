@@ -1,0 +1,20 @@
+{
+    "data": {
+      "labels": ["Week 1", "Week 2", "Week 3", "Week 4"],
+      "datasets": [
+        {
+          "data": [5, 10, 15, 20]
+        }
+      ]
+    },
+    "chartConfig": {
+      "backgroundGradientFrom": "#1E2923",
+      "backgroundGradientFromOpacity": 0,
+      "backgroundGradientTo": "#08130D",
+      "backgroundGradientToOpacity": 0.5,
+      "color": "(opacity = 1) => `rgba(26, 255, 146, ${opacity})`",
+      "strokeWidth": 2,
+      "barPercentage": 0.5
+    }
+  }
+  

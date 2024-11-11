@@ -7,16 +7,16 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 
 const Footer = () => {
-    const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
+    // const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
     const navigation = useNavigation();
     const [iconColor, setIconColor] = useState('#000');
 
     return (
-        <ImageBackground
-            source={backgroundImage}
-            style={styles.BackgroundImage}
-            resizeMode="stretch"
-        >
+        // <ImageBackground
+        //     source={backgroundImage}
+        //     style={styles.BackgroundImage}
+        //     resizeMode="stretch"
+        // >
             <View style={styles.footer}>
                 <View style={styles.footerIcons}>
                     <TouchableOpacity
@@ -59,7 +59,7 @@ const Footer = () => {
                     <Text style={styles.iconTexta}>Articles</Text>
                 </View>
             </View>
-        </ImageBackground>
+        // </ImageBackground>
 
     );
 };

@@ -1,99 +1,104 @@
-import { useState } from "react"; 
+import React, { useState } from "react"; 
 import { View, ImageBackground, TouchableOpacity, Text, TextInput } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome'; // or any other icon set
 import { useNavigation } from '@react-navigation/native';
-import styles from "./styles";
+import { RadioButton } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import styles from "./styles";
 import Footer from '../components/Footer';
+import { ScrollView } from "react-native-gesture-handler";
+import Menu from "../components/Menu";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
-const SleepIntake = () => {
-    const initialValues = {
-        duration: "",
-        time: "",
-    };
-
+const AddSleep = () => {
     const navigation = useNavigation();
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
 
-    const handleChange = (name, value) => {
-        setFormValues({ ...formValues, [name]: value });
+    const [duration, setDuration] = useState('');
+    const [time, setTime] = useState('');
+    const [sleepLogs, setSleepLogs] = useState([]); 
+    const [errors, setErrors] = useState({});
+    const [checked, setChecked] = useState('Nightly'); // Radio button state
+
+    // Validation function
+    const validateInputs = () => {
+        let validationErrors = {};
+        if (!duration) validationErrors.duration = "Duration is required";
+        if (!time) validationErrors.time = "Time is required";
+        setErrors(validationErrors);
+        return Object.keys(validationErrors).length === 0;
     };
 
-    const validate = (values) => {
-        let errors = {};
-        if (!values.duration) {
-            errors.duration = "Duration is required";
-        }
-        if (!values.time) {
-            errors.time = "Time is required";
-        }
-        return errors;
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const errors = validate(formValues);
-        setFormErrors(errors);
+    const handleSubmit = () => {
+        if (!validateInputs()) return;
         
-        if (Object.keys(errors).length === 0) {
-            try {
-                const response = await fetch('http://localhost:5000/api/sleepIntake', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formValues),
-                });
+        // Add new sleep log entry and navigate
+        const newLog = { type: checked, duration, time };
+        setSleepLogs([...sleepLogs, newLog]);
+        navigation.navigate('SleepChart', { sleepLogs: [...sleepLogs, newLog] });
 
-                const data = await response.json();
-                
-                if (data.success) {
-                    console.log('Sleep intake entered successfully.');
-                }
-            } catch (err) {
-                console.error('Error:', err);
-            }
-        }
+        // Clear inputs
+        setDuration('');
+        setTime('');
+        setErrors({});
     };
 
     return (
-    <View style={styles.content}>
-        <ImageBackground source={backgroundImage} style={styles.image}>
-            <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('SleepChart')} />
-            <Text style={styles.sleepText}>Duration</Text>
-            <View style={styles.amountOz}>
-            <TextInput
-            style={styles.sleepInput}
-            value={formValues.duration}
-            onChangeText={(text) => handleChange('duration', text)}
-            placeholder="Enter duration"
-            keyboardType="numeric"
-            />
-                <Text style={styles.sleepHours}>hrs</Text>
-            </View>
-            {formErrors.duration && <Text style={styles.error}>{formErrors.duration}</Text>}
+        <View style={styles.content}>
+            <ImageBackground source={backgroundImage} style={styles.image}>
+                <Menu />
+                <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('SleepChart')} />
+                <Text style={styles.sleepTitle}>Add Sleep</Text>
+                <ScrollView>
+                <RadioButton.Group onValueChange={value => setChecked(value)} value={checked}>
+                    <Text style={styles.waterText}>Choose Type of Sleep</Text>
+                    <View style={styles.radioButton}>
+                        <View style={styles.radioButtonOutline}>
+                            <RadioButton value="Nightly" uncheckedColor="white" color="black" />
+                        </View>
+                        <Text style={styles.rblabel}>Nightly</Text>
+                    </View>
+                    <View style={styles.radioButton}>
+                        <View style={styles.radioButtonOutline}>
+                            <RadioButton value="Nap" uncheckedColor="white" color="black" />
+                        </View>
+                        <Text style={styles.rblabel}>Nap</Text>
+                    </View>
+                </RadioButton.Group>
+                
+                    <Text style={styles.sleepInputText}>Duration</Text>
+                    <View style={styles.inputCont}>
+                        <TextInput
+                            style={styles.waterInput}
+                            value={duration}
+                            onChangeText={setDuration}
+                            keyboardType="numeric"
+                            placeholder="Enter duration"
+                        />
+                        <Text style={styles.sleepHours}>hrs</Text>
+                    </View>
+                    {errors.duration && <Text style={styles.error}>{errors.duration}</Text>}
 
-            <Text style={styles.sleepText}>Time</Text>
-            <View style={styles.timeIconCont}>
-                <TextInput
-                    style={styles.sleepInput}
-                    value={formValues.time}
-                    onChangeText={(text) => handleChange('time', text)}
-                />
-                <Icon name="clock-o" size={20} color="#000" style={styles.clockIcon} />
-            </View>
-            {formErrors.time && <Text style={styles.error}>{formErrors.time}</Text>}
-            
-            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                <Text style={styles.sleepSubmit}>Save</Text>
-            </TouchableOpacity>
+                    <Text style={styles.sleepInputText}>Time</Text>
+                    <View style={styles.inputCont}>
+                        <TextInput
+                            style={styles.waterInput}
+                            value={time}
+                            onChangeText={setTime}
+                            placeholder="Enter time"
+                        />
+                        <Icon name="clock-o" size={25} color="#000" style={{ marginLeft: 25 }} />
+                    </View>
+                    {errors.time && <Text style={styles.error}>{errors.time}</Text>}
+
+                    <TouchableOpacity style={styles.waterSubmitButton} onPress={handleSubmit}>
+                        <Text style={styles.waterButtonText}>Save</Text>
+                    </TouchableOpacity>
+                </ScrollView>
             </ImageBackground>
             <Footer />
         </View>
-        ); 
-}
+    ); 
+};
 
-export default SleepIntake;
+export default AddSleep;

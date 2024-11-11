@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.myapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,7 +37,7 @@
       "**/*"
     ],
     "fonts": {
-      "Koulen": "./assets/fonts/Koulen-Regular.ttf" 
+      "Koulen": "./assets/fonts/Koulen-Regular.ttf"
     }
   }
 }
