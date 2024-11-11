@@ -67,7 +67,7 @@ export default function WaterIntake() {
                         onChangeText={setTime}
                         placeholder="Enter time"
                     />
-                    <FontAwesome name="clock-o" size={20} color="#000" style={styles.clockIcon} />
+                    <FontAwesome name="clock-o" size={25} color="#000" style={{marginLeft:10}} />
                 </View>
                 {errors.time && <Text style={styles.error}>{errors.time}</Text>}
 

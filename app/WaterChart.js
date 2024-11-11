@@ -34,7 +34,8 @@ export default function WaterChart({ route }) {
     return (
     <View style={styles.content}>
         <ImageBackground source={backgroundImage} style={styles.image}>
-        <Menu />    
+            <Menu />    
+
         {!goalSet ? (
             <>
             <Text style={styles.goalText}>Log Water Intake</Text>
