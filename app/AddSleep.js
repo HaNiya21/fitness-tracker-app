@@ -51,7 +51,7 @@ const AddSleep = () => {
                 <Text style={styles.sleepTitle}>Add Sleep</Text>
                 <ScrollView>
                 <RadioButton.Group onValueChange={value => setChecked(value)} value={checked}>
-                    <Text style={styles.sleepText}>Choose Type of Sleep</Text>
+                    <Text style={styles.waterText}>Choose Type of Sleep</Text>
                     <View style={styles.radioButton}>
                         <View style={styles.radioButtonOutline}>
                             <RadioButton value="Nightly" uncheckedColor="white" color="black" />
@@ -69,7 +69,7 @@ const AddSleep = () => {
                     <Text style={styles.sleepInputText}>Duration</Text>
                     <View style={styles.inputCont}>
                         <TextInput
-                            style={styles.sleepInput}
+                            style={styles.waterInput}
                             value={duration}
                             onChangeText={setDuration}
                             keyboardType="numeric"
@@ -82,7 +82,7 @@ const AddSleep = () => {
                     <Text style={styles.sleepInputText}>Time</Text>
                     <View style={styles.inputCont}>
                         <TextInput
-                            style={styles.sleepInput}
+                            style={styles.waterInput}
                             value={time}
                             onChangeText={setTime}
                             placeholder="Enter time"
@@ -91,7 +91,7 @@ const AddSleep = () => {
                     </View>
                     {errors.time && <Text style={styles.error}>{errors.time}</Text>}
 
-                    <TouchableOpacity style={styles.sleepSubmit} onPress={handleSubmit}>
+                    <TouchableOpacity style={styles.waterSubmitButton} onPress={handleSubmit}>
                         <Text style={styles.waterButtonText}>Save</Text>
                     </TouchableOpacity>
                 </ScrollView>
