@@ -370,6 +370,15 @@ waterAmountCont: {
     marginBottom: 10,
 },
 
+timePickerWaterContainer: { 
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginTop: 70,
+    padding: 5,
+    width: '60%',
+    marginRight: 65,
+},
+
 timeIconCont: { 
     flexDirection: 'row',
     alignItems: 'center',
@@ -744,6 +753,27 @@ sleepHours: {
     color: '#0F2951',
     marginLeft: 20,
     marginBottom: 10,
+},
+sleepTimeContainer: {
+    borderRadius: 10,
+    backgroundColor: '#ECECEC',
+    borderColor: '#ECECEC',
+    borderWidth: 4,
+    width: '70%',
+    height: 50,
+},
+
+timePickerSleepContainer: {
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginTop: 325,
+    padding: 5,
+    width: '60%',
+    marginRight: 60,
+    // borderColor: 'black',
+    // borderWidth: 1
+    
+
 },
 
 sleepSubmit: {
