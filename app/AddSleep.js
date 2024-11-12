@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from "./styles";
 import Footer from '../components/Footer';
+import DateTimePicker from '@react-native-community/datetimepicker'; // for date/time pickers
 import { ScrollView } from "react-native-gesture-handler";
 import Menu from "../components/Menu";
 

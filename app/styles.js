@@ -553,9 +553,9 @@ exerciseText: {
     marginBottom: 5,
     color: '#0F2951',
     alignSelf: 'flex-start',
-    marginLeft: 80,
-    marginBottom: 10,
-    fontFamily: 'Trebuchet MS',
+    marginLeft: 50,
+    marginBottom: 5,
+    fontFamily: 'Koulen-Regular',
 },
 
 // Container for each input field to keep layout similar to amountOz
@@ -574,6 +574,24 @@ exerciseInput: {
     color: 'black',
     marginBottom: 10,
     width: '70%',
+    marginLeft: 50,
+
+},
+dateContainer: {
+    borderRadius: 10,
+    borderColor: '#ECECEC',
+    borderWidth: 4,
+    width: '70%',
+    marginLeft: 50,
+    marginBottom: 10,
+},
+
+dateInput: {
+    backgroundColor: '#ECECEC',
+    padding: 11,
+    borderRadius: 10,
+    color: '#0F2951',
+
 },
 
 // Submit button style, similar to waterSubmit
@@ -584,6 +602,32 @@ exerciseSubmit: {
     width: '147px',
     textAlign: 'center',
     marginTop: 50,
+
+},
+
+datePickerContainer: {  
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginTop: 40,
+    padding: 5,
+    width: '70%',
+    marginRight: 30,
+
+},
+
+timePickerContainer: {
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginBottom: 155,
+    padding: 5,
+    width: '70%',
+    marginRight: 30,
+},
+
+modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
 
 },
 
