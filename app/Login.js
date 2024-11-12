@@ -125,8 +125,11 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.linkText}>Sign Up</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('ExerciseList')}>
+                <TouchableOpacity onPress={() => navigation.navigate('ExerciseBodyPart')}>
                     <Text style={styles.linkText}>Exercise Page</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('TrainerList')}>
+                    <Text style={styles.linkText}>Trainer Page</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('WaterIntake')}>
                     <Text style={styles.linkText}>WaterIntake</Text>
@@ -165,6 +168,9 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
                     <Text style={styles.linkText}>Sleep Chart</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                    <Text style={styles.linkText}>Profile</Text>  
+                </TouchableOpacity>     
             </View>
         </View>
     );

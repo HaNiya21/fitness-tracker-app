@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
         paddingRight: 40,
         paddingLeft: 40,
         color: 'white',
+        lineHeight:33,
         //fontWeight: 'bold',
         fontFamily: 'Koulen-Regular',
     },
@@ -183,6 +184,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         marginBottom: 20,
         outlineStyle: '#FFF',
+        fontFamily: 'Koulen-Regular',
     },
 
     input: {
@@ -262,8 +264,16 @@ const styles = StyleSheet.create({
     },
     
     backIcon: {
-    marginTop: 100,
+    marginTop: 90,
     marginLeft: 20,
+    marginBottom: 20,
+    backgroundColor: '#4BA5E3',
+    width: 40,  // Set width to make a circular or rounded shape
+    height: 40, // Set height equal to width for a circle
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+
 },
 
 waterTitle: {
@@ -481,14 +491,14 @@ footer: {
     padding: 15,
     bottom: 0,
     position: 'absolute',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    width: '100%',
-    backgroundColor: '#4BA5E3',
-    padding: 15,
-    bottom: 0,
-    position: 'absolute',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'space-around',
+    // width: '100%',
+    // backgroundColor: '#4BA5E3',
+    // padding: 15,
+    // bottom: 0,
+    // position: 'absolute',
     
 },
 
@@ -511,23 +521,25 @@ footerIcons: {
 iconTextd: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     textAlign: 'center',
 },
 
 iconText: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     textAlign: 'center',
+    letterSpacing: 1,
 },
 
 iconTexta: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
     textAlign: 'center',
     marginRight: 10,
+    letterSpacing: 1,
 },
 
 iconTexte: {
@@ -540,19 +552,21 @@ iconTexte: {
 // add exercise page
 exerciseContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: 'transparent',
+    marginHorizontal: 4,
+    //justifyContent: 'center',
+    //alignItems: 'center',
+    //padding: 20,
+    //backgroundColor: 'transparent',
 },
 exerciseTitle:
 {
-    fontSize: 40,
+    fontSize: 30,
     marginBottom: 20,
-    fontWeight: 'bold',
-    fontFamily: 'KoHo-Bold',
+    fontWeight: 'semibold',
+    fontFamily: 'Koulen-Regular',
     color: '#0F2951',
-    marginRight: 30,
+    marginRight: 15,
+    letterSpacing: 1,
 },
 
 // Label text for each input field, similar to waterText
@@ -805,52 +819,44 @@ sleepChartTitle: {
 },
 
 // Dashboard Component
-backgroundImage: {
+dashboardContainer: {
     flex: 1,
     justifyContent: 'center',
-
-    marginLeft: 5,
-    fontSize: 16,
-    color: '#6b7280',
-},
-amountOz: {
-    flexDirection: 'row',
-
     alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+dashboardTitle: {
+    fontSize: 40,
     marginBottom: 20,
-    width: '90%',
+    fontWeight: 'bold',
+    fontFamily: 'Koulen-Regular',
 },
-timeIconCont: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#d1d5db',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    width: '90%',
-    backgroundColor: '#ffffff', // White background for the time input
+
+dashboardButton: {
+    backgroundColor: '#3C68AA',
+    padding: 5,
+    borderRadius: 5,
+    marginBottom: 20,
+    fontFamily: 'Koulen-Regular',
 },
-clockIcon: {
-    marginLeft: 10,
+
+dashboardText: {
+    color: '#FFF',
+    fontSize: 15,
+    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
 },
-button: {
-    backgroundColor: '#4f46e5', // Custom blue button color
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginTop: 20,
-    alignItems: 'center',
+
+dashboardLink: {
+    color: '#FFF',
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
 },
-sleepSubmit: {
-    color: '#ffffff',
-    fontSize: 18,
-    fontWeight: '600',
-},
-error: {
-    color: '#f87171', // Red color for error messages
-    fontSize: 14,
-    marginBottom: 10,
-},
+
+
 
 // Sleep Chart Component
 scrollView: {
@@ -918,43 +924,48 @@ bbToggle: {
     color: '#000',
   },
 // popup styles
-modalOverlay: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    width: '80%',
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  modalButton: {
-    backgroundColor: '#3498db',
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    borderRadius: 5,
-    marginVertical: 10,
-  },
-  modalButtonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  closeButton: {
-    marginTop: 20,
-  },
-  closeButtonText: {
-    color: '#e74c3c',
-    fontSize: 16,
-  },
+    modalOverlay: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    },
+    modalContent: {
+      width: 300,
+      padding: 20,
+      backgroundColor: 'white',
+      borderRadius: 10,
+      alignItems: 'center',
+    },
+    modalTitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 20,
+    },
+    modalButton: {
+      width: '100%',
+      padding: 10,
+      backgroundColor: '#007bff',
+      borderRadius: 5,
+      marginBottom: 10,
+      alignItems: 'center',
+    },
+    modalButtonText: {
+      color: 'white',
+      fontSize: 16,
+    },
+    closeButton: {
+      marginTop: 20,
+      padding: 10,
+      backgroundColor: 'red',
+      borderRadius: 5,
+      alignItems: 'center',
+    },
+    closeButtonText: {
+      color: 'white',
+      fontSize: 16,
+    },
+
 //pedometer
 PedometerContainer: {
     flex: 1,
@@ -1074,6 +1085,81 @@ articleLink: {
     color: '#4BA5E3',
     fontFamily: 'Koulen-Regular',
 },
+//profile page
+profileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+profileBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    position: 'relative',
+    elevation: 5, // for shadow effect on Android
+},
+logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10,
+},
+logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+},
+editIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+},
+profileContent: {
+    alignItems: 'flex-start',
+},
+profileText: {
+    fontSize: 16,
+    marginVertical: 5,
+},
+// profile page
+profileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+profileBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    position: 'relative',
+    elevation: 5, // for shadow effect on Android
+},
+
+logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10,
+},
+
+logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+},
+
+editIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+},
+
+
+
 
 
 

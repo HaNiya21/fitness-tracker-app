@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from "./styles";
 import Footer from '../components/Footer';
+//import Footer from '../components/footer';
+
 import DateTimePicker from '@react-native-community/datetimepicker'; // for date/time pickers
 import { AntDesign } from "@expo/vector-icons";
 import Menu from "../components/Menu";
