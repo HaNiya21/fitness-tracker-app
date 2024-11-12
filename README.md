@@ -9,3 +9,12 @@
 #completed exercise body part, exercise list, details pages
 #created trainers list page
 #need to work on the burger
+
+# Youtube videos used for dummy data
+
+#Milestone Strength
+#MadFit
+#caroline Girvan
+#growingannanas
+#The Fit Mother Project - Fitness For Busy Moms
+#Fabulous50s

@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
 
@@ -39,9 +40,16 @@ const styles = StyleSheet.create({
     signInButton: {
         backgroundColor: '#3C68AA',
         padding: 5,
-        borderRadius: 5,
+        borderRadius: 50,
         marginBottom: 20,
         fontFamily: 'Koulen-Regular',
+    },
+
+    logoText: {
+        fontSize: 32,
+        fontFamily: 'Koulen-Regular',
+        color: 'black', 
+        letterSpacing: 1,
     },
 // Landing Page Styles
     box1: {
@@ -182,7 +190,8 @@ const styles = StyleSheet.create({
     paragraph: {
         fontSize: 18,
         color: '#FFF',
-        marginBottom: 20,
+        marginTop: 10,
+        marginBottom: 10,
         outlineStyle: '#FFF',
         fontFamily: 'Koulen-Regular',
     },
@@ -191,7 +200,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         backgroundColor: '#FFF',
         padding: 10,
-        borderRadius: 10,
+        borderRadius: 20,
         fontFamily: 'Koulen-Regular',
         color: '#8D8D8D',
         
@@ -536,8 +545,9 @@ iconTexta: {
 iconTexte: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
+    textAlign: 'left',
+    letterSpacing: 1,
 },
 
 // add exercise page
@@ -1015,7 +1025,44 @@ articleLink: {
     fontFamily: 'Koulen-Regular',
 },
 
+// trainers page
 
+tabIndicator: {
+    backgroundColor: '#000',
+    height: 2,
+    
+    //color: '#fff',
+  },
+
+  tabTitle: {
+    color: '#000',
+    fontFamily: 'Koulen-Regular',
+    letterSpacing: 1,
+    fontSize: 20,
+  },
+
+  tabContent: {
+    padding: 16,
+    width: wp(90),
+    //flexDirection: 'column',
+  },
+
+  contactItem: {
+    flexDirection: 'column',
+    //alignItems: 'center',
+    marginVertical: 8,
+  },
+
+  description: {
+    fontSize: 16,
+    color: '#333',
+    backgroundColor: '#f2f2f2',
+    padding: 10,
+    marginBottom: 8,
+    borderRadius: 10,
+    justifyContent: 'center',
+    textAlign: 'justify',
+  },
 
 });
 

@@ -4,8 +4,8 @@ import Card from '../components/Card';
 import styles from "./styles";
 import Footer from '../components/Footer';
 import { trainerList } from '../constants/trainerlist';
-import BodyPartCard from '../components/BodyPartCard';
 import Menu from '../components/Menu';
+import TrainersCard from '../components/TrainersCard';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -32,7 +32,7 @@ export default function TrainerList() {
             columnWrapperStyle={{
                 justifyContent: 'space-between'
             }}
-            renderItem={({ item, index }) => <BodyPartCard item={item} index={index} />}
+            renderItem={({ item, index }) => <TrainersCard item={item} index={index} />}
             />
         </View>
             {/* <ScrollView contentContainerStyle={style.container}>

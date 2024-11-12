@@ -34,7 +34,7 @@ const SignUp = () => {
 
         if (Object.keys(errors).length === 0) {
             try {
-                const response = await fetch('http://172.20.9.103:5000/api/SignUp', {
+                const response = await fetch('http://192.168.1.71:5000/api/SignUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const SignUp = () => {
 
             <View style={styles.box1}>
                 <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL} />
-                <Text style={styles.headerText}>GYMWOLF</Text>
+                <Text style={styles.logoText}>GYMWOLF</Text>
             </View>
 
             <ScrollView style={styles.form} contentContainerStyle={{ justifyContent: 'center'}}>
@@ -154,7 +154,7 @@ const SignUp = () => {
                     {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
                 </View>
 
-                <TouchableOpacity style={styles.SignUpButton} onPress={handleSubmit}>
+                <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
                     <Text style={styles.SignUpText}>Sign Up</Text>
                 </TouchableOpacity>
 

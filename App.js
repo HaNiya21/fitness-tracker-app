@@ -13,6 +13,7 @@ import SignUp from './app/SignUp';
 import ExerciseBodyPart from './app/ExerciseBodyPart';
 import Exercises from './app/Exercises';
 import TrainerList from './app/TrainerList';
+import TrainerDetails from './app/TrainerDetails';
 import WaterChart from './app/WaterChart';
 import Dashboard from './app/Dashboard'; 
 import StepCounter from './app/Pedometer';
@@ -42,10 +43,12 @@ function App() {
                 <Stack.Screen name="ExerciseDetails" component={ExerciseDetails} />
                 <Stack.Screen name="Exercises" component={Exercises} />
                 <Stack.Screen name="TrainerList" component={TrainerList} />
+                <Stack.Screen name="TrainerDetails" component={TrainerDetails} />
                 <Stack.Screen name="Dashboard" component={Dashboard} />
                 <Stack.Screen name="StepCounter" component={StepCounter} />
                 <Stack.Screen name="Articles" component={Articles} />
                 <Stack.Screen name="Menu" component={Menu} />
+                <Stack.Screen name="Progress" component={Progress} />
                 <Stack.Screen name="SleepChart" component={SleepChart} />  
             </Stack.Navigator>
         </NavigationContainer>  
