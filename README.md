@@ -5,3 +5,7 @@
 #App.js is placed in the root directory
 #In component folder placed toggle and footer files
 #in app folder, all the screens are located
+
+#completed exercise body part, exercise list, details pages
+#created trainers list page
+#need to work on the burger

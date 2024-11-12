@@ -28,7 +28,7 @@ const Footer = () => {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('Excercises')}
+                        onPress={() => navigation.navigate('ExcerciseBodyPart')}
                         onPressIn={() => setIconColor('#ffffff')} // Change to desired color on press
                         onPressOut={() => setIconColor('#000')}
                     >
@@ -36,7 +36,7 @@ const Footer = () => {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('PersonalTrainer')}
+                        onPress={() => navigation.navigate('PersonalTrainers')}
                         onPressIn={() => setIconColor('#ffffff')} // Change to desired color on press
                         onPressOut={() => setIconColor('#000')}
                     >
@@ -53,8 +53,8 @@ const Footer = () => {
                 </View>
 
                 <View style={styles.footerText}>
-                    <Text style={styles.iconTextd}>Dashboard</Text>
-                    <Text style={styles.iconTexte}>Excercises</Text>
+                    <Text style={styles.iconText}>Dashboard</Text>
+                    <Text style={styles.iconText}>Excercises</Text>
                     <Text style={styles.iconText}>Personal Trainer</Text>
                     <Text style={styles.iconTexta}>Articles</Text>
                 </View>
