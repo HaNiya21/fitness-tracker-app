@@ -389,6 +389,15 @@ waterAmountCont: {
     marginBottom: 10,
 },
 
+timePickerWaterContainer: { 
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginTop: 70,
+    padding: 5,
+    width: '60%',
+    marginRight: 65,
+},
+
 timeIconCont: { 
     flexDirection: 'row',
     alignItems: 'center',
@@ -577,9 +586,9 @@ exerciseText: {
     marginBottom: 5,
     color: '#0F2951',
     alignSelf: 'flex-start',
-    marginLeft: 80,
-    marginBottom: 10,
-    fontFamily: 'Trebuchet MS',
+    marginLeft: 50,
+    marginBottom: 5,
+    fontFamily: 'Koulen-Regular',
 },
 
 // Container for each input field to keep layout similar to amountOz
@@ -598,6 +607,24 @@ exerciseInput: {
     color: 'black',
     marginBottom: 10,
     width: '70%',
+    marginLeft: 50,
+
+},
+dateContainer: {
+    borderRadius: 10,
+    borderColor: '#ECECEC',
+    borderWidth: 4,
+    width: '70%',
+    marginLeft: 50,
+    marginBottom: 10,
+},
+
+dateInput: {
+    backgroundColor: '#ECECEC',
+    padding: 11,
+    borderRadius: 10,
+    color: '#0F2951',
+
 },
 
 // Submit button style, similar to waterSubmit
@@ -608,6 +635,32 @@ exerciseSubmit: {
     width: '147px',
     textAlign: 'center',
     marginTop: 50,
+
+},
+
+datePickerContainer: {  
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginTop: 40,
+    padding: 5,
+    width: '70%',
+    marginRight: 30,
+
+},
+
+timePickerContainer: {
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginBottom: 155,
+    padding: 5,
+    width: '70%',
+    marginRight: 30,
+},
+
+modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
 
 },
 
@@ -725,6 +778,27 @@ sleepHours: {
     marginLeft: 20,
     marginBottom: 10,
 },
+sleepTimeContainer: {
+    borderRadius: 10,
+    backgroundColor: '#ECECEC',
+    borderColor: '#ECECEC',
+    borderWidth: 4,
+    width: '70%',
+    height: 50,
+},
+
+timePickerSleepContainer: {
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+    marginTop: 325,
+    padding: 5,
+    width: '60%',
+    marginRight: 60,
+    // borderColor: 'black',
+    // borderWidth: 1
+    
+
+},
 
 sleepSubmit: {
     backgroundColor: '#D7D7D7',
@@ -755,52 +829,44 @@ sleepChartTitle: {
 },
 
 // Dashboard Component
-backgroundImage: {
+dashboardContainer: {
     flex: 1,
     justifyContent: 'center',
-
-    marginLeft: 5,
-    fontSize: 16,
-    color: '#6b7280',
-},
-amountOz: {
-    flexDirection: 'row',
-
     alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+dashboardTitle: {
+    fontSize: 40,
     marginBottom: 20,
-    width: '90%',
+    fontWeight: 'bold',
+    fontFamily: 'Koulen-Regular',
 },
-timeIconCont: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#d1d5db',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    width: '90%',
-    backgroundColor: '#ffffff', // White background for the time input
+
+dashboardButton: {
+    backgroundColor: '#3C68AA',
+    padding: 5,
+    borderRadius: 5,
+    marginBottom: 20,
+    fontFamily: 'Koulen-Regular',
 },
-clockIcon: {
-    marginLeft: 10,
+
+dashboardText: {
+    color: '#FFF',
+    fontSize: 15,
+    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
 },
-button: {
-    backgroundColor: '#4f46e5', // Custom blue button color
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginTop: 20,
-    alignItems: 'center',
+
+dashboardLink: {
+    color: '#FFF',
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
 },
-sleepSubmit: {
-    color: '#ffffff',
-    fontSize: 18,
-    fontWeight: '600',
-},
-error: {
-    color: '#f87171', // Red color for error messages
-    fontSize: 14,
-    marginBottom: 10,
-},
+
+
 
 // Sleep Chart Component
 scrollView: {
@@ -868,43 +934,48 @@ bbToggle: {
     color: '#000',
   },
 // popup styles
-modalOverlay: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    width: '80%',
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  modalButton: {
-    backgroundColor: '#3498db',
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    borderRadius: 5,
-    marginVertical: 10,
-  },
-  modalButtonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  closeButton: {
-    marginTop: 20,
-  },
-  closeButtonText: {
-    color: '#e74c3c',
-    fontSize: 16,
-  },
+    modalOverlay: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    },
+    modalContent: {
+      width: 300,
+      padding: 20,
+      backgroundColor: 'white',
+      borderRadius: 10,
+      alignItems: 'center',
+    },
+    modalTitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 20,
+    },
+    modalButton: {
+      width: '100%',
+      padding: 10,
+      backgroundColor: '#007bff',
+      borderRadius: 5,
+      marginBottom: 10,
+      alignItems: 'center',
+    },
+    modalButtonText: {
+      color: 'white',
+      fontSize: 16,
+    },
+    closeButton: {
+      marginTop: 20,
+      padding: 10,
+      backgroundColor: 'red',
+      borderRadius: 5,
+      alignItems: 'center',
+    },
+    closeButtonText: {
+      color: 'white',
+      fontSize: 16,
+    },
+
 //pedometer
 PedometerContainer: {
     flex: 1,
@@ -1024,6 +1095,81 @@ articleLink: {
     color: '#4BA5E3',
     fontFamily: 'Koulen-Regular',
 },
+//profile page
+profileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+profileBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    position: 'relative',
+    elevation: 5, // for shadow effect on Android
+},
+logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10,
+},
+logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+},
+editIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+},
+profileContent: {
+    alignItems: 'flex-start',
+},
+profileText: {
+    fontSize: 16,
+    marginVertical: 5,
+},
+// profile page
+profileContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#4BA5E3',
+},
+
+profileBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    position: 'relative',
+    elevation: 5, // for shadow effect on Android
+},
+
+logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10,
+},
+
+logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+},
+
+editIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+},
+
+
+
 
 // trainers page
 

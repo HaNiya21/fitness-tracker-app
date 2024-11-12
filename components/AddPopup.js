@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from '../app/styles'; // Assuming you already have a styles file
+import styles from '../app/styles';
 
 const AddPopup = ({ visible, onClose }) => {
   return (
@@ -35,6 +34,7 @@ const AddPopup = ({ visible, onClose }) => {
     </Modal>
   );
 };
+
 
 
 export default AddPopup;

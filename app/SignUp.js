@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from "reac
 import { useNavigation } from '@react-navigation/native';
 import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen";
 import styles from "./styles";
+import { err } from "react-native-svg";
 
 const SignUp = () => {
     let [fontsLoaded] = useFonts({
@@ -12,7 +13,11 @@ const SignUp = () => {
     const navigation = useNavigation();
 
     const initialValues = {
-        username: "",
+        firstname: "",
+        lastname: "",
+        height: "",
+        weight: "",
+        age:``,
         email: "",
         password: "",
         confirmPassword: "",
@@ -66,9 +71,11 @@ const SignUp = () => {
         const errors = {};
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
-        if (!values.username) {
-            errors.username = "Username is required!";
-        }
+        if (!values.firstname) errors.firstname = "First name is required!";
+        if (!values.lastname) errors.lastname = "Last name is required!";
+        if (!values.height || isNaN(values.height)) errors.height = "Height is required!";
+        if (!values.weight || isNaN(values.weight)) errors.weight = "Weight is required!";
+        if (!values.age || isNaN(values.age)) errors.age = "Age is required!";
         if (!values.email) {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
@@ -104,59 +111,85 @@ const SignUp = () => {
 
             <ScrollView style={styles.form} contentContainerStyle={{ justifyContent: 'center'}}>
                 <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Choose a username"
-                        placeholderTextColor="#8D8D8D"
-                        value={formValues.username}
-                        onChangeText={(value) => handleChange('username', value)}
-                    />
-                    {formErrors.username && <Text style={styles.error}>{formErrors.username}</Text>}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <TextInput
+                style={[styles.input ,{ flex: 1, marginRight: 5 }]}
+                placeholder="First Name"
+                placeholderTextColor="#8D8D8D"
+                value={formValues.firstName}
+                onChangeText={(text) => handleChange('firstName', text)}
+            />
+    
+            <TextInput
+                style={[styles.input, { flex: 1 }]}
+                placeholder="Last Name"
+                placeholderTextColor="#8D8D8D"
+                value={formValues.lastName}
+                onChangeText={(text) => handleChange('lastName', text)}
+            />
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 15 }}>
+            <TextInput
+                style={[styles.input, { flex: 1, marginRight: 5 }]}
+                placeholder="Height (cm)"
+                placeholderTextColor="#8D8D8D"
+                value={formValues.heightCm}
+                onChangeText={(text) => handleChange('heightCm', text)}
+                keyboardType="numeric"
+            />
+        
+            <TextInput
+                style={[styles.input, { flex: 1 }]}
+                placeholder="Weight (kg)"
+                 placeholderTextColor="#8D8D8D"
+                value={formValues.weightKg}
+                onChangeText={(text) => handleChange('weightKg', text)}
+                keyboardType="numeric"
+            />
+            </View>
+            <TextInput
+                style={[styles.input, { flex: 1 }]}
+                placeholder="Age"
+                 placeholderTextColor="#8D8D8D"
+                value={formValues.age}
+                onChangeText={(text) => handleChange('age', text)}
+                keyboardType="numeric"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+                 placeholderTextColor="#8D8D8D"
+                value={formValues.email}
+                onChangeText={(text) => handleChange('email', text)}
+                keyboardType="email-address"
+            />
+            <View style={styles.field}>
+            <TextInput
+                style={styles.input}
+                placeholder="Password"
+                 placeholderTextColor="#8D8D8D"
+                value={formValues.password}
+                onChangeText={(text) => handleChange('password', text)}
+                secureTextEntry
+            />
+            {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
+            </View>
+            <TextInput
+                style={styles.input}
+                placeholder="Confirm Password"
+                 placeholderTextColor="#8D8D8D"
+                value={formValues.confirmPassword}
+                onChangeText={(text) => handleChange('confirmPassword', text)}
+                secureTextEntry
+            />
+            {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
                 </View>
-
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Email"
-                        placeholderTextColor="#8D8D8D"
-                        value={formValues.email}
-                        onChangeText={(value) => handleChange('email', value)}
-                        autoCapitalize="none"
-                    />
-                    {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
-                </View>
-
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Password"
-                        placeholderTextColor="#8D8D8D"
-
-                        secureTextEntry
-                        value={formValues.password}
-                        onChangeText={(value) => handleChange('password', value)}
-                        autoCapitalize="none"
-                    />
-                    {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
-                </View>
-
-                <View style={styles.field}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Confirm password"
-                        placeholderTextColor="#8D8D8D"
-
-                        secureTextEntry
-                        value={formValues.confirmPassword}
-                        onChangeText={(value) => handleChange('confirmPassword', value)}
-                        autoCapitalize="none"
-                    />
-                    {formErrors.confirmPassword && <Text style={styles.error}>{formErrors.confirmPassword}</Text>}
-                </View>
+                
 
                 <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
                     <Text style={styles.SignUpText}>Sign Up</Text>
                 </TouchableOpacity>
+            
 
                 <Text style={styles.text}>
                 Already have an account?
