@@ -51,7 +51,7 @@ const Login = () => {
             const normalizedEmail = formValues.email.toLowerCase(); // Convert to lowercase
     
             try {
-                const response = await fetch('http://172.20.9.103:5000/api/login', {
+                const response = await fetch('http://192.168.1.71:5000/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -88,40 +88,42 @@ const Login = () => {
     return (
         <View style={styles.loginContainer}>
             <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
-            <Text style={styles.LoginTitle}>GYMWOLF</Text>
+            <Text style={styles.logoText}>GYMWOLF</Text>
             <Text style={styles.paragraph}>Welcome Back!</Text>
             <View style={styles.form}>
                 <View style={styles.field}>
-    <TextInput
-        style={styles.input}
-        placeholder="Enter Email"
-        placeholderTextColor="#8D8D8D"
-        value={formValues.email}
-        onChangeText={(value) => handleChange('email', value)}
-        keyboardType="email-address"
-        autoCapitalize="none" // Ensure this is set to 'none'
-    />
-    {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
-</View>
-<View style={styles.field}>
-    <TextInput
-        style={styles.input}
-        placeholder="Enter Password"
-        placeholderTextColor="#8D8D8D"
-        value={formValues.password}
-        onChangeText={(value) => handleChange('password', value)}
-        secureTextEntry={true}
-        autoCapitalize="none" // Ensure this is set to 'none'
-    />
-    {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
-</View>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Enter Email"
+                        placeholderTextColor="#8D8D8D"
+                        value={formValues.email}
+                        onChangeText={(value) => handleChange('email', value)}
+                        keyboardType="email-address"
+                        autoCapitalize="none" // Ensure this is set to 'none'
+                    />
+                    {formErrors.email && <Text style={styles.error}>{formErrors.email}</Text>}
+                </View>
+
+                <View style={styles.field}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Enter Password"
+                        placeholderTextColor="#8D8D8D"
+                        value={formValues.password}
+                        onChangeText={(value) => handleChange('password', value)}
+                        secureTextEntry={true}
+                        autoCapitalize="none" // Ensure this is set to 'none'
+                    />
+                    {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
+                </View>
 
                 <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
-                    <Text style={styles.SignInText}>Sign In</Text>
+                    <Text style={styles.SignInText}>Log in</Text>
                 </TouchableOpacity>
             </View>
+
             <View style={styles.textContainer}>
-                <Text>Don't have an account? </Text>
+                <Text style={{color: '#000', fontFamily: 'Koulen-Regular'}}>Don't have an account? </Text>
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.linkText}>Sign Up</Text>
                 </TouchableOpacity>

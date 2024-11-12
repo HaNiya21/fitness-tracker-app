@@ -13,7 +13,7 @@ const Articles = () => {
     async function getNewsData() {
         setLoading(true);
         try {
-            const resp = await axios.get("https://newsapi.org/v2/top-headlines?apiKey=4f73a059411643648e2d930986d11bea&country=us&category=sports&category=health");
+            const resp = await axios.get("https://newsapi.org/v2/top-headlines?apiKey=4f73a059411643648e2d930986d11bea&country=us&category=health&category=sports");
             setNewsData(resp.data.articles);
         } catch (error) {
             console.error(error);

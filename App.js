@@ -11,6 +11,7 @@ import SignUp from './app/SignUp';
 import ExerciseBodyPart from './app/ExerciseBodyPart';
 import Exercises from './app/Exercises';
 import TrainerList from './app/TrainerList';
+import TrainerDetails from './app/TrainerDetails';
 import WaterChart from './app/WaterChart';
 import Dashboard from './app/Dashboard'; 
 import StepCounter from './app/Pedometer';
@@ -80,6 +81,11 @@ function App() {
                 <Stack.Screen 
                     name="TrainerList" 
                     component={TrainerList} 
+                    options={{ headerTitle: 'Trainers' }}
+                />
+                <Stack.Screen 
+                    name="TrainerDetails" 
+                    component={TrainerDetails} 
                     options={{ headerTitle: 'Trainers' }}
                 />
                 <Stack.Screen 
