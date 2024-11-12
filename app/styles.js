@@ -1108,7 +1108,7 @@ profileBox: {
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 20,
-    width: '90%',
+    width: '80%',
     position: 'relative',
     elevation: 5, // for shadow effect on Android
 },
@@ -1133,42 +1133,20 @@ profileText: {
     fontSize: 16,
     marginVertical: 5,
 },
-// profile page
-profileContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#4BA5E3',
-},
-
-profileBox: {
-    backgroundColor: '#fff',
+profileInput: {
+    marginVertical: 10,
+    backgroundColor: '#ECECEC',
+    padding: 10,
     borderRadius: 10,
-    padding: 20,
-    width: '90%',
-    position: 'relative',
-    elevation: 5, // for shadow effect on Android
+    fontFamily: 'Koulen-Regular',
+    color: '#8D8D8D',
+    
+    
 },
-
-logoContainer: {
-    alignItems: 'center',
-    marginBottom: 10,
+profileLine: {
+    borderBottomColor: '000000',
+    borderBottomWidth: 1,
 },
-
-logo: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-},
-
-editIcon: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
-},
-
-
 
 
 // trainers page
@@ -1210,6 +1188,7 @@ tabIndicator: {
     textAlign: 'justify',
   },
 
+  
 });
 
 export default styles;
