@@ -1107,10 +1107,13 @@ profileContainer: {
 profileBox: {
     backgroundColor: '#fff',
     borderRadius: 10,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 50,
     width: '80%',
     position: 'relative',
     elevation: 5, // for shadow effect on Android
+    minHeight: 400,
+    marginTop: 90,
 },
 logoContainer: {
     alignItems: 'center',
@@ -1123,8 +1126,9 @@ logo: {
 },
 editIcon: {
     position: 'absolute',
-    top: 10,
+    top: -40,
     right: 10,
+    zIndex: 2,
 },
 profileContent: {
     alignItems: 'flex-start',
@@ -1144,10 +1148,36 @@ profileInput: {
     
 },
 profileLine: {
-    borderBottomColor: '000000',
+    borderBottomColor: '#000000',
     borderBottomWidth: 1,
 },
-
+profileRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+},
+profileLabel: {
+    fontSize: 15,
+    color: '#8D8D8D',
+    fontFamily: 'Koulen-Regular',
+    padding: 3,
+},
+profileValue: {
+    fontSize: 15,
+    color: '#8D8D8D',
+    textAlign: 'right',
+    marginLeft: 20,
+    padding: 3,
+},
+circleWrapper: {
+    position: 'absolute',
+    top: 100,
+    left: '45%',
+    transform: [{ translateX: -50 }],
+    zIndex: 1,
+},
 
 // trainers page
 
