@@ -84,6 +84,11 @@ function App() {
                     options={{ headerTitle: 'Trainers' }}
                 />
                 <Stack.Screen 
+                    name="TrainerDetails" 
+                    component={TrainerDetails} 
+                    options={{ headerTitle: 'Trainers' }}
+                />
+                <Stack.Screen 
                     name="StepCounter" 
                     component={StepCounter} 
                     options={{ headerTitle: 'Step Counter' }}
