@@ -75,12 +75,12 @@ export default function ExerciseChart() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-        <Text style={styles.title}>Weekly Details</Text>
-        <Text style={styles.weekRange}>{data.weeklyDetails.weekRange}</Text>
+    <View style={styles.content}>
+      <ImageBackground source={backgroundImage} style={styles.image}>
+        <Text style={{marginTop: 120, left:50 }}>Weekly Details</Text>
+        <Text style={{ left:50, top:40 }}>{data.weeklyDetails.weekRange}</Text>
         
-        <ScrollView>
+        <ScrollView style={{ left: 50, top: 100}}>
           {data.weeklyDetails.days.map((dayData, index) => (
             <View key={index} style={styles.dayContainer}>
               <Text style={styles.dayName}>{dayData.day}</Text>

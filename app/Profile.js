@@ -6,6 +6,7 @@ import styles from './styles';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import { ImageBackground } from 'react-native';
+import SVG, { Circle } from 'react-native-svg';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -48,14 +49,25 @@ const Profile = () => {
             <ImageBackground source={backgroundImage} style={styles.image}>
                 {/* Top Menu */}
                 <Menu />
+
+                <View style={styles.circleWrapper}>
+                    <SVG height="150" width="150">
+                        <Circle
+                            cx="75"
+                            cy="75"
+                            r="75"
+                            fill="rgba(114, 157, 221, 0.62)"
+                        />
+                    </SVG>
+                </View>
                 
                 {/* Main Profile Content */}
-                <ScrollView contentContainerStyle={{ paddingTop: 100, justifyContent: 'center', alignItems: 'center' }}>
+                <ScrollView contentContainerStyle={{ paddingTop: 100, justifyContent: 'center', alignItems: 'center', paddingBottom: 150, }}>
                     <View style={[styles.profileBox, { backgroundColor: '#ECECEC', alignItems: 'center' }]}>
                         {/* Edit Icon */}
-                        <TouchableOpacity onPress={toggleEdit} style={styles.editIcon}>
-                            <Icon name="edit" size={24} color="#000" />
-                        </TouchableOpacity>
+                            <TouchableOpacity onPress={toggleEdit} style={styles.editIcon}>
+                                <Icon name="edit" size={35} color="#000" />
+                            </TouchableOpacity>
 
                         {/* Editable Fields */}
                         {isEditing ? (
@@ -110,20 +122,47 @@ const Profile = () => {
                         ) : (
                             // View Mode
                             <View>
-                                <Text style={styles.profileInput}>First Name: {profileValues.firstname}</Text>
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>First Name</Text> 
+                                    <Text style={styles.profileValue}>{profileValues.firstname}</Text>
+                                </View>
                                 <View style={styles.profileLine} />
-                                <Text style={styles.profileInput}>Last Name: {profileValues.lastname}</Text>
+                                
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>Last Name</Text>
+                                    <Text style={styles.profileValue}>{profileValues.lastname}</Text>
+                                </View>
                                 <View style={styles.profileLine} />
-                                <Text style={styles.profileInput}>Age: {profileValues.age}</Text>
+
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>Age</Text>
+                                    <Text style={styles.profileValue}>{profileValues.age}</Text>
+                                </View>
                                 <View style={styles.profileLine} />
-                                <Text style={styles.profileInput}>Height: {profileValues.height} cm</Text>
+
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>Height</Text>
+                                    <Text style={styles.profileValue}>{profileValues.height} cm</Text>
+                                </View>
                                 <View style={styles.profileLine} />
-                                <Text style={styles.profileInput}>Weight: {profileValues.weight} kg</Text>
+
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>Weight</Text>
+                                    <Text style={styles.profileValue}>{profileValues.weight} kg</Text>
+                                </View>
                                 <View style={styles.profileLine} />
-                                <Text style={styles.profileInput}>Email: {profileValues.email}</Text>
+
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>Email</Text>
+                                    <Text style={styles.profileValue}>{profileValues.email}</Text>
+                                </View>
                                 <View style={styles.profileLine} />
-                                <Text style={styles.profileInput}>Password: {profileValues.password}</Text>
-                                <View style={styles.profileLine} />
+
+                                <View style={styles.profileRow}>
+                                    <Text style={styles.profileLabel}>Password</Text>
+                                    <Text style={styles.profileValue}>{profileValues.password}</Text>
+                                </View>
+
                             </View>
                         )}
                     </View>

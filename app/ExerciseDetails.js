@@ -30,7 +30,7 @@ const ExerciseDetails = () => {
 
             <Menu />
                 <View style={styles.backIcon}>
-                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('ExerciseBodyPart')} /> 
+                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
                 </View>
                 <View style={{ elevation: 4, backgroundColor: '#e5e5e5', paddingTop:5, marginBottom: 8}}>
                     <Image

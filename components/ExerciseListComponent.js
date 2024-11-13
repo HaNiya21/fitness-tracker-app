@@ -41,20 +41,20 @@ const ExerciseCard = ({ item, index }) => {
             </Pressable>
             <View style={{paddingBottom: 10}}> 
             <Text 
-                    style={{color: 'black', 
-                        fontSize: hp(2), 
-                        //fontWeight: 'semibold',
-                        //lineHeight: 30, 
-                        marginBottom: 10,
-                        textAlign: 'center', 
-                        letterSpacing: 1, 
-                        fontFamily: 'Koulen-Regular'}}
+                style={{color: 'black', 
+                    fontSize: hp(2), 
+                    //fontWeight: 'semibold',
+                    //lineHeight: 30, 
+                    marginBottom: 10,
+                    textAlign: 'center', 
+                    letterSpacing: 1, 
+                    fontFamily: 'Koulen-Regular'}}
                 >
                     {
                         item?.name?.length > 20 ? item.name.slice(0, 15) + '...' : item.name
                     }
-                </Text> 
-            </View>
+            </Text> 
+        </View>
             
         </View>
     )

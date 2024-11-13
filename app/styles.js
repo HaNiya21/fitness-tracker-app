@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
 
@@ -39,9 +40,16 @@ const styles = StyleSheet.create({
     signInButton: {
         backgroundColor: '#3C68AA',
         padding: 5,
-        borderRadius: 5,
+        borderRadius: 50,
         marginBottom: 20,
         fontFamily: 'Koulen-Regular',
+    },
+
+    logoText: {
+        fontSize: 32,
+        fontFamily: 'Koulen-Regular',
+        color: 'black', 
+        letterSpacing: 1,
     },
 // Landing Page Styles
     box1: {
@@ -182,7 +190,8 @@ const styles = StyleSheet.create({
     paragraph: {
         fontSize: 18,
         color: '#FFF',
-        marginBottom: 20,
+        marginTop: 10,
+        marginBottom: 10,
         outlineStyle: '#FFF',
         fontFamily: 'Koulen-Regular',
     },
@@ -191,7 +200,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         backgroundColor: '#FFF',
         padding: 10,
-        borderRadius: 10,
+        borderRadius: 20,
         fontFamily: 'Koulen-Regular',
         color: '#8D8D8D',
         
@@ -545,8 +554,9 @@ iconTexta: {
 iconTexte: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'KoHo-Regular',
-    textAlign: 'center',
+    fontFamily: 'Koulen-Regular',
+    textAlign: 'left',
+    letterSpacing: 1,
 },
 
 // add exercise page
@@ -1097,10 +1107,13 @@ profileContainer: {
 profileBox: {
     backgroundColor: '#fff',
     borderRadius: 10,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 50,
     width: '80%',
     position: 'relative',
     elevation: 5, // for shadow effect on Android
+    minHeight: 400,
+    marginTop: 90,
 },
 logoContainer: {
     alignItems: 'center',
@@ -1113,8 +1126,9 @@ logo: {
 },
 editIcon: {
     position: 'absolute',
-    top: 10,
+    top: -40,
     right: 10,
+    zIndex: 2,
 },
 profileContent: {
     alignItems: 'flex-start',
@@ -1134,11 +1148,77 @@ profileInput: {
     
 },
 profileLine: {
-    borderBottomColor: '000000',
+    borderBottomColor: '#000000',
     borderBottomWidth: 1,
 },
+profileRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+},
+profileLabel: {
+    fontSize: 15,
+    color: '#8D8D8D',
+    fontFamily: 'Koulen-Regular',
+    padding: 3,
+},
+profileValue: {
+    fontSize: 15,
+    color: '#8D8D8D',
+    textAlign: 'right',
+    marginLeft: 20,
+    padding: 3,
+},
+circleWrapper: {
+    position: 'absolute',
+    top: 100,
+    left: '45%',
+    transform: [{ translateX: -50 }],
+    zIndex: 1,
+},
 
+// trainers page
 
+tabIndicator: {
+    backgroundColor: '#000',
+    height: 2,
+    
+    //color: '#fff',
+  },
+
+  tabTitle: {
+    color: '#000',
+    fontFamily: 'Koulen-Regular',
+    letterSpacing: 1,
+    fontSize: 20,
+  },
+
+  tabContent: {
+    padding: 16,
+    width: wp(90),
+    //flexDirection: 'column',
+  },
+
+  contactItem: {
+    flexDirection: 'column',
+    //alignItems: 'center',
+    marginVertical: 8,
+  },
+
+  description: {
+    fontSize: 16,
+    color: '#333',
+    backgroundColor: '#f2f2f2',
+    padding: 10,
+    marginBottom: 8,
+    borderRadius: 10,
+    justifyContent: 'center',
+    textAlign: 'justify',
+  },
+
+  
 });
 
 export default styles;

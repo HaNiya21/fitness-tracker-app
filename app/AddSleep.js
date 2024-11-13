@@ -104,7 +104,7 @@ const AddSleep = () => {
                         <View style={styles.timePickerSleepContainer}>
                             <DateTimePicker
                                 value={new Date()}
-                                mode="date"
+                                mode="time"
                                 display="default"
                                 onChange={onTimeChange}
                             />
