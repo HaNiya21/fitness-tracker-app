@@ -61,7 +61,7 @@ const AddSleep = () => {
                     <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('SleepChart')} />
                 </View>
                 <Text style={[styles.sleepTitle, 
-                            {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                             {fontSize: i18n.language === 'es' ? 35: 45 },
                             {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
                             {fontWeight: i18n.language === 'es' ? 'bold': 'regular' }]}>{t('Add Sleep')}</Text>
@@ -69,7 +69,7 @@ const AddSleep = () => {
                     <RadioButton.Group onValueChange={value => setChecked(value)} value={checked}>
                         <Text style={[styles.waterText,
                                     {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
-                                    {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular' },
+                                    {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular' },
                                     {fontWeight: i18n.language === 'es' ? 'bold': 'regular', fontSize: 18, marginTop:  20, marginBottom: 20 }]}>{t('Choose Type of Sleep')}</Text>
                         <View style={styles.radioButton}>
                             <View style={styles.radioButtonOutline}>
@@ -86,7 +86,7 @@ const AddSleep = () => {
                     </RadioButton.Group>
                     
                     <Text style={[styles.sleepInputText, 
-                                {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                                {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                                 {fontSize: i18n.language === 'es' ? 15: 20 },
                                 {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                                 {letterSpacing: i18n.language === 'es' ? -1: 'auto' },
@@ -102,7 +102,7 @@ const AddSleep = () => {
                         <Text style={[styles.sleepHours,{fontSize: i18n.language === 'es' ? 25: 30 }]}>{t('hrs')}</Text>
                     </View>
                     {errors.duration && <Text style={[styles.error, 
-                                                {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                                                {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                                                 {fontSize: i18n.language === 'es' ? 12: 'auto' },
                                                 {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                                                 {letterSpacing: i18n.language === 'es' ? -1: 'auto' }]}>{t(errors.duration)}</Text>}

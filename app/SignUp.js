@@ -180,7 +180,7 @@ const SignUp = () => {
             <View style={styles.field}>
             <TextInput
                 style={[styles.input, 
-                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
                         {fontSize: i18n.language === 'es' ? 12: 'auto'},
@@ -195,7 +195,7 @@ const SignUp = () => {
             </View>
             <TextInput
                 style={[styles.input, 
-                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
                         {fontSize: i18n.language === 'es' ? 12: 'auto'},
@@ -219,7 +219,7 @@ const SignUp = () => {
 
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                 <Text style={[styles.LoginLink, 
-                            { fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                            { fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                             { fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                             { fontSize: i18n.language === 'es' ? 12: 16 }]}>{t('Login')}</Text>
             </TouchableOpacity>

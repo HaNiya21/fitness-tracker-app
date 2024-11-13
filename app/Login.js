@@ -112,7 +112,7 @@ const Login = () => {
                 <View style={styles.field}>
                     <TextInput
                         style={[styles.input, 
-                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
                         {fontSize: i18n.language === 'es' ? 12: 'auto'},
@@ -125,7 +125,7 @@ const Login = () => {
                         autoCapitalize="none" // Ensure this is set to 'none'
                     />
                     {formErrors.password && <Text style={[styles.error, 
-                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
                         {fontSize: i18n.language === 'es' ? 12: 'auto'},
@@ -133,7 +133,7 @@ const Login = () => {
                 </View>
 
                 <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
-                    <Text style={[styles.SignInText, {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                    <Text style={[styles.SignInText, {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
                         {fontSize: i18n.language === 'es' ? 14: 16},
@@ -175,7 +175,7 @@ const Login = () => {
                     <Text style={styles.linkText}>Progress</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('ExerciseChart')}>
-                    <Text style={styles.linkText}>ExerciseChart</Text>
+                    <Text style={styles.linkText}>Exercise Chart</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
                     <Text style={styles.linkText}>SleepChart</Text> 

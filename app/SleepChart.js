@@ -26,14 +26,14 @@ export default function SleepChart({ route }) {
             <Menu/>
             <View style={styles.waterChart}>
                 <Text style={[styles.sleepChartTitle, {
-                    fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular',
+                    fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular',
                     fontSize: i18n.language === 'es' ? 24 : 30,
                     letterSpacing: i18n.language === 'es' ? -1.5: 'auto'
                 }]}>{t('Sleep Chart')}</Text>
                 <View style={styles.waterChartTitles}>
                     <Text style={styles.waterChartText}>{t('Type')}</Text>
                     <Text style={[styles.waterChartText, 
-                                {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'}, 
+                                {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'}, 
                                 {fontSize: i18n.language === 'es' ? 16 : 20}, 
                                 {letterSpacing: i18n.language === 'es' ? -1.5: 'auto'}]}>{t('Duration (hrs)')}</Text>
                     <Text style={styles.waterChartText}>{t('Time')}</Text>

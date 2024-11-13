@@ -51,14 +51,14 @@ const Menu = () => {
         <View style={styles.menuDropdown}>
           <TouchableOpacity onPress={handleProfileClick}>
             <Text style={[styles.menuItem, 
-            {fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
+            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
             {fontSize: i18n.language === 'es' ? 25 : 30 },
             {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
             {letterSpacing: i18n.language === 'es' ? -1.5 : 'auto'}]}>{t('Profile')}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleProgressClick}>
           <Text style={[styles.menuItem, 
-            {fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
+            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
             {fontSize: i18n.language === 'es' ? 25 : 30 },
             {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
             {marginVertical: i18n.language === 'es' ? 25 : 10 },
@@ -66,7 +66,7 @@ const Menu = () => {
           </TouchableOpacity>
           <TouchableOpacity onPress={handleLogoutClick}>
           <Text style={[styles.menuItem, 
-            {fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
+            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
             {fontSize: i18n.language === 'es' ? 25 : 30 },
             {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
             {letterSpacing: i18n.language === 'es' ? -1.5 : 'auto'}]}>{t('Logout')}</Text>

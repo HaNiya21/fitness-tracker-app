@@ -51,7 +51,7 @@ const ExerciseCard = ({ item, index }) => {
                     marginBottom: 10,
                     textAlign: 'center', 
                     letterSpacing: 1},
-                    { fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
+                    { fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
                     { fontSize: i18n.language === 'es' ? 14 : 20 },
                     { fontWeight: i18n.language === 'es' ? 'bold' : 'regular' } ]}
                 >

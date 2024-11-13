@@ -459,6 +459,7 @@ waterChartText: {
     textAlign: 'center',
     alignSelf: 'center',
     fontSize: 20,
+    marginHorizontal: 30,
 },
 
  

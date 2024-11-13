@@ -67,7 +67,7 @@ const LandingPage = () => {
             
                         <Pressable style={styles.LoginButton} onPress={() => navigation.navigate('Login')}>
                             <Text style={[styles.linkText, 
-                            { fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
+                            { fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
                             { fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                             { fontSize: i18n.language === 'es' ? 16: 20},
                             { letterSpacing: i18n.language === 'es' ? -1 : 0 },
