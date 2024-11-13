@@ -111,7 +111,12 @@ const Login = () => {
 
                 <View style={styles.field}>
                     <TextInput
-                        style={styles.input}
+                        style={[styles.input, 
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                        {letterSpacing: i18n.language === 'es' ? -1: 0},
+                        {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                        {padding: i18n.language === 'es' ? 15: 10 }]}
                         placeholder={t('Enter Password')}
                         placeholderTextColor="#8D8D8D"
                         value={formValues.password}
@@ -119,11 +124,20 @@ const Login = () => {
                         secureTextEntry={true}
                         autoCapitalize="none" // Ensure this is set to 'none'
                     />
-                    {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
+                    {formErrors.password && <Text style={[styles.error, 
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                        {letterSpacing: i18n.language === 'es' ? -1: 0},
+                        {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                        {margin: i18n.language === 'es' ? 10: 'auto' }]} >{t(formErrors.password)}</Text>}
                 </View>
 
                 <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
-                    <Text style={styles.SignInText}>{t('Log in')}</Text>
+                    <Text style={[styles.SignInText, {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                        {letterSpacing: i18n.language === 'es' ? -1: 0},
+                        {fontSize: i18n.language === 'es' ? 14: 16},
+                        {padding: i18n.language === 'es' ? 5: 5 }]}>{t('Log in')}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -154,11 +168,7 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
                     <Text style={styles.linkText}>Dashboard</Text>  
                 </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => navigation.navigate('AddSleep')}>
-                    <Text style={styles.linkText}>Add Sleep</Text>
-                </TouchableOpacity>
-                 <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
+                <TouchableOpacity onPress={() => navigation.navigate('StepCounter')}>
                     <Text style={styles.linkText}>Pedometer</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Progress')}>
@@ -172,9 +182,6 @@ const Login = () => {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
                     <Text style={styles.linkText}>Menu</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
-                    <Text style={styles.linkText}>Sleep Chart</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                     <Text style={styles.linkText}>Profile</Text>  
