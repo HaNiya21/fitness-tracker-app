@@ -11,10 +11,14 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Tab, TabView } from 'react-native-elements';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const TrainerDetails = () => {
+
+    const {t, i18n} = useTranslation();
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -57,10 +61,10 @@ const TrainerDetails = () => {
                     style= {{marginHorizontal: 15, marginTop: 3}}>
                             <Tab value={index} onChange={setIndex} indicatorStyle={styles.tabIndicator}>
                                 <Tab.Item 
-                                    title="Profile"
+                                    title={t("Profile")}
                                     titleStyle = {styles.tabTitle} />
                                 <Tab.Item 
-                                    title="Contact"
+                                    title={t("Contact")}
                                     titleStyle = {styles.tabTitle} />
                                 <Tab.Item 
                                     title="Videos"
@@ -69,7 +73,7 @@ const TrainerDetails = () => {
                             <TabView value={index} onChange={setIndex}>
                                 <TabView.Item style={styles.tabContent}>
                                     <Text style={styles.description}>
-                                        {item.description}
+                                        {t(item.description)}
                                     </Text>
                                 </TabView.Item>
 
@@ -91,7 +95,7 @@ const TrainerDetails = () => {
                                 <TabView.Item style={styles.tabContent}>
                                     <View style={styles.contactItem}>
                                         <Text style = {{fontSize: hp(2.3), fontFamily:'Roboto', paddingBottom: 5}}>
-                                            Youtube Video: 
+                                            {t('YouTube Videos')}: 
                                         </Text>
                                         <View>
                                             {
@@ -101,7 +105,7 @@ const TrainerDetails = () => {
                                                         key={arr.id}
                                                         style={styles.description}
                                                     > 
-                                                        To watch video {arr.id} click here 
+                                                        {t('To watch video')} {arr.id} {t('click here')} 
                                                     </Link>
                                                     )): <Link 
                                                             href={item.videos} 

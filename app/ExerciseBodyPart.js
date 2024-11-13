@@ -1,18 +1,23 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet, ImageBackground, Text, FlatList, Pressable, Image } from 'react-native';
-// import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-// import Card from '../components/Card';
+
 import styles from "./styles";
 import Footer from '../components/Footer';
 import BodyPartCard from '../components/BodyPartCard';
 import { bodyParts } from '../constants/bodyParts';
 import Menu from '../components/Menu';
-//import { LinearGradient } from 'expo-linear-gradient';
+
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
+
 export default function ExerciseBodyPart() {
+
+    const { t, i18n } = useTranslation();
+
   return (
     <>
      <ImageBackground 
@@ -21,7 +26,7 @@ export default function ExerciseBodyPart() {
             resizeMode="cover"
      > 
      <Menu />
-        <Text style={style.exerciseTitle}>Exercises</Text>
+        <Text style={style.exerciseTitle}>{t('Exercises')}</Text>
 
         <View style={{flex: 1, marginHorizontal: 20}}>
             <FlatList

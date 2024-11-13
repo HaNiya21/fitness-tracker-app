@@ -5,11 +5,15 @@ import styles from "../app/styles";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
     // const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
     const navigation = useNavigation();
     const [iconColor, setIconColor] = useState('#000');
+
+    const {t, i18n} = useTranslation();
 
     return (
         // <ImageBackground
@@ -53,10 +57,14 @@ const Footer = () => {
                 </View>
 
                 <View style={styles.footerText}>
-                    <Text style={styles.iconText}>Dashboard</Text>
-                    <Text style={styles.iconText}>Exercises</Text>
-                    <Text style={styles.iconText}>Personal Trainer</Text>
-                    <Text style={styles.iconTexta}>Articles</Text>
+                    <Text style={[styles.iconText, 
+                        {marginLeft: i18n.language === 'es' ? 20 : 10}]}>{t('Dashboard')}</Text>
+                    <Text style={[styles.iconText,
+                        {marginLeft: i18n.language === 'es' ? 35 : 15}]}>{t('Exercises')}</Text>
+                    <Text style={[styles.iconText,
+                        {marginLeft: i18n.language === 'es' ? 0 : 0}]}>{t('Personal Trainer')}</Text>
+                    <Text style={[styles.iconText,
+                        {marginRight: i18n.language === 'es' ? 10 : 10}]}>{t('Articles')}</Text>
                 </View>
             </View>
         // </ImageBackground>

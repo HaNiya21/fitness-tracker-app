@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { View, TouchableOpacity, Text, TextInput, Image } from "react-native";
-import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
 import { useNavigation } from '@react-navigation/native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
+import ToggleSwitch from '../components/ToggleSwitch';
 import styles from "./styles";
 
 const Login = () => {
 
-    let [fontsLoaded] = useFonts({
-        Koulen_400Regular, // Registering the font
-    });
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = () => {
+        const newLanguage = i18n.language === 'en' ? 'es' : 'en';
+        i18n.changeLanguage(newLanguage)
+            .then(() => console.log("Language changed to:", newLanguage))
+            .catch(err => console.log(err));
+    };
 
 
     const initialValues = {
@@ -30,14 +35,14 @@ const Login = () => {
         let errors = {};
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!values.email) {
-            errors.email = "Email is required";
+            errors.email = t('Email is required');
         } else if (!emailRegex.test(values.email)) {
-            errors.email = "Please enter a valid email";
+            errors.email = t('Please enter a valid email');
         }
         if (!values.password) {
-            errors.password = "Password is required";
+            errors.password = t('Password is required');
         } else if (values.password.length < 6) {
-            errors.password = "Password must be more than 6 characters";
+            errors.password = t('Password must be more than 6 characters');
         }
         return errors;
     };
@@ -65,7 +70,7 @@ const Login = () => {
                 if (!response.ok) {
                     console.error('Login request failed with status:', response.status);
                     const errorData = await response.json();
-                    alert(errorData.msg || 'Login failed. Please try again.');
+                    alert(errorData.msg || t('Login failed. Please try again.'));
                     return;
                 }
     
@@ -89,12 +94,12 @@ const Login = () => {
         <View style={styles.loginContainer}>
             <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
             <Text style={styles.logoText}>GYMWOLF</Text>
-            <Text style={styles.paragraph}>Welcome Back!</Text>
+            <Text style={styles.paragraph}>{t('Welcome Back!')}</Text>
             <View style={styles.form}>
                 <View style={styles.field}>
                     <TextInput
                         style={styles.input}
-                        placeholder="Enter Email"
+                        placeholder={t('Enter Email')}
                         placeholderTextColor="#8D8D8D"
                         value={formValues.email}
                         onChangeText={(value) => handleChange('email', value)}
@@ -107,7 +112,7 @@ const Login = () => {
                 <View style={styles.field}>
                     <TextInput
                         style={styles.input}
-                        placeholder="Enter Password"
+                        placeholder={t('Enter Password')}
                         placeholderTextColor="#8D8D8D"
                         value={formValues.password}
                         onChangeText={(value) => handleChange('password', value)}
@@ -118,14 +123,15 @@ const Login = () => {
                 </View>
 
                 <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
-                    <Text style={styles.SignInText}>Log in</Text>
+                    <Text style={styles.SignInText}>{t('Log in')}</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.textContainer}>
-                <Text style={{color: '#000', fontFamily: 'Koulen-Regular'}}>Don't have an account? </Text>
+                <Text style={{color: '#000', fontFamily: 'Koulen-Regular'}}>{t("Don't have an account?")}</Text>
+
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                    <Text style={styles.linkText}>Sign Up</Text>
+                    <Text style={styles.linkText}>{t('Sign Up')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('ExerciseBodyPart')}>
                     <Text style={styles.linkText}>Exercise Page</Text>
@@ -174,6 +180,8 @@ const Login = () => {
                     <Text style={styles.linkText}>Profile</Text>  
                 </TouchableOpacity>     
             </View>
+            <ToggleSwitch onPress={changeLanguage} style={{position: 'absolute', right: 20, bottom: 30 }}/>
+
         </View>
     );
 };

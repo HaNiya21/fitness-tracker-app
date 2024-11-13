@@ -1,0 +1,155 @@
+{
+    "translation": {
+
+        "First Name":"First Name",
+        "Last Name":"Last Name",
+        "Height (cm)":"Height (cm)",
+        "Weight (kg)":"Weight (kg)",
+        "Age":"Age",
+        "Email":"Email",
+        "Password":"Password",
+        "Confirm Password":"Confirm Password",
+        "Login":"Login",
+        "Already have an account?":"Already have an account?",
+        "Sign Up":"Sign Up",
+        "Password is required":"Password is required",
+        "Email is required":"Email is required",
+        "Please enter a valid email":"Please enter a valid email",
+        "Password must be more than 6 characters":"Password must be more than 6 characters",
+        "Login failed. Please try again.":"Login failed. Please try again.",
+
+        "GYMWOLF IS THE BEST TOOL TO": "GYMWOLF IS THE BEST TOOL TO", 
+        "TRACK YOUR WORKOUTS ": "TRACK YOUR WORKOUTS ",
+        "ONLINE.": "ONLINE.",
+        "Get Started":"Get Started",
+
+        "Profile":"Profile",
+        "Progress":"Progress",
+        "Logout":"Logout",
+
+        "Welcome Back!":"Welcome Back!",
+        "Enter Email":"Enter Email",
+        "Enter Password":"Enter Password",
+        "Log in":"Log in",
+        "Don't have an account?":"Don't have an account?",
+
+        "exercise":"exercise",
+        "exercises":"exercises",
+        "exerciseTitle": "{{name}} Exercises",
+
+        "Exercises":"Exercises",
+        "Chest":"Chest",
+        "Upper Arms":"Upper Arms",
+        "Lower Arms":"Lower Arms",
+        "Back":"Back",
+        "Shoulders":"Shoulders",
+        "Upper Legs":"Upper Legs",
+        "Lower Legs":"Lower Legs",
+        "Waist":"Waist",
+        "Cardio":"Cardio",
+
+        "archer push up":"archer push up",
+        "assisted chest dip (kneeling)":"assisted chest dip (kneeling)",
+        "assisted wide-grip chest dip (kneeling)": "assisted wide-grip chest dip (kneeling)",
+        "assisted seated pectoralis major stretch with stability ball":"assisted seated pectoralis major stretch with stability ball",
+        "band bench press":"band bench press",
+        "band one arm twisting chest press":"band one arm twisting chest press",
+        "barbell bench press":"barbell bench press",
+        "barbell decline bench press":"barbell decline bench press",
+        "barbell decline pullover":"barbell decline pullover",
+        "barbell decline wide-grip press":"barbell decline wide-grip press",
+
+        "Equipment":"Equipment",
+        "Target Muscle":"Target Muscle",
+        "Secondary Muscle":"Secondary Muscle",
+        "Instructions":"Instructions",
+
+        "leverage machine":"leverage machine",
+        "assisted":"assisted",
+        "body weight":"body weight",
+
+        "pectorals":"pectorals",
+        "tricpes":"tricpes",
+        "shoulders":"shoulders",
+        "core":"core",
+
+        "Sit on a stability ball with your feet flat on the ground and your back straight.": "Sit on a stability ball with your feet flat on the ground and your back straight.",
+        "Hold a stability ball with both hands and extend your arms straight out in front of you.": "Hold a stability ball with both hands and extend your arms straight out in front of you.",
+        "Slowly lower the stability ball towards your chest, feeling a stretch in your pectoral muscles.": "Slowly lower the stability ball towards your chest, feeling a stretch in your pectoral muscles.",
+        "Hold the stretch for a few seconds, then slowly return to the starting position.": "Hold the stretch for a few seconds, then slowly return to the starting position.",
+
+        "Adjust the machine to your desired height and secure your knees on the pad.":"Adjust the machine to your desired height and secure your knees on the pad.",
+        "Grasp the handles with your palms facing down and your arms fully extended.":"Grasp the handles with your palms facing down and your arms fully extended.",
+        "Lower your body by bending your elbows until your upper arms are parallel to the floor.":"Lower your body by bending your elbows until your upper arms are parallel to the floor.",
+        "Pause for a moment, then push yourself back up to the starting position.": "Pause for a moment, then push yourself back up to the starting position.",
+        "Repeat for the desired number of repetitions.": "Repeat for the desired number of repetitions.",
+
+        "Start in a push-up position with your hands slightly wider than shoulder-width apart.": "Start in a push-up position with your hands slightly wider than shoulder-width apart.",
+        "Extend one arm straight out to the side, parallel to the ground.": "Extend one arm straight out to the side, parallel to the ground.",
+        "Lower your body by bending your elbows, keeping your back straight and core engaged.": "Lower your body by bending your elbows, keeping your back straight and core engaged.",
+        "Push back up to the starting position.": "Push back up to the starting position.",
+        "Repeat on the other side, extending the opposite arm out to the side.": "Repeat on the other side, extending the opposite arm out to the side.",
+        "Continue alternating sides for the desired number of repetitions.": "Continue alternating sides for the desired number of repetitions.",
+
+        "Our Trainers":"Our Trainers",
+        "Contact":"Contact",
+        "YouTube Videos":"YouTube Videos",
+        "To watch video":"To watch video",
+        "click here":"click here",
+
+        "Heliis has completed the International Personal Trainer EGF Level 4 training, she's a triathlon athlete, a judge of the Estonian Triathlon Union and experienced trainer of children at the Tartu Swimming Club. You can also hire Heliis via our online service and have work directly with you through our app":"Heliis has completed the International Personal Trainer EGF Level 4 training, she's a triathlon athlete, a judge of the Estonian Triathlon Union and experienced trainer of children at the Tartu Swimming Club. You can also hire Heliis via our online service and have work directly with you through our app",
+        "Sarah is a former gymnast and an IFBB bikini fitness world champion. To achieve this, she has gained access to, trained with and learned from the best coaches and specialists in the field. Now, based on these experiences, she can help you to set and reach your nutrition and fitness targets and ultimately create a healthy, enjoyable and sustainable lifestyle for you. Inside and outside the gym, she will support your progress every step of the way! Ask her clients, they love her! You can hire Arida to be your PT too, on our website www.gymwolf.com/trainer": "Sarah is a former gymnast and an IFBB bikini fitness world champion. To achieve this, she has gained access to, trained with and learned from the best coaches and specialists in the field. Now, based on these experiences, she can help you to set and reach your nutrition and fitness targets and ultimately create a healthy, enjoyable and sustainable lifestyle for you. Inside and outside the gym, she will support your progress every step of the way! Ask her clients, they love her! You can hire Arida to be your PT too, on our website www.gymwolf.com/trainer",
+
+        "Hello, and welcome! I'm Lorel McDowell, Certified Personal Trainer, MNU Certified Nutritionist, and Pre and Postnatal Specialist. Every day, every session, it has all been part of our shared journey towards growth. Education empowers us, and empowerment builds self-confidence. So, expect to learn as we train! We'll cover training fundamentals, spicing things up to keep it fun.": "Hello, and welcome! I'm Lorel McDowell, Certified Personal Trainer, MNU Certified Nutritionist, and Pre and Postnatal Specialist. Every day, every session, it has all been part of our shared journey towards growth. Education empowers us, and empowerment builds self-confidence. So, expect to learn as we train! We'll cover training fundamentals, spicing things up to keep it fun.",
+
+        "First up is Erik Kalmus (@erik_k on Instagram, in case you're interested), our strength and conditioning specialist. A university-trained Strength Sports coach, he is an expert at designing personal training programmes and nutrition plans. He is currently pursuing his master`s degree in Strength and Conditioning with an eye of doing research for an eventual PhD, too. Man's got goals! As a PT, Erik finds that his main job is to change clients' environmental habits such as physical activity, sleep and nutrition by carefully building on their training and fitting it into their lifestyle. He is very dedicated to improving his clients` quality of life and loves to see the results of his work manifest in their lives. You can hire Erik as your personal PT on our website, www.gymwolf.com/trainer": "First up is Erik Kalmus (@erik_k on Instagram, in case you're interested), our strength and conditioning specialist. A university-trained Strength Sports coach, he is an expert at designing personal training programmes and nutrition plans. He is currently pursuing his master`s degree in Strength and Conditioning with an eye of doing research for an eventual PhD, too. Man's got goals! As a PT, Erik finds that his main job is to change clients' environmental habits such as physical activity, sleep and nutrition by carefully building on their training and fitting it into their lifestyle. He is very dedicated to improving his clients` quality of life and loves to see the results of his work manifest in their lives. You can hire Erik as your personal PT on our website, www.gymwolf.com/trainer",
+
+        "Hi, I am Agne Kask. I am a certified fitness instructor and Neuroathletics coach, specializing in exercise and brain health for older adults. My focus is on helping women maintain vitality, creativity, longevity, and mental sharpness as they age. I am also a certified life and business coach, meditation and mindset coach, personal stylist, and color consultant. My mission is to help women over 50 thrive in every aspect of their lives, empowering them to live with confidence, purpose, and joy.": "Hi, I am Agne Kask. I am a certified fitness instructor and Neuroathletics coach, specializing in exercise and brain health for older adults. My focus is on helping women maintain vitality, creativity, longevity, and mental sharpness as they age. I am also a certified life and business coach, meditation and mindset coach, personal stylist, and color consultant. My mission is to help women over 50 thrive in every aspect of their lives, empowering them to live with confidence, purpose, and joy.",
+
+        "Siim is a university-trained practicing physiotherapist, personal trainer and a world-class bodybuilder. He is a strong believer in what does not challenge you, would not change you. Thus, you should expect to be challenged if you work with him. Siim has extensive experience, from working with people with special needs to training elite athletes from freestyle skiing to bodybuilding and bikini fitness. His speciality is physical conditioning along with strength and hypertrophy programs.": "Siim is a university-trained practicing physiotherapist, personal trainer and a world-class bodybuilder. He is a strong believer in what does not challenge you, would not change you. Thus, you should expect to be challenged if you work with him. Siim has extensive experience, from working with people with special needs to training elite athletes from freestyle skiing to bodybuilding and bikini fitness. His speciality is physical conditioning along with strength and hypertrophy programs.",
+
+        "Health Spot":"Health Spot",
+        "Read More":"Read More",
+
+
+        "Dashboard":"Dashboard",
+        "Personal Trainer":"Personal Trainer",
+        "Articles":"Articles",
+
+        "Amount is required":"Amount is required",
+        "Time is required":"Time is required",
+        "Enter amount":"Enter amount",
+        "Enter time":"Enter time",
+        "Select time":"Select time",
+        "Amount":"Amount",
+        "Time":"Time",
+        "Add Water":"Add Water",
+        "Save":"Save",
+
+        "Enter Goal":"Enter Goal",
+        "Goal Set":"Goal Set",
+        "Log Water Intake":"Log Water Intake",
+        "Set":"Set",
+        "Water Chart":"Water Chart",
+        "Amount (oz)":"Amount (oz)",
+
+        "Add Sleep":"Add Sleep",
+        "Choose Type of Sleep":"Choose Type of Sleep",
+        "Nightly":"Nightly",
+        "Nap":"Nap",
+        "Duration":"Duration",
+        "hrs":"hrs",
+        "Duration is required":"Duration is required",
+
+        "Sleep Chart":"Sleep Chart",
+        "Type":"Type",
+        "Duration (hrs)":"Duration (hrs)"
+    
+
+        
+
+
+
+
+    }
+}

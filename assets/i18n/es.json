@@ -1,0 +1,160 @@
+{
+    "translation": {
+        "hello":"Hola",
+        "this line is translated":"Esta linea está traducida",
+        "First Name":"Nombre",
+        "Last Name":"Apellido",
+        "Height (cm)":"Estatura (cm)",
+        "Weight (kg)":"Peso (kg)",
+        "Age":"Edad",
+        "Email":"Correo electronico",
+        "Password":"ContraseÑa",
+        "Login":"INICIAR SESIÓN",
+        "Already have an account?":"¿Ya tienes una cuenta?",
+        "Sign Up":"Regístrate",
+        "Confirm Password":"Confirmar contraseÑa",
+        "Password is required":"La contraseña es requerida",
+        "Email is required":"El correo es requerido",
+        "Please enter a valid email":"Por favor ingrese un correo válido",
+        "Password must be at least 6 characters":"La contraseña debe tener al menos 6 caracteres",
+        "Login Failed. Please try again":"Inicio de sesión fallido. Por favor intente de nuevo",
+
+        "GYMWOLF IS THE BEST TOOL TO": "GYMWOLF ES LA MEJOR HERRAMIENTA PARA",
+        "TRACK YOUR WORKOUTS ": "SEGUIR TUS ENTRENAMIENTOS",
+        "ONLINE.": "EN LÍNEA.",
+        "Get Started":"Comenzar",
+
+        "Profile":"PERFIL",
+        "Progress":"PROGRESO",
+        "Logout":"CERRAR SESIÓN",
+
+        "Welcome Back!":"¡Bienvenido de nuevo!",
+        "Enter Email":"Ingresa tu correo",
+        "Enter Password":"Ingresa tu contraseña",
+        "Log in":"Iniciar sesión",
+        "Don't have an account?":"¿No tienes una cuenta?",
+
+        "exercise":"ejercicio",
+        "exercises":"ejercicios",
+        "exerciseTitle": "Ejercicios de {{name}}",
+
+        "Exercises":"Ejercicios",
+        "Chest":"Pecho",
+        "Upper Arms":"Parte Superior de Brazos",
+        "Lower Arms":"Brazos inferiores",
+        "Back":"Espalda",
+        "Shoulders":"Hombros",
+        "Upper Legs":"Piernas superiores",
+        "Lower Legs":"Piernas inferiores",
+        "Waist":"Cintura",
+        "Cardio":"Cardio",
+
+        "archer push up": "FLEXIÓN DE ARQUERO",
+        "assisted chest dip (kneeling)": "INMERSIÓN DE PECHO ASISTIDA (DE RODILLAS)",
+        "assisted wide-grip chest dip (kneeling)": "INMERSIÓN ASISTIDA DE PECHO CON AGARRE ANCHO (DE RODILLAS)",
+        "assisted seated pectoralis major stretch with stability ball": "ESTIRAMIENTO ASISTIDO DEL MÚSCULO PECTORAL MAYOR SENTADO CON BALÓN DE ESTABILIDAD",
+        "band bench press": "PRESS DE BANCA CON BANDA",
+        "band one arm twisting chest press": "BANDA CON PRENSA DE PECHO CON UN BRAZO GIRATORIO",
+        "barbell bench press": "PRESS DE BANCA CON BARRA",
+        "barbell decline bench press": "PRESS DE BANCA DECLINADO CON BARRA",
+        "barbell decline pullover": "PULLOVER DECLINADO CON BARRA",
+        "barbell decline wide-grip press": "PRESS DECLINADO CON AGARRE ANCHO DE BARRA",
+
+        "Equipment":"Equipo",
+        "Target Muscle":"Músculo objetivo",
+        "Secondary Muscle":"Músculo secundario",
+        "Instructions":"Instrucciones",
+
+        "leverage machine":"Máquina de palanca", 
+        "assisted":"Asistido",
+        "body weight":"Peso corporal",
+
+        "pectorals":"Pectoral",
+        "tricpes":"Tríceps",
+        "shoulders":"Hombros",
+        "core":"Abdomen",
+
+        "Sit on a stability ball with your feet flat on the ground and your back straight.": "Siéntate en un balón de estabilidad con los pies planos en el suelo y la espalda recta.",
+        "Hold a stability ball with both hands and extend your arms straight out in front of you.": "Sostén un balón de estabilidad con ambas manos y extiende los brazos rectos frente a ti.",
+        "Slowly lower the stability ball towards your chest, feeling a stretch in your pectoral muscles.":"Baja lentamente el balón de estabilidad hacia tu pecho, sintiendo un estiramiento en tus músculos pectorales.",
+        "Hold the stretch for a few seconds, then slowly return to the starting position.": "Mantén el estiramiento durante unos segundos, luego regresa lentamente a la posición inicial.",
+
+
+        "Adjust the machine to your desired height and secure your knees on the pad.": "Ajusta la máquina a la altura deseada y asegura tus rodillas en la almohadilla.",
+        "Grasp the handles with your palms facing down and your arms fully extended." : "Agarra las manijas con las palmas hacia abajo y los brazos completamente extendidos.",
+        "Lower your body by bending your elbows until your upper arms are parallel to the floor." : "Baja tu cuerpo doblando los codos hasta que tus brazos superiores estén paralelos al suelo.",
+        "Pause for a moment, then push yourself back up to the starting position." : "Haz una pausa por un momento, luego empújate hacia arriba a la posición inicial.",
+        "Repeat for the desired number of repetitions.": "Repite para el número deseado de repeticiones.",
+
+        "Start in a push-up position with your hands slightly wider than shoulder-width apart.": "Comienza en una posición de flexión con las manos ligeramente más anchas que el ancho de los hombros.",
+        "Extend one arm straight out to the side, parallel to the ground.": "Extiende un brazo recto hacia un lado, paralelo al suelo.",
+        "Lower your body by bending your elbows, keeping your back straight and core engaged.": "Baja tu cuerpo doblando los codos, manteniendo la espalda recta y el abdomen comprometido.",
+        "Push back up to the starting position.": "Empújate hacia arriba a la posición inicial.",
+        "Repeat on the other side, extending the opposite arm out to the side." : "Repite en el otro lado, extendiendo el brazo opuesto hacia un lado.",
+        "Continue alternating sides for the desired number of repetitions.": "Continúa alternando lados para el número deseado de repeticiones.",
+
+        "Our Trainers":"Nuestros Entrenadores",
+        "Contact":"Contacto",
+        "YouTube Videos":"Videos de YouTube",
+        "To watch video":"Para ver el video",
+        "click here":"haz clic aquí",
+        
+
+        "Heliis has completed the International Personal Trainer EGF Level 4 training, she's a triathlon athlete, a judge of the Estonian Triathlon Union and experienced trainer of children at the Tartu Swimming Club. You can also hire Heliis via our online service and have work directly with you through our app":"Heliis ha completado la formación de Entrenador Personal Internacional EGF Nivel 4, es atleta de triatlón, juez de la Unión de Triatlón de Estonia y entrenadora experimentada de niños en el Club de Natación de Tartu. También puedes contratar a Heliis a través de nuestro servicio en línea y trabajar directamente contigo a través de nuestra aplicación",
+
+        "Sarah is a former gymnast and an IFBB bikini fitness world champion. To achieve this, she has gained access to, trained with and learned from the best coaches and specialists in the field. Now, based on these experiences, she can help you to set and reach your nutrition and fitness targets and ultimately create a healthy, enjoyable and sustainable lifestyle for you. Inside and outside the gym, she will support your progress every step of the way! Ask her clients, they love her! You can hire Arida to be your PT too, on our website www.gymwolf.com/trainer": "Sarah es una ex gimnasta y campeona mundial de fitness en bikini IFBB. Para lograr esto, ha tenido acceso, entrenado y aprendido de los mejores entrenadores y especialistas en el campo. Ahora, basada en estas experiencias, puede ayudarte a establecer y alcanzar tus objetivos de nutrición y fitness y, en última instancia, crear un estilo de vida saludable, agradable y sostenible para ti. Dentro y fuera del gimnasio, apoyará tu progreso en cada paso del camino. ¡Pregúntale a sus clientes, la aman! También puedes contratar a Arida para ser tu PT, en nuestro sitio web www.gymwolf.com/trainer",
+
+        "Hello, and welcome! I'm Lorel McDowell, Certified Personal Trainer, MNU Certified Nutritionist, and Pre and Postnatal Specialist. Every day, every session, it has all been part of our shared journey towards growth. Education empowers us, and empowerment builds self-confidence. So, expect to learn as we train! We'll cover training fundamentals, spicing things up to keep it fun.": "¡Hola y bienvenido! Soy Lorel McDowell, Entrenadora Personal Certificado, Nutricionista Certificada MNU y Especialista en Pre y Postnatal. Todos los días, cada sesión, todo ha sido parte de nuestro viaje compartido hacia el crecimiento. La educación nos empodera y el empoderamiento construye la autoconfianza. ¡Así que espera aprender mientras entrenamos! Cubriremos los fundamentos del entrenamiento, condimentando las cosas para mantenerlo divertido.",
+
+        "First up is Erik Kalmus (@erik_k on Instagram, in case you're interested), our strength and conditioning specialist. A university-trained Strength Sports coach, he is an expert at designing personal training programmes and nutrition plans. He is currently pursuing his master`s degree in Strength and Conditioning with an eye of doing research for an eventual PhD, too. Man's got goals! As a PT, Erik finds that his main job is to change clients' environmental habits such as physical activity, sleep and nutrition by carefully building on their training and fitting it into their lifestyle. He is very dedicated to improving his clients` quality of life and loves to see the results of his work manifest in their lives. You can hire Erik as your personal PT on our website, www.gymwolf.com/trainer":" Primero está Erik Kalmus (@erik_k en Instagram, en caso de que estés interesado), nuestro especialista en fuerza y acondicionamiento. Entrenador de Deportes de Fuerza entrenado en la universidad, es un experto en diseñar programas de entrenamiento personal y planes de nutrición. Actualmente está persiguiendo su maestría en Fuerza y Acondicionamiento con la intención de hacer investigación para un eventual doctorado, también. ¡El hombre tiene metas! Como PT, Erik encuentra que su trabajo principal es cambiar los hábitos ambientales de los clientes, como la actividad física, el sueño y la nutrición, construyendo cuidadosamente sobre su entrenamiento y adaptándolo a su estilo de vida. Está muy dedicado a mejorar la calidad de vida de sus clientes y le encanta ver los resultados de su trabajo manifestarse en sus vidas. Puedes contratar a Erik como tu PT personal en nuestro sitio web, www.gymwolf.com/trainer",
+
+        "Hi, I am Agne Kask. I am a certified fitness instructor and Neuroathletics coach, specializing in exercise and brain health for older adults. My focus is on helping women maintain vitality, creativity, longevity, and mental sharpness as they age. I am also a certified life and business coach, meditation and mindset coach, personal stylist, and color consultant. My mission is to help women over 50 thrive in every aspect of their lives, empowering them to live with confidence, purpose, and joy.": "Hola, soy Agne Kask. Soy instructora de fitness certificada y entrenadora de Neuroathletics, especializada en ejercicio y salud cerebral para adultos mayores. Mi enfoque es ayudar a las mujeres a mantener la vitalidad, la creatividad, la longevidad y la agudeza mental a medida que envejecen. También soy coach de vida y negocios certificada, coach de meditación y mentalidad, estilista personal y consultora de color. Mi misión es ayudar a las mujeres mayores de 50 años a prosperar en todos los aspectos de sus vidas, empoderándolas para vivir con confianza, propósito y alegría.",
+
+        "Siim is a university-trained practicing physiotherapist, personal trainer and a world-class bodybuilder. He is a strong believer in what does not challenge you, would not change you. Thus, you should expect to be challenged if you work with him. Siim has extensive experience, from working with people with special needs to training elite athletes from freestyle skiing to bodybuilding and bikini fitness. His speciality is physical conditioning along with strength and hypertrophy programs.":"Siim es un fisioterapeuta en ejercicio entrenado en la universidad, entrenador personal y culturista de clase mundial. Es un firme creyente en que lo que no te desafía, no te cambiará. Por lo tanto, debes esperar ser desafiado si trabajas con él. Siim tiene una amplia experiencia, desde trabajar con personas con necesidades especiales hasta entrenar a atletas de élite, desde esquí estilo libre hasta culturismo y fitness en bikini. Su especialidad es la acondicionamiento físico junto con programas de fuerza y hipertrofia.",
+
+
+        "Health Spot":"Punto de Salud",
+        "Read More":"Leer más",
+
+        "Dashboard":"Tablero",
+        "Personal Trainer":"Entrenador Personal",
+        "Articles":"Artículos",
+
+        "Amount is required":"La cantidad es requerida",
+        "Time is required":"El tiempo es requerido",
+        "Enter amount":"Ingrese la cantidad",
+        "Enter time":"Ingrese el tiempo",
+        "Select time":"Seleccionar hora",
+        "Amount":"Cantidad",
+        "Time":"Hora",
+        "Add Water":"Agregar agua",
+        "Save":"Guardar",
+
+        "Enter Goal":"Ingrese la meta",
+        "Goal Set":"Meta establecida",
+        "Log Water Intake":"Registro de consumo de agua",
+        "Water Intake":"Consumo de agua",
+        "Set":"Establecer",
+        "Water Chart":"Tabla de agua",
+        "Amount (oz)":"Cantidad (oz)",
+
+        "Add Sleep":"AGREGAR SUEÑO",
+        "Choose Type of Sleep":"ELIJA EL TIPO DE SUEÑO",
+        "Nightly":"Nocturno",
+        "Nap":"Siesta",
+        "Duration":"DURACIÓN",
+        "hrs":"horas",
+        "Duration is required":"La duración es requerida",
+
+        "Sleep Chart":"TABLA DE SUEÑO",
+        "Type":"Tipo",
+        "Duration (hrs)":"DURACIÓN (HORAS)"
+
+
+
+        
+
+
+        
+    }
+}

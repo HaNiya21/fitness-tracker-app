@@ -4,7 +4,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { useNavigation } from '@react-navigation/native';
 
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
+
 const BodyPartCard = ({ item, index }) => {
+
+    const { t, i18n } = useTranslation();
 
     const navigation = useNavigation();
 
@@ -34,7 +39,7 @@ const BodyPartCard = ({ item, index }) => {
                         letterSpacing: 2, 
                         fontFamily: 'Koulen-Regular'}}
                 >
-                    {item?.name}
+                    {t(item?.name)}
                 </Text> 
             </Pressable>
         </View>

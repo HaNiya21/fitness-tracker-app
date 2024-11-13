@@ -91,6 +91,20 @@ const styles = StyleSheet.create({
     title1: {
         fontSize: 26,
         alignItems: 'center',
+        textAlign: 'center',
+        marginVertical: 3,
+        paddingRight: 40,
+        paddingLeft: 40,
+        color: 'white',
+        lineHeight:33,
+        //fontWeight: 'bold',
+        fontFamily: 'Koulen-Regular',
+    },
+
+    title1ES: {
+        fontSize: 26,
+        alignItems: 'center',
+        textAlign: 'center',
         marginVertical: 3,
         paddingRight: 40,
         paddingLeft: 40,
@@ -142,22 +156,19 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontFamily: 'Koulen-Regular',
         textAlign: 'center',
+        
     },
     //Language Toggle Styles
     languageToggle: {
         marginTop: 5,
     },
     languageText: {
-        fontSize: 16,
+        fontSize: 14,
         color: 'white',
+        fontFamily: 'Roboto',
     },
 
     form: {
-        // width: '70%',
-        // padding: 20,
-        // height: 'auto',
-        // borderColor: '#ECECEC',
-        // borderWidth: 1,
         display: 'flex',
         flexDirection: 'column',
         width: '70%',
@@ -265,11 +276,14 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
         textAlign: 'center',
         fontFamily: 'Koulen-Regular',
+        fontSize: 16,
+        marginBottom: 0,
     },
 
     error: {
         color: '#e64b43',
         fontFamily: 'Koulen-Regular',
+        marginLeft: 30,
     },
     
     backIcon: {
@@ -354,15 +368,6 @@ waterOz: {
 },
 
 
-// waterContainer: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     padding: 20,
-//     backgroundColor: 'transparent',
-
-// },
-
 waterSubmit: {
     backgroundColor: '#D7D7D7',
     padding: 15,
@@ -423,7 +428,7 @@ goalText: {
     alignSelf: 'flex-start',
     marginLeft: 50,
     marginTop: 150,
-    fontFamily: 'KoHo-Regular',
+    fontFamily: 'Koulen-Regular',
 },
 
 goalInput: {
@@ -451,13 +456,11 @@ waterChartText: {
     fontWeight: 'bold',
     color: 'black',
     fontFamily: 'Koulen-Regular',
+    textAlign: 'center',
+    alignSelf: 'center',
+    fontSize: 20,
 },
-// goalText: {
-//     fontSize: 20,
-//     color: '#0F2951',
-//     fontFamily: 'KoHo-Regular',
-//     textAlign: 'center',
-// }, 
+
  
 waterChartTitle: {
     fontSize: 20,
@@ -477,6 +480,7 @@ waterChartTitles: {
     width: '70%',
     alignSelf: 'center',
     fontFamily: 'Koulen-Regular',
+    textAlign: 'center',
 },
 
 waterChartValues: {
@@ -489,6 +493,7 @@ waterChartValues: {
     paddingBottom: 5,
     width: '70%',
     alignSelf: 'center',
+    textAlign: 'center',
 },
 
 footer: {
@@ -527,12 +532,6 @@ footerIcons: {
 },
 
 
-iconTextd: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'Koulen-Regular',
-    textAlign: 'center',
-},
 
 iconText: {
     color: 'white',
@@ -542,22 +541,7 @@ iconText: {
     letterSpacing: 1,
 },
 
-iconTexta: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'Koulen-Regular',
-    textAlign: 'center',
-    marginRight: 10,
-    letterSpacing: 1,
-},
 
-iconTexte: {
-    color: 'white',
-    fontSize: 10,
-    fontFamily: 'Koulen-Regular',
-    textAlign: 'left',
-    letterSpacing: 1,
-},
 
 // add exercise page
 exerciseContainer: {
@@ -577,6 +561,7 @@ exerciseTitle:
     color: '#0F2951',
     marginRight: 15,
     letterSpacing: 1,
+    textAlign: 'center',
 },
 
 // Label text for each input field, similar to waterText
@@ -772,10 +757,10 @@ sleepInput: {
 },
 sleepHours: {
 
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#0F2951',
-    marginLeft: 20,
+    marginLeft: 15,
     marginBottom: 10,
 },
 sleepTimeContainer: {
@@ -918,9 +903,6 @@ menuItem: {
     borderBottomColor: '#ECECEC',
     borderBottomWidth: 1,
 
-bbToggle: {
-    marginBottom: 10,
-},
 
   },
   languageToggle: {

@@ -4,12 +4,18 @@ import { View, ImageBackground, Text, Image, TouchableOpacity, Linking, ScrollVi
 import styles from "./styles";
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
+
 
 const Articles = () => {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
+
+    const {t, i18n} = useTranslation();
+
 
     async function getNewsData() {
         setLoading(true);
@@ -30,7 +36,7 @@ const Articles = () => {
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
                 <Menu />
-                <Text style={styles.ArticlePageTitle}>Health Spot</Text>
+                <Text style={styles.ArticlePageTitle}>{t('Health Spot')}</Text>
                 
                 <ScrollView contentContainerStyle  ={styles.articleContainer}>
                     {loading ? (
@@ -47,9 +53,8 @@ const Articles = () => {
                             {/* //depending on article index, the article will either take upp all of the screen, or only half. */}
                                 <Image source={{ uri: article.urlToImage }} style={styles.articleImage} />
                                 <Text style={styles.articleTitle}>{article.title}</Text>
-                                {/* <Text style={styles.articleDescription}>{article.description}</Text> */}
                                 <TouchableOpacity onPress={() => Linking.openURL(article.url)}>
-                                    <Text style={styles.articleLink}>Read more</Text>
+                                    <Text style={styles.articleLink}>{t('Read More')}</Text>
                                 </TouchableOpacity>
                             </View>
                         ))
