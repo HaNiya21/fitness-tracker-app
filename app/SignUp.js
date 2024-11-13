@@ -111,7 +111,7 @@ const SignUp = () => {
     return (
         <View style={styles.SignUpContainer}>
             {signupSuccess && (
-                <Text style={styles.successMessage}>Signed up successfully</Text>
+                <Text style={styles.successMessage}>{t('Signed up successfully')}</Text>
             )}
 
             {signupError && (
@@ -179,17 +179,27 @@ const SignUp = () => {
             />
             <View style={styles.field}>
             <TextInput
-                style={styles.input}
+                style={[styles.input, 
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                        {letterSpacing: i18n.language === 'es' ? -1: 0},
+                        {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                        {padding: i18n.language === 'es' ? 15: 10 }]}
                 placeholder={t('Password')}
                  placeholderTextColor="#8D8D8D"
                 value={formValues.password}
                 onChangeText={(text) => handleChange('password', text)}
                 secureTextEntry
             />
-            {formErrors.password && <Text style={styles.error}>{formErrors.password}</Text>}
+            {formErrors.password && <Text style={styles.error}>{t(formErrors.password)}</Text>}
             </View>
             <TextInput
-                style={styles.input}
+                style={[styles.input, 
+                        {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                        {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                        {letterSpacing: i18n.language === 'es' ? -1: 0},
+                        {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                        {padding: i18n.language === 'es' ? 15: 10 }]}
                 placeholder={t('Confirm Password')}
                 placeholderTextColor="#8D8D8D"
                 value={formValues.confirmPassword}
@@ -208,7 +218,10 @@ const SignUp = () => {
                 <Text style={styles.text}> {t('Already have an account?')}</Text>
 
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                <Text style={styles.LoginLink}>{t('Login')}</Text>
+                <Text style={[styles.LoginLink, 
+                            { fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                            { fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                            { fontSize: i18n.language === 'es' ? 12: 16 }]}>{t('Login')}</Text>
             </TouchableOpacity>
             </ScrollView>
             {/* <ToggleSwitch style={{ position: 'absolute', right: 20, bottom: 30 }} onPress={changeLanguage} /> */}

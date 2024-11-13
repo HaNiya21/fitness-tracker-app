@@ -65,8 +65,8 @@ export default function WaterChart({ route }) {
           </View>
           {waterLog.map((log, index) => (
             <View key={index} style={styles.waterChartValues}>
-              <Text style={styles.waterTimeText}>{log.time}</Text>
-              <Text style={styles.waterAmountText}>{log.amount}</Text>
+              <Text style={{marginRight: 30}}>{log.time}</Text>
+              <Text style={{marginRight: 30}}>{log.amount}</Text>
             </View>
           ))}
         </View>

@@ -27,8 +27,8 @@ const AddSleep = () => {
 
     const validateInputs = () => {
         let validationErrors = {};
-        if (!duration) validationErrors.duration = "Duration is required";
-        if (!time) validationErrors.time = "Time is required";
+        if (!duration) validationErrors.duration = t('Duration is required');
+        if (!time) validationErrors.time = t('Time is required');
         setErrors(validationErrors);
         return Object.keys(validationErrors).length === 0;
     };
@@ -89,7 +89,7 @@ const AddSleep = () => {
                                 {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
                                 {fontSize: i18n.language === 'es' ? 15: 20 },
                                 {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
-                                {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
+                                {letterSpacing: i18n.language === 'es' ? -1: 'auto' },
                                 {marginTop: i18n.language === 'es' ? 10: 'auto' }]}>{t('Duration')}</Text>
                     <View style={styles.inputCont}>
                         <TextInput
@@ -101,7 +101,11 @@ const AddSleep = () => {
                         />
                         <Text style={[styles.sleepHours,{fontSize: i18n.language === 'es' ? 25: 30 }]}>{t('hrs')}</Text>
                     </View>
-                    {errors.duration && <Text style={styles.error}>{errors.duration}</Text>}
+                    {errors.duration && <Text style={[styles.error, 
+                                                {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                                                {fontSize: i18n.language === 'es' ? 12: 'auto' },
+                                                {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                                                {letterSpacing: i18n.language === 'es' ? -1: 'auto' }]}>{t(errors.duration)}</Text>}
 
                     <Text style={styles.sleepInputText}>{t('Time')}</Text>
                     <View style={styles.inputCont}>
@@ -128,7 +132,7 @@ const AddSleep = () => {
                         </View>
                     </View>
                 </Modal>
-                    {errors.time && <Text style={styles.error}>{errors.time}</Text>}
+                    {errors.time && <Text style={styles.error}>{t(errors.time)}</Text>}
 
                     <TouchableOpacity style={styles.waterSubmitButton} onPress={handleSubmit}>
                         <Text style={styles.waterButtonText}>{t('Save')}</Text>

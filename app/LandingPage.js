@@ -6,6 +6,9 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { LinearGradient } from 'expo-linear-gradient';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import { useFonts, Koulen_400Regular } from '@expo-google-fonts/koulen';
+
+
 import* as Font from 'expo-font';
 
 import ToggleSwitch from '../components/ToggleSwitch';
@@ -19,6 +22,10 @@ const LandingPage = () => {
     
     const {t, i18n} = useTranslation();
 
+    let [fontsLoaded] = useFonts({
+        Koulen_400Regular,
+    });
+
 
     const changeLanguage = () => {
         const newLanguage = i18n.language === 'en' ? 'es' : 'en';
@@ -26,6 +33,11 @@ const LandingPage = () => {
             .then(() => console.log("Language changed to:", newLanguage))
             .catch(err => console.log(err));
     };
+
+
+    if (!fontsLoaded) {
+        return <Text>Loading...</Text>; // Fallback content while fonts load
+    }
 
     return (
         <View className='mainContainer' style={styles.content}>
@@ -54,7 +66,12 @@ const LandingPage = () => {
                         </Pressable>
             
                         <Pressable style={styles.LoginButton} onPress={() => navigation.navigate('Login')}>
-                            <Text style={[styles.linkText, { fontSize: 20 }, { fontFamily: i18n.language === 'es' ? 'Tahoma-bold' : 'Koulen-Regular' }]}>{t('Login')}</Text>
+                            <Text style={[styles.linkText, 
+                            { fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
+                            { fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                            { fontSize: i18n.language === 'es' ? 16: 20},
+                            { letterSpacing: i18n.language === 'es' ? -1 : 0 },
+                            { marginTop: i18n.language === 'es' ? 5 : 'auto'}]}>{t('Login')}</Text>
                         </Pressable>
                         {/* <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                                 <Text style={styles.LoginLink}>Login</Text>

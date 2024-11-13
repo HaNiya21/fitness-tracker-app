@@ -499,7 +499,7 @@ waterChartValues: {
 footer: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     width: '100%',
     backgroundColor: '#4BA5E3',
     padding: 15,
@@ -1155,7 +1155,7 @@ profileValue: {
 },
 circleWrapper: {
     position: 'absolute',
-    top: 100,
+    top: 120,
     left: '45%',
     transform: [{ translateX: -50 }],
     zIndex: 1,

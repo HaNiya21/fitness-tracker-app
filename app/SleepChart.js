@@ -40,9 +40,9 @@ export default function SleepChart({ route }) {
                 </View>
                     {sleepLogs.map((log, index) => (
                         <View style={styles.waterChartValues} key={index}>
-                            <Text style={styles.waterTimeText}>{log.type}</Text>
-                            <Text style={styles.waterAmountText}>{log.duration}</Text>
-                            <Text style={styles.waterAmountText}>{log.time}</Text>
+                            <Text style={{marginRight: 30}}>{t(log.type)}</Text>
+                            <Text style={{marginRight: 30}}>{log.duration}</Text>
+                            <Text>{log.time}</Text>
                         </View>
                     ))}
                     <TouchableOpacity
