@@ -50,7 +50,9 @@ const ExerciseDetails = () => {
 
                             <Text style = {[{fontSize: hp(3.5), fontWeight: 'semibold', fontFamily:'Koulen-Regular', lineHeight: 42},
                                             {fontFamily: i18n.language === 'es' ? 'Trebuchet' : 'Koulen-Regular' },
-                                            {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' }]}>
+                                            {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
+                                            {fontSize: i18n.language === 'es' ? 25 : hp(3.5) },
+                                            {letterSpacing: i18n.language === 'es' ? -1 : 0 }]}>
                                 {t(item.name)}
                             </Text>
 

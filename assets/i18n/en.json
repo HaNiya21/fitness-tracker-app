@@ -63,6 +63,8 @@
         "Target Muscle":"Target Muscle",
         "Secondary Muscle":"Secondary Muscle",
         "Instructions":"Instructions",
+        "band":"band",
+        "barbell":"barbell",
 
         "leverage machine":"leverage machine",
         "assisted":"assisted",
@@ -72,6 +74,10 @@
         "tricpes":"tricpes",
         "shoulders":"shoulders",
         "core":"core",
+        "biceps":"biceps",
+        "forearms":"forearms",
+        "chest":"chest",
+        "Brachialis":"Brachialis",
 
         "Sit on a stability ball with your feet flat on the ground and your back straight.": "Sit on a stability ball with your feet flat on the ground and your back straight.",
         "Hold a stability ball with both hands and extend your arms straight out in front of you.": "Hold a stability ball with both hands and extend your arms straight out in front of you.",
@@ -143,13 +149,176 @@
 
         "Sleep Chart":"Sleep Chart",
         "Type":"Type",
-        "Duration (hrs)":"Duration (hrs)"
-    
+        "Duration (hrs)":"Duration (hrs)",
 
+        "Steps":"Steps",
+        "Calories":"Calories",
+        "Distance":"Distance",
+
+        "Activity is required":"Activity is required",
+        "Date is required":"Date is required",
+        "Start Time is required":"Start Time is required",
+        "Distance is required":"Distance is required",
+        "Submission failed":"Submission failed",
+        "Activity":"Activity",
+        "Date":"Date",
+        "Start Time":"Start Time",
+        "Duration (mins)":"Duration (mins)",
+        "Distance (km)":"Distance (km)",
+        "Enter activity":"Enter activity",
+        "Select Date":"Select Date",
+        "Select Time":"Select Time",
+        "Enter duration":"Enter duration",
+        "Enter distance":"Enter distance",
+        "Submit":"Submit",
+
+        "Signed up successfully":"Signed up successfully",
+
+        "assisted standing triceps extension (with towel)": "assisted standing triceps extension (with towel)",
+        "Stand with your feet shoulder-width apart and hold a towel with both hands behind your head.": "Stand with your feet shoulder-width apart and hold a towel with both hands behind your head.",
+        "Keep your elbows close to your ears and your upper arms stationary.": "Keep your elbows close to your ears and your upper arms stationary.",
+        "Slowly extend your forearms upward, squeezing your triceps at the top.": "Slowly extend your forearms upward, squeezing your triceps at the top.",
+        "Pause for a moment, then slowly lower the towel back down to the starting position.": "Pause for a moment, then slowly lower the towel back down to the starting position.",
+
+        "assisted triceps dip (kneeling)": "assisted triceps dip (kneeling)",
+        "Adjust the machine to your desired weight and height.": "Adjust the machine to your desired weight and height.",
+        "Kneel down on the pad facing the machine, with your hands gripping the handles.": "Kneel down on the pad facing the machine, with your hands gripping the handles.",
+        "Lower your body by bending your elbows, keeping your back straight and close to the machine.": "Lower your body by bending your elbows, keeping your back straight and close to the machine.",
+        "Pause for a moment at the bottom, then push yourself back up to the starting position.": "Pause for a moment at the bottom, then push yourself back up to the starting position.",
+        
+        "band alternating biceps curl": "band alternating biceps curl",
+        "Stand with your feet shoulder-width apart and hold the band with an underhand grip, palms facing up.": "Stand with your feet shoulder-width apart and hold the band with an underhand grip, palms facing up.", 
+        "Keep your elbows close to your sides and slowly curl one arm up towards your shoulder, squeezing your biceps at the top.": "Keep your elbows close to your sides and slowly curl one arm up towards your shoulder, squeezing your biceps at the top.", 
+        "Lower the arm back down to the starting position and repeat with the other arm.": "Lower the arm back down to the starting position and repeat with the other arm.",   
+        "Continue alternating arms for the desired number of repetitions.": "Continue alternating arms for the desired number of repetitions.", 
+
+        "band close-grip push-up": "band close-grip push-up",
+        "Place a band around your upper arms, just above the elbows." : "Place a band around your upper arms, just above the elbows.",
+        "Assume a push-up position with your hands directly under your shoulders and your body in a straight line from head to heels.": "Assume a push-up position with your hands directly under your shoulders and your body in a straight line from head to heels.",
+        "Bend your elbows and lower your chest towards the ground, keeping your elbows close to your sides.": "Bend your elbows and lower your chest towards the ground, keeping your elbows close to your sides",
+        "Push through your palms to extend your arms and return to the starting position.": "Push through your palms to extend your arms and return to the starting position.",
+
+        "band concentration curl": "band concentration curl",
+        "Sit on a bench or chair with your legs spread apart and your feet flat on the ground.": "Sit on a bench or chair with your legs spread apart and your feet flat on the ground.",
+        "Hold one end of the band in your hand and step on the other end with your foot on the same side.": "Hold one end of the band in your hand and step on the other end with your foot on the same side.",
+        "Lean forward slightly and rest your elbow on the inside of your thigh, just above the knee.": "Lean forward slightly and rest your elbow on the inside of your thigh, just above the knee.",
+        "With your palm facing up, slowly curl your hand towards your shoulder, keeping your upper arm stationary.":"With your palm facing up, slowly curl your hand towards your shoulder, keeping your upper arm stationary.",
+        "Pause for a moment at the top, then slowly lower your hand back down to the starting position.": "Pause for a moment at the top, then slowly lower your hand back down to the starting position.",
+        "Repeat for the desired number of repetitions, then switch sides." : "Repeat for the desired number of repetitions, then switch sides.",
+
+        "band one arm overhead biceps curl": "band one arm overhead biceps curl",
+        "Stand with your feet shoulder-width apart and place one end of the band under your foot.": "Stand with your feet shoulder-width apart and place one end of the band under your foot.",
+        "Hold the other end of the band with your arm fully extended overhead, palm facing forward.": "Hold the other end of the band with your arm fully extended overhead, palm facing forward.",
+        "Keeping your upper arm stationary, curl your forearm towards your shoulder, squeezing your biceps." : "Keeping your upper arm stationary, curl your forearm towards your shoulder, squeezing your biceps.",
+        "Pause for a moment at the top, then slowly lower your forearm back to the starting position." : "Pause for a moment at the top, then slowly lower your forearm back to the starting position.",
+        "Repeat for the desired number of repetitions, then switch arms." : "Repeat for the desired number of repetitions, then switch arms.",
+
+        "band side triceps extension": "band side triceps extension",
+        "Stand with your feet shoulder-width apart and hold the band with both hands, palms facing down.": "Stand with your feet shoulder-width apart and hold the band with both hands, palms facing down.",
+        "Extend your arms straight out to the sides, keeping them parallel to the ground.": "Extend your arms straight out to the sides, keeping them parallel to the ground.",
+        "Slowly bend your elbows and bring your hands towards your shoulders, keeping your upper arms still.": "Slowly bend your elbows and bring your hands towards your shoulders, keeping your upper arms still.",
+        "Pause for a moment, then slowly extend your arms back out to the starting position.": "Pause for a moment, then slowly extend your arms back out to the starting position.",
         
 
+        "barbell alternate biceps curl": "barbell alternate biceps curl",
+        "Stand up straight with your feet shoulder-width apart and hold a barbell in each hand, palms facing forward.": "Stand up straight with your feet shoulder-width apart and hold a barbell in each hand, palms facing forward.",
+        "Keep your upper arms stationary and exhale as you curl the weights while contracting your biceps.": "Keep your upper arms stationary and exhale as you curl the weights while contracting your biceps.",
+        "Continue to raise the barbells until your biceps are fully contracted and the barbells are at shoulder level.": "Continue to raise the barbells until your biceps are fully contracted and the barbells are at shoulder level.",
+        "Hold the contracted position for a brief pause as you squeeze your biceps.": "Hold the contracted position for a brief pause as you squeeze your biceps.",
+        "Inhale as you slowly begin to lower the barbells back to the starting position.": "Inhale as you slowly begin to lower the barbells back to the starting position.",
+        "Repeat for the desired number of repetitions, alternating arms.": "Repeat for the desired number of repetitions, alternating arms.",
 
+        "barbell biceps curl (with arm blaster)": "barbell biceps curl (with arm blaster)",
+        "Stand up straight with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing up.": "Stand up straight with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing up.",
+        "Place your upper arms against the arm blaster, keeping your elbows close to your torso." : "Place your upper arms against the arm blaster, keeping your elbows close to your torso.",
+        "Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps.": "Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps.",
+        "Continue to raise the barbell until your biceps are fully contracted and the bar is at shoulder level." : "Continue to raise the barbell until your biceps are fully contracted and the bar is at shoulder level.",
+    "Inhale and slowly begin to lower the barbell back to the starting position." : "Inhale and slowly begin to lower the barbell back to the starting position.",
+    
+    "barbell close-grip bench press": "barbell close-grip bench press",
+    "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench." : "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench.",
+    "Grasp the barbell with a close grip, slightly narrower than shoulder-width apart." : "Grasp the barbell with a close grip, slightly narrower than shoulder-width apart.",
+    "Unrack the barbell and lower it slowly towards your chest, keeping your elbows close to your body." : "Unrack the barbell and lower it slowly towards your chest, keeping your elbows close to your body.",
+    "Pause for a moment when the barbell touches your chest." : "Pause for a moment when the barbell touches your chest.",
+    "Push the barbell back up to the starting position, fully extending your arms." : "Push the barbell back up to the starting position, fully extending your arms.",
+
+    "Grasp the band handles with an overhand grip, slightly wider than shoulder-width apart." : "Grasp the band handles with an overhand grip, slightly wider than shoulder-width apart.",
+    "Extend your arms fully, pushing the bands away from your chest." : "Extend your arms fully, pushing the bands away from your chest.",
+    "Slowly lower the bands back down to your chest, keeping your elbows at a 90-degree angle." : "Slowly lower the bands back down to your chest, keeping your elbows at a 90-degree angle.",
+    
+    "Grasp the handles with a wide grip and keep your elbows slightly bent." : "Grasp the handles with a wide grip and keep your elbows slightly bent.",
+    "Push yourself back up to the starting position by extending your arms." : "Push yourself back up to the starting position by extending your arms.",
+
+    "Attach the band to a sturdy anchor point at chest height." : "Attach the band to a sturdy anchor point at chest height.",
+    "Stand with your side facing the anchor point and grab the band with one hand." : "Stand with your side facing the anchor point and grab the band with one hand.",
+        "Step away from the anchor point to create tension in the band." : "Step away from the anchor point to create tension in the band.",
+        "Position your feet shoulder-width apart and slightly bend your knees." : "Position your feet shoulder-width apart and slightly bend your knees.",
+        "Bring your hand holding the band across your body, towards the opposite shoulder." : "Bring your hand holding the band across your body, towards the opposite shoulder.",
+        "While maintaining tension in the band, push your hand forward and away from your body, extending your arm." : "While maintaining tension in the band, push your hand forward and away from your body, extending your arm",
+        "Slowly return to the starting position and repeat for the desired number of repetitions." : "Slowly return to the starting position and repeat for the desired number of repetitions.",
+        "Switch sides and repeat the exercise with the other hand." : "Switch sides and repeat the exercise with the other hand.",
+
+        "Grasp the barbell with an overhand grip slightly wider than shoulder-width apart." : "Grasp the barbell with an overhand grip slightly wider than shoulder-width apart.",
+        "Lift the barbell off the rack and hold it directly above your chest with your arms fully extended." : "Lift the barbell off the rack and hold it directly above your chest with your arms fully extended.",
+        "Lower the barbell slowly towards your chest, keeping your elbows tucked in." : "Lower the barbell slowly towards your chest, keeping your elbows tucked in.",
+        "Push the barbell back up to the starting position by extending your arms." : "Push the barbell back up to the starting position by extending your arms.",
+
+        "Lie down on a decline bench with your head lower than your hips and your feet secured." : "Lie down on a decline bench with your head lower than your hips and your feet secured.",
+        "Hold the barbell with a pronated grip (palms facing away from you) and your hands slightly wider than shoulder-width apart." : "Hold the barbell with a pronated grip (palms facing away from you) and your hands slightly wider than shoulder-width apart.", 
+        "Extend your arms above your chest, keeping a slight bend in your elbows." : "Extend your arms above your chest, keeping a slight bend in your elbows.",
+        "Lower the barbell in an arc motion behind your head, feeling a stretch in your chest and shoulders." : "Lower the barbell in an arc motion behind your head, feeling a stretch in your chest and shoulders.",
+        "Pause for a moment, then return the barbell to the starting position by reversing the motion." : "Pause for a moment, then return the barbell to the starting position by reversing the motion.",
+
+        "band reverse wrist curl": "band reverse wrist curl",
+        "Sit on a bench or chair with your feet flat on the ground." : "Sit on a bench or chair with your feet flat on the ground.",
+        "Hold the band with an overhand grip, palms facing down, and wrap it around your fingers." : "Hold the band with an overhand grip, palms facing down, and wrap it around your fingers.",
+        "Rest your forearms on your thighs, with your wrists hanging off the edge." : "Rest your forearms on your thighs with your wrists hanging off the edge.",
+        "Slowly curl your wrists upward, squeezing your forearms." : "Slowly curl your wrists upward, squeezing your forearms.",
+        "Pause for a moment at the top, then slowly lower your wrists back down to the starting position." : "Pause for a moment at the top, then slowly lower your wrists back down to the starting position.",
+
+        "band wrist curl": "band wrist curl",
+        "Hold the band with both hands, palms facing up, and rest your forearms on your thighs." : "Hold the band with both hands, palms facing up, and rest your forearms on your thighs.",
+
+        "barbell palms down wrist curl over a bench": "barbell palms down wrist curl over a bench",
+        "Sit on a bench with your feet flat on the ground and your forearms resting on your thighs, palms facing down." : "Sit on a bench with your feet flat on the ground and your forearms resting on your thighs, palms facing down.",
+        "Hold a barbell with an overhand grip, hands shoulder-width apart." : "Hold a barbell with an overhand grip, hands shoulder-width apart.",
+    "Lower the barbell towards the ground by flexing your wrists, keeping your forearms stationary.": "Lower the barbell towards the ground by flexing your wrists, keeping your forearms stationary.",
+    "Pause for a moment at the bottom, then slowly raise the barbell back up by extending your wrists.": "Pause for a moment at the bottom, then slowly raise the barbell back up by extending your wrists.",
+    "barbell palms up wrist curl over a bench": "barbell palms up wrist curl over a bench",
+    "Sit on a bench with your feet flat on the ground and hold a barbell with an underhand grip, palms facing up.": "Sit on a bench with your feet flat on the ground and hold a barbell with an underhand grip, palms facing up.",
+    "Rest your forearms on the bench, allowing your wrists to hang off the edge.": "Rest your forearms on the bench, allowing your wrists to hang off the edge.",
+    "Keeping your forearms stationary, exhale and curl your wrists upwards as far as possible.": "Keeping your forearms stationary exhale and curl your wrists upwards as far as possible.",
+    "Hold the contracted position for a brief pause, then inhale and slowly lower the barbell back to the starting position.": "Hold the contracted position for a brief pause, then inhale and slowly lower the barbell back to the starting position.",
+    "barbell revers wrist curl v. 2" : "barbell revers wrist curl v. 2",
+    "Sit on a bench with your feet flat on the ground and your knees bent.": "Sit on a bench with your feet flat on the ground and your knees bent.",
+    "Hold a barbell with an overhand grip, palms facing down, and your hands shoulder-width apart.": "Hold a barbell with an overhand grip, palms facing down, and your hands shoulder-width apart.",
+    "Rest your forearms on your thighs, allowing your wrists to hang off the edge.": "Rest your forearms on your thighs, allowing your wrists to hang off the edge.",
+    "Keeping your forearms stationary, exhale and curl your wrists upward as far as possible.": "Keeping your forearms stationary exhale and curl your wrists upward as far as possible.",
+
+    "barbell reverse wrist curl": "barbell reverse wrist curl",
+    "Sit on a bench with your feet flat on the ground and hold a barbell with an overhand grip, palms facing down." : "Sit on a bench with your feet flat on the ground and hold a barbell with an overhand grip, palms facing down.",
+    "Slowly curl your wrists upward, bringing the barbell towards your body." : "Slowly curl your wrists upward, bringing the barbell towards your body.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position." : "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+
+    "barbell standing back wrist curl": "barbell standing back wrist curl",
+    "Stand up straight with your feet shoulder-width apart and hold a barbell with an overhand grip." : "Stand up straight with your feet shoulder-width apart and hold a barbell with an overhand grip.",
+    "Rest the barbell on the back of your hands with your palms facing down and your fingers pointing towards your body.": "Rest the barbell on the back of your hands with your palms facing down and your fingers pointing towards your body.",
+    "Keeping your upper arms stationary, exhale and curl your wrists upwards as far as possible." : "Keeping your upper arms stationary exhale and curl your wrists upwards as far as possible.",
+    "barbell wrist curl": "barbell wrist curl",
+    "Sit on a bench with your feet flat on the ground and your forearms resting on your thighs, holding a barbell with an underhand grip." : "Sit on a bench with your feet flat on the ground and your forearms resting on your thighs, holding a barbell with an underhand grip.",
+    "Allow the barbell to roll down to your fingertips, keeping your wrists straight." : "Allow the barbell to roll down to your fingertips, keeping your wrists straight.",
+    "Slowly curl the barbell up towards your forearms by flexing your wrists." : "Slowly curl the barbell up towards your forearms by flexing your wrists.",
+    
+    "barbell wrist curl v. 2": "barbell wrist curl v. 2",
+    "Hold a barbell with an underhand grip, palms facing up, and your hands shoulder-width apart." : "Hold a barbell with an underhand grip, palms facing up, and your hands shoulder-width apart.",
+    "Slowly curl your wrists upward, bringing the barbell towards your forearms." : "Slowly curl your wrists upward, bringing the barbell towards your forearms.",
+    
+        "cable reverse wrist curl": "cable reverse wrist curl",
+        "Attach a cable to a low pulley and sit on a bench facing the cable machine." : "Attach a cable to a low pulley and sit on a bench facing the cable machine.",
+        "Grasp the cable handle with an overhand grip, palms facing down."  : "Grasp the cable handle with an overhand grip, palms facing down.",
+        "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position." : "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position."
 
 
     }
+
 }
