@@ -38,6 +38,14 @@
     ],
     "fonts": {
       "Koulen": "./assets/fonts/Koulen-Regular.ttf"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f31552f2-e415-4ea6-8cae-153fc4d7b052"
+      }
     }
   }
 }
