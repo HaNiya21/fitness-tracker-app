@@ -6,10 +6,14 @@ import Footer from '../components/Footer';
 import { trainerList } from '../constants/trainerlist';
 import Menu from '../components/Menu';
 import TrainersCard from '../components/TrainersCard';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 export default function TrainerList() {
+
+    const { t, i18n } = useTranslation();
   return (
     <>
         <ImageBackground 
@@ -20,7 +24,7 @@ export default function TrainerList() {
 
         <Menu />
 
-        <Text style={style.exerciseTitle}>Our Trainers</Text>
+        <Text style={style.exerciseTitle}>{t('Our Trainers')}</Text>
 
         <View style={{flex: 1, marginHorizontal: 20}}>
             <FlatList

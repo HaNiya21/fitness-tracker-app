@@ -3,7 +3,7 @@ import {View, Text, Pressable, LayoutAnimation} from 'react-native';
 import styles from "../app/styles";
 
 
-const ToggleSwitch = () => {
+const ToggleSwitch = ({ style, onPress }) => {
     const [isOn, setIsOn] = useState(false);
 
     const onColor = '#A9A9A9';
@@ -13,10 +13,11 @@ const ToggleSwitch = () => {
 
     const toggleLanguage = () => {
         setLanguage((prev) => (prev === "EN" ? "ES" : "EN"));
+        onPress && onPress();
     };
 
     return (
-        <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <View style = {[{flex: 1, alignItems: 'center', justifyContent: 'center'}, style ]}>
             <Pressable 
                 style = {{
                     height: 30, 
@@ -40,8 +41,8 @@ const ToggleSwitch = () => {
                         alignSelf: isOn ? 'flex-end' : 'flex-start',
                         alignItems: 'center',
                         justifyContent: 'center'
-                 }}>
-                    <Text style = {{fontSize: 18, fontWeight: 'bold'}}> {isOn ? 'ES' : 'EN'}</Text>  
+                }}>
+                    <Text style = {{fontSize: 16, fontWeight: 'bold'}}> {isOn ? 'ES' : 'EN'}</Text>  
                 </View>
             </Pressable>
             <Text style={styles.languageText}>Switch to {language === "EN" ? "Español" : "English"}</Text>

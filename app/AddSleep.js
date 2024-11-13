@@ -9,11 +9,14 @@ import Footer from '../components/Footer';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { ScrollView } from "react-native-gesture-handler";
 import Menu from "../components/Menu";
+import '../assets/i18n/i18n.js';
+import { useTranslation } from 'react-i18next';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const AddSleep = () => {
     const navigation = useNavigation();
+    const { t, i18n } = useTranslation();
 
     const [duration, setDuration] = useState('');
     const [time, setTime] = useState('');
@@ -54,26 +57,40 @@ const AddSleep = () => {
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
                 <Menu />
-                <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('SleepChart')} />
-                <Text style={styles.sleepTitle}>Add Sleep</Text>
+                <View style={styles.backIcon}>
+                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('SleepChart')} />
+                </View>
+                <Text style={[styles.sleepTitle, 
+                            {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                            {fontSize: i18n.language === 'es' ? 35: 45 },
+                            {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
+                            {fontWeight: i18n.language === 'es' ? 'bold': 'regular' }]}>{t('Add Sleep')}</Text>
                 <ScrollView>
                     <RadioButton.Group onValueChange={value => setChecked(value)} value={checked}>
-                        <Text style={styles.waterText}>Choose Type of Sleep</Text>
+                        <Text style={[styles.waterText,
+                                    {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
+                                    {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular' },
+                                    {fontWeight: i18n.language === 'es' ? 'bold': 'regular', fontSize: 18, marginTop:  20, marginBottom: 20 }]}>{t('Choose Type of Sleep')}</Text>
                         <View style={styles.radioButton}>
                             <View style={styles.radioButtonOutline}>
                                 <RadioButton value="Nightly" uncheckedColor="white" color="black" />
                             </View>
-                            <Text style={styles.rblabel}>Nightly</Text>
+                            <Text style={styles.rblabel}>{t('Nightly')}</Text>
                         </View>
                         <View style={styles.radioButton}>
                             <View style={styles.radioButtonOutline}>
                                 <RadioButton value="Nap" uncheckedColor="white" color="black" />
                             </View>
-                            <Text style={styles.rblabel}>Nap</Text>
+                            <Text style={styles.rblabel}>{t('Nap')}</Text>
                         </View>
                     </RadioButton.Group>
                     
-                    <Text style={styles.sleepInputText}>Duration</Text>
+                    <Text style={[styles.sleepInputText, 
+                                {fontFamily: i18n.language === 'es' ? 'Trebuchet': 'Koulen-Regular'},
+                                {fontSize: i18n.language === 'es' ? 15: 20 },
+                                {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
+                                {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
+                                {marginTop: i18n.language === 'es' ? 10: 'auto' }]}>{t('Duration')}</Text>
                     <View style={styles.inputCont}>
                         <TextInput
                             style={styles.waterInput}
@@ -82,14 +99,14 @@ const AddSleep = () => {
                             keyboardType="numeric"
                             placeholder="Enter duration"
                         />
-                        <Text style={styles.sleepHours}>hrs</Text>
+                        <Text style={[styles.sleepHours,{fontSize: i18n.language === 'es' ? 25: 30 }]}>{t('hrs')}</Text>
                     </View>
                     {errors.duration && <Text style={styles.error}>{errors.duration}</Text>}
 
-                    <Text style={styles.sleepInputText}>Time</Text>
+                    <Text style={styles.sleepInputText}>{t('Time')}</Text>
                     <View style={styles.inputCont}>
                         <TouchableOpacity onPress={() => setShowPicker(true)} style={styles.sleepTimeContainer}>
-                            <Text style={styles.waterInput}>{time || "Select time"}</Text>
+                            <Text style={styles.waterInput}>{time || t('Select time')}</Text>
                         </TouchableOpacity>
                         <Icon name="clock-o" size={25} color="#000" style={{ marginLeft: 25 }} />
                     </View>
@@ -114,7 +131,7 @@ const AddSleep = () => {
                     {errors.time && <Text style={styles.error}>{errors.time}</Text>}
 
                     <TouchableOpacity style={styles.waterSubmitButton} onPress={handleSubmit}>
-                        <Text style={styles.waterButtonText}>Save</Text>
+                        <Text style={styles.waterButtonText}>{t('Save')}</Text>
                     </TouchableOpacity>
                 </ScrollView>
                 
