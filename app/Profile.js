@@ -9,6 +9,7 @@ import { ImageBackground } from 'react-native';
 import SVG, { Circle } from 'react-native-svg';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from '../components/headerLogo';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -52,7 +53,9 @@ const Profile = () => {
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
                 {/* Top Menu */}
+
                 <View style={{zIndex : 3}}>
+                    <HeaderLogo />
                     <Menu />
                 </View>
 

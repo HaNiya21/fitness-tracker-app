@@ -11,6 +11,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Menu from "../components/Menu";
 import '../assets/i18n/i18n.js';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from "../components/headerLogo.js";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -56,6 +57,9 @@ const AddSleep = () => {
     return (
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
+                <View>
+                    <HeaderLogo />
+                </View>
                 <Menu />
                 <View style={styles.backIcon}>
                     <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('SleepChart')} />

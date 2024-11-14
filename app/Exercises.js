@@ -10,6 +10,7 @@ import {chestExercise} from '../constants/chestExercise';
 import { fetchExercisesByBodyPart } from '../api/ExerciseDB';
 import Footer from '../components/Footer';
 import ExerciseCard from '../components/ExerciseListComponent';
+import HeaderLogo from '../components/headerLogo';
 
 import { FlatList } from 'react-native-gesture-handler';
 import { ScrollView } from 'react-native-virtualized-view';
@@ -48,10 +49,11 @@ const Exercises = () => {
                     style={styles.image} 
                     resizeMode="cover"
             > 
-
+            <View>
+                <HeaderLogo />
+            </View>
                 <Menu />
 
-                
                     <View style={styles.backIcon}>
                         <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('ExerciseBodyPart')} /> 
                     </View>
