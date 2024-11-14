@@ -209,7 +209,7 @@ const AddExercise = () => {
             {/* <View>
                 <Footer />
             </View> */}
-        </>
+        </View>
     );
 };
 
