@@ -5,9 +5,7 @@
 - Priya Sudhir Suvarna
 - Alfredo Rodriguez
 - Lina Urrego
-
 ---
-
 ## 1. Design Critique Document
 
 ### Thoroughness of Analysis
