@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/fitness-tracker')
 
 // Signup Route
 app.post('/api/signup', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { firstname, lastname, height, weight, age, email, password } = req.body;
 
     try {
         // Check if user already exists
