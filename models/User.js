@@ -28,23 +28,6 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Age is required'],
         min: [0, 'Age must be a positive number']
     },
-    lastname: {
-        type: String,
-        required: true,
-    },
-    height: {
-        type: String,
-        required: true,
-    },
-    weight: {
-        type: String,
-        required: true,
-    },
-    age: {
-        type: String,
-        required: true,
-    },
-
     email: {
         type: String,
         required: [true, 'Email is required'],

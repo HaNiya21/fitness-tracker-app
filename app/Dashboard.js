@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import StepCounter from './Pedometer';
 import AddPopup from '../components/AddPopup';
-import dailyExerciseData from '../constants/dailyExercisedata';
+import {dailyExerciseData} from '../constants/dailyExerciseData';
 import {yesterdayExerciseData} from '../constants/yesterdayExerciseData';
 
 

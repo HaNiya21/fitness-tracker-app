@@ -3,6 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'intl-pluralrules';
 
+import * as Font from 'expo-font';
+import { useFonts } from 'expo-font';
+
 import WaterIntake from './app/WaterIntake';
 import AddExercise from './app/AddExercise';
 import ExerciseChart from './app/ExerciseChart';
@@ -28,6 +31,16 @@ import HeaderLogo from './components/headerLogo';
 const Stack = createStackNavigator();
 
 function App() {
+
+    const [fontsLoaded] = useFonts({
+        'Koulen-Regular': require('./assets/fonts/Koulen-Regular.ttf'),
+      });
+    
+      if (!fontsLoaded) {
+        // Show a loading spinner until the font is loaded
+        return null;
+      }
+
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Landing">
