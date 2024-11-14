@@ -53,7 +53,7 @@ const SignUp = () => {
 
         if (Object.keys(errors).length === 0) {
             try {
-                const response = await fetch('http://192.168.1.71:5000/api/SignUp', {
+                const response = await fetch('http://localhost:5000/api/SignUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
