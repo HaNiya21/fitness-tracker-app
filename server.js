@@ -29,7 +29,7 @@ app.post('/api/signup', async (req, res) => {
         }
 
         // Create new user
-        user = new User({ username, email, password });
+        user = new User({ firstname, lastname, height, weight, age, email, password });
 
         // Hash password
         const salt = await bcrypt.genSalt(10);

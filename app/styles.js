@@ -299,6 +299,20 @@ const styles = StyleSheet.create({
 
 },
 
+// next
+prevIcon: {
+    marginTop: 40,
+    marginHorizontal: 40,
+    //marginBottom: 10,
+    backgroundColor: '#C7C7C7',
+    width: 35,  // Set width to make a circular or rounded shape
+    height: 35, // Set height equal to width for a circle
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+
+},
+
 waterTitle: {
     fontFamily: 'Koulen-Regular',
     fontSize: 40,
@@ -428,7 +442,7 @@ goalText: {
     alignSelf: 'flex-start',
     marginLeft: 50,
     marginTop: 150,
-    fontFamily: 'Koulen-Regular',
+    fontFamily: 'Roboto',
 },
 
 goalInput: {
@@ -961,38 +975,40 @@ menuItem: {
 
 //pedometer
 PedometerContainer: {
-    flex: 1,
-    justifyContent: 'center',
+    //flex: 1,
+    //justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    padding: 12,
+    padding: 8,
 }, 
 
 pedLabelsCont: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 20,
-    borderRadius: 15,
+    //justifyContent: 'center',
+    //marginTop: 4,
+    borderRadius: 20,
     padding: 10,
     backgroundColor: '#ECECEC',
     
 },
 
 PedometerValueContainer: {
-    margin: 20,
-    marginVertical: 10,
+    margin: 24,
+    marginVertical: 2,
 },
 
 PedometerLabel: {
     color: 'black',
     fontSize: 20,
+    fontFamily: 'Koulen-Regular',
 },
 
 PedometerValue: {
     fontSize: 35,
     fontWeight: '500',
     textAlign: 'center',
+    fontFamily: 'Roboto',
 },
 
 ring: {
@@ -1019,6 +1035,51 @@ ringContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
+},
+
+//dashboardContainers
+
+dashboardContainers: {
+    display: 'flex',
+    flexDirection: 'row',
+    //justifyContent: 'center',
+    //marginTop: 4,
+    borderRadius: 20,
+    padding: 10,
+    marginHorizontal: 32,
+    backgroundColor: '#ECECEC',
+
+},
+
+dashboardValueContainer: {
+    marginVertical: 2,
+},
+
+dashText: {
+    paddingHorizontal: 32,
+    //marginTop: 4, 
+    padding: 5,
+    fontFamily: 'Koulen-Regular', 
+    fontWeight: 'bold', 
+    fontSize: hp(2.3)
+},
+
+item: {
+    flexDirection: 'row', // Make the row the main axis
+    alignItems: 'center', // Align items vertically within the row
+    paddingHorizontal: 10, // Add horizontal padding for spacing
+    paddingBottom: 10, // Add some padding to the bottom
+  },
+
+iconContainer: {
+    marginRight: 10, // Add some margin to the right of the icon
+},
+
+textContainer: {
+    flex: 1, // Take up all available space
+    padding: 4,
+    //justifyContent: 'center', // Center the text vertically
+    //alignItems: 'center', // Center the text horizontally
 },
 
 // articles page

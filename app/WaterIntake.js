@@ -57,13 +57,16 @@ export default function WaterIntake() {
   return (
     <View style={styles.content}>
       <ImageBackground source={backgroundImage} style={styles.image}>
+
       <View>
           <HeaderLogo />
       </View>
         <Menu />
-        <View style={styles.backIcon}>
-          <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('WaterChart')} /> 
-        </View>
+      
+      <View style={styles.backIcon}>
+        <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+      </View>
+       
         <Text style={styles.waterTitle}>{t('Add Water')}</Text>
         <ScrollView>
         <Text style={styles.waterText}>{t('Amount')}</Text>

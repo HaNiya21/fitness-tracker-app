@@ -83,6 +83,12 @@ export default function ExerciseChart() {
       <ImageBackground source={backgroundImage} style={styles.image}>
         <Text style={{marginTop: 120, left:50 }}>Weekly Details</Text>
         <Text style={{ left:50, top:40 }}>{data.weeklyDetails.weekRange}</Text>
+
+        <View style={styles.backIcon}>
+          <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+        </View>
+        <Text style={styles.title}>Weekly Details</Text>
+        <Text style={styles.weekRange}>{data.weeklyDetails.weekRange}</Text>
         
         <ScrollView style={{ left: 50, top: 100}}>
           {data.weeklyDetails.days.map((dayData, index) => (

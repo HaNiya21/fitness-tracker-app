@@ -67,7 +67,7 @@ const AddExercise = () => {
 
         if (Object.keys(errors).length === 0) {
             try {
-                const response = await fetch('http://localhost:5000/api/exercise', {
+                const response = await fetch('http://192.168.1.71:5000/api/exercise', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -75,7 +75,18 @@ const AddExercise = () => {
                     body: JSON.stringify(formValues),
                 });
 
-                const data = await response.json();
+                //const data = await response.json();
+
+                // Check if response status is OK (200-299)
+                if (!response.ok) {
+                    console.error('HTTP Error:', response.status, response.statusText);
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                // Attempt to parse the response as JSON
+                const data = await response.json().catch(() => {
+                    throw new Error('Response is not in JSON format.');
+                });
 
                 if (data.success) {
                     console.log('Exercise added successfully.');
@@ -99,8 +110,9 @@ const AddExercise = () => {
                 
                 <Menu />
                 <View style={styles.backIcon}>
-                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.navigate('ExerciseChart')} />
+                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
                 </View>
+
                 <ScrollView>
                 <Text style={styles.exerciseText}>{t('Activity')}</Text>
                 <TextInput
@@ -192,9 +204,12 @@ const AddExercise = () => {
                     <Text style={styles.waterButtonText}>{t('Submit')}</Text>
                 </TouchableOpacity>
                 </ScrollView>
-                </ImageBackground>
+            </ImageBackground>
+
+            {/* <View>
                 <Footer />
-            </View>
+            </View> */}
+        </View>
     );
 };
 

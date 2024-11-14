@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { View, TextInput, ImageBackground, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from "./styles";
 import Footer from '../components/Footer.js';
 import Menu from '../components/Menu.js';
@@ -32,10 +33,15 @@ export default function WaterChart({ route }) {
   return (
     <View style={styles.content}>
         <ImageBackground source={backgroundImage} style={styles.image}>
-        <View>
-            <HeaderLogo />
-        </View>
-            <Menu />    
+            <View>
+              <HeaderLogo />
+            </View>
+            <Menu />   
+
+            <View style={styles.backIcon}>
+              <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+            </View>  
+
 
         {!goalSet ? (
           <>

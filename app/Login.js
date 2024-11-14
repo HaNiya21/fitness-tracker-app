@@ -5,6 +5,7 @@ import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
 import ToggleSwitch from '../components/ToggleSwitch';
 import styles from "./styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = () => {
 
@@ -91,7 +92,8 @@ const Login = () => {
         }
     };
     return (
-        <View style={styles.loginContainer}>
+        <SafeAreaView edges={['top']} style={{flex: 1, marginVertical: 4}} >
+            <View style={styles.loginContainer}>
             <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
             <Text style={styles.logoText}>GYMWOLF</Text>
             <Text style={styles.paragraph}>{t('Welcome Back!')}</Text>
@@ -147,7 +149,7 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.linkText}>{t('Sign Up')}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('ExerciseBodyPart')}>
+                {/* <TouchableOpacity onPress={() => navigation.navigate('ExerciseBodyPart')}>
                     <Text style={styles.linkText}>Exercise Page</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('TrainerList')}>
@@ -177,19 +179,22 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('ExerciseChart')}>
                     <Text style={styles.linkText}>Exercise Chart</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
+                {/* <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
                     <Text style={styles.linkText}>SleepChart</Text> 
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+                </TouchableOpacity> */}
+                {/* <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
                     <Text style={styles.linkText}>Menu</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                     <Text style={styles.linkText}>Profile</Text>  
-                </TouchableOpacity>     
+                </TouchableOpacity>       */}
             </View>
             <ToggleSwitch onPress={changeLanguage} style={{position: 'absolute', right: 20, bottom: 30 }}/>
 
         </View>
+
+        </SafeAreaView>
+        
     );
 };
 

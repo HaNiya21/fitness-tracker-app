@@ -28,6 +28,9 @@ export default function SleepChart({ route }) {
                 <HeaderLogo/>
             </View>
             <Menu/>
+            <View style={styles.backIcon}>
+                <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+            </View>
             <View style={styles.waterChart}>
                 <Text style={[styles.sleepChartTitle, {
                     fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular',

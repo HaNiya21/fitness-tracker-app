@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useFonts, Koulen_400Regular } from '@expo-google-fonts/koulen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './styles'; 
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
@@ -17,6 +18,8 @@ const Profile = () => {
     let [fontsLoaded] = useFonts({
         Koulen_400Regular,
     });
+
+    const navigation = useNavigation();
 
     const { t, i18n } = useTranslation();
 
@@ -57,6 +60,10 @@ const Profile = () => {
                 <View style={{zIndex : 3}}>
                     <HeaderLogo />
                     <Menu />
+                </View>
+
+                <View style={styles.backIcon}>
+                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
                 </View>
 
                 <View style={styles.circleWrapper}>
