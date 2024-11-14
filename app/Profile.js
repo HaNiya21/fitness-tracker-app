@@ -4,6 +4,7 @@ import { useFonts, Koulen_400Regular } from '@expo-google-fonts/koulen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './styles'; 
+import { useNavigation } from '@react-navigation/native';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import { ImageBackground } from 'react-native';
