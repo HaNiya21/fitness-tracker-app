@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import ToggleSwitch from '../components/ToggleSwitch';
 
 import { err } from "react-native-svg";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const SignUp = () => {
 
@@ -18,11 +17,11 @@ const SignUp = () => {
     const navigation = useNavigation();
 
     const initialValues = {
-        firstName: "",
-        lastName: "",
-        heightCm: "",
+        firstname: "",
+        lastname: "",
+        height: "",
         weight: "",
-        age: "",
+        age:``,
         email: "",
         password: "",
         confirmPassword: "",
@@ -85,18 +84,8 @@ const SignUp = () => {
 
     const validate = (values) => {
         const errors = {};
-
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-        if (!values.firstName) errors.firstName = "First name is required!";
-        if (!values.lastName) errors.lastName = "Last name is required!";
-        if (!values.heightCm || isNaN(values.heightCm)) errors.height = "Height is required!";
-        if (!values.weightKg || isNaN(values.weightKg)) errors.weightKg = "Weight is required!";
-        if (!values.age || isNaN(values.age)) errors.age = "Age is required!";
-
         if (!values.firstname) errors.firstname = 'First name is required';
         if (!values.lastname) errors.lastname = 'Last name is required';
-      
         if (!values.email) {
             errors.email = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(values.email)) {
@@ -240,17 +229,6 @@ const SignUp = () => {
                 </TouchableOpacity>
             
 
-
-                <Text style={styles.text}>
-                    {t('Already have an account?')}
-                </Text>
-
-            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                <Text style={[styles.LoginLink, 
-                            { fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
-                            { fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
-                            { fontSize: i18n.language === 'es' ? 12: 16 }]}>{t('Login')}</Text>
-
                 <Text style={styles.text}>{t('Already have an account?')}</Text>
 
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
@@ -275,10 +253,7 @@ const SignUp = () => {
             <ToggleSwitch style={{ position: 'absolute', right: 20, bottom: 30 }} onPress={changeLanguage} />
 
         </View>
-    </SafeAreaView>
     );
 };
-               
-            
 
 export default SignUp;
