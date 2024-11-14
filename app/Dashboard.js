@@ -15,6 +15,7 @@ import { dailyExerciseData } from '../constants/dailyExerciseData';
 import {yesterdayExerciseData} from '../constants/yesterdayExerciseData';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from '../components/headerLogo';
 
 
 
@@ -110,6 +111,9 @@ const Dashboard = () => {
         style={styles.image} 
         resizeMethod='cover'
       >
+      <View>
+        <HeaderLogo />  
+      </View>
         <Menu />
       {/* Hello, Username */}
         <Text 
