@@ -7,6 +7,7 @@ import Footer from '../components/Footer.js';
 import Menu from '../components/Menu.js';
 import '../assets/i18n/i18n.js'
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from "../components/headerLogo.js";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -32,10 +33,15 @@ export default function WaterChart({ route }) {
   return (
     <View style={styles.content}>
         <ImageBackground source={backgroundImage} style={styles.image}>
-            <Menu />  
+            <View>
+              <HeaderLogo />
+            </View>
+            <Menu />   
+
             <View style={styles.backIcon}>
               <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
             </View>  
+
 
         {!goalSet ? (
           <>

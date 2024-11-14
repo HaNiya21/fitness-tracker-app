@@ -4,6 +4,7 @@ import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Footer from "../components/Footer";
+import HeaderLogo from "../components/headerLogo";
 
 const backgroundImage = require("../assets/images/GymwolfBackground.jpeg");
 
@@ -76,6 +77,9 @@ export default function ExerciseChart() {
 
   return (
     <View style={styles.content}>
+      <View>
+        <HeaderLogo />
+      </View>
       <ImageBackground source={backgroundImage} style={styles.image}>
         <Text style={{marginTop: 120, left:50 }}>Weekly Details</Text>
         <Text style={{ left:50, top:40 }}>{data.weeklyDetails.weekRange}</Text>

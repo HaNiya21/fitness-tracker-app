@@ -316,7 +316,9 @@
         "cable reverse wrist curl": "cable reverse wrist curl",
         "Attach a cable to a low pulley and sit on a bench facing the cable machine." : "Attach a cable to a low pulley and sit on a bench facing the cable machine.",
         "Grasp the cable handle with an overhand grip, palms facing down."  : "Grasp the cable handle with an overhand grip, palms facing down.",
-        "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position." : "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position."
+        "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position." : "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position.",
+
+        "Start time is required":"Start time is required"
 
 
     }

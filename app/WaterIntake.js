@@ -10,6 +10,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Menu from '../components/Menu';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from "../components/headerLogo";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -56,11 +57,16 @@ export default function WaterIntake() {
   return (
     <View style={styles.content}>
       <ImageBackground source={backgroundImage} style={styles.image}>
-      <Menu />
+
+      <View>
+          <HeaderLogo />
+      </View>
+        <Menu />
+      
       <View style={styles.backIcon}>
         <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
       </View>
-        
+       
         <Text style={styles.waterTitle}>{t('Add Water')}</Text>
         <ScrollView>
         <Text style={styles.waterText}>{t('Amount')}</Text>

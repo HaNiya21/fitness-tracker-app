@@ -23,6 +23,7 @@ import SleepChart from './app/SleepChart';
 import Menu from './components/Menu';
 import ExerciseDetails from './app/ExerciseDetails';
 import Profile from './app/Profile';
+import HeaderLogo from './components/headerLogo';
 
 const Stack = createStackNavigator();
 
@@ -130,6 +131,11 @@ function App() {
                 <Stack.Screen 
                     name="Menu" 
                     component={Menu} 
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="HeaderLogo"
+                    component={HeaderLogo}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
