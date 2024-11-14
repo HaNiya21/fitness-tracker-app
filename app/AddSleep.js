@@ -54,7 +54,10 @@ const AddSleep = () => {
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
                 <Menu />
-                <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('SleepChart')} />
+                <View style={styles.backIcon}>
+                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+                </View>
+                
                 <Text style={styles.sleepTitle}>Add Sleep</Text>
                 <ScrollView>
                     <RadioButton.Group onValueChange={value => setChecked(value)} value={checked}>

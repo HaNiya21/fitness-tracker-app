@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import WaterIntake from './app/WaterIntake';
 import AddExercise from './app/AddExercise';
+import ExerciseChart from './app/ExerciseChart';
 import AddSleep from './app/AddSleep';
 import LandingPage from './app/LandingPage';
 import Login from './app/Login';
@@ -36,12 +37,13 @@ function App() {
                 <Stack.Screen 
                     name="Login" 
                     component={Login} 
-                    options={{ headerTitle: 'Login' }}
+                    //options={{ headerTitle: 'Login' }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen 
                     name="SignUp" 
                     component={SignUp} 
-                    options={{ headerTitle: 'Sign Up' }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen 
                     name="WaterIntake" 
@@ -56,12 +58,18 @@ function App() {
                 <Stack.Screen 
                     name="Dashboard" 
                     component={Dashboard} 
-                    options={{ headerTitle: 'Dashboard' }}
+                    // options={{ headerTitle: 'Dashboard' }}
+                    screenOptions={{ headerShown: false }}
                 />
                 <Stack.Screen 
                     name="AddExercise" 
                     component={AddExercise} 
                     options={{ headerTitle: 'Add Exercise' }}
+                />
+                <Stack.Screen 
+                    name="ExerciseChart" 
+                    component={ExerciseChart} 
+                    options={{ headerTitle: 'Log Exercise' }}
                 />
                 <Stack.Screen 
                     name="AddSleep" 

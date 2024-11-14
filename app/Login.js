@@ -3,8 +3,9 @@ import { View, TouchableOpacity, Text, TextInput, Image } from "react-native";
 import { useFonts, Koulen_400Regular } from "@expo-google-fonts/koulen"; // imported font from google 
 import { useNavigation } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import { yesterdayExerciseData } from "../constants/yesterdayExerciseData";
 import styles from "./styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = () => {
 
@@ -12,6 +13,7 @@ const Login = () => {
         Koulen_400Regular, // Registering the font
     });
 
+    console.log(yesterdayExerciseData);
 
     const initialValues = {
         email: "",
@@ -86,7 +88,8 @@ const Login = () => {
         }
     };
     return (
-        <View style={styles.loginContainer}>
+        <SafeAreaView edges={['top']} style={{flex: 1, marginVertical: 4}} >
+            <View style={styles.loginContainer}>
             <Image source={require('../assets/images/wolf_logo-black.png')} style={styles.logoSL}/>
             <Text style={styles.logoText}>GYMWOLF</Text>
             <Text style={styles.paragraph}>Welcome Back!</Text>
@@ -127,7 +130,7 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.linkText}>Sign Up</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('ExerciseBodyPart')}>
+                {/* <TouchableOpacity onPress={() => navigation.navigate('ExerciseBodyPart')}>
                     <Text style={styles.linkText}>Exercise Page</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('TrainerList')}>
@@ -161,10 +164,10 @@ const Login = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('ExerciseChart')}>
                     <Text style={styles.linkText}>ExerciseChart</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
+                {/* <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
                     <Text style={styles.linkText}>SleepChart</Text> 
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+                </TouchableOpacity> */}
+                {/* <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
                     <Text style={styles.linkText}>Menu</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('SleepChart')}>
@@ -172,9 +175,12 @@ const Login = () => {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                     <Text style={styles.linkText}>Profile</Text>  
-                </TouchableOpacity>     
+                </TouchableOpacity>       */}
             </View>
         </View>
+
+        </SafeAreaView>
+        
     );
 };
 

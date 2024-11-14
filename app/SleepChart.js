@@ -21,6 +21,9 @@ export default function SleepChart({ route }) {
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
             <Menu/>
+            <View style={styles.backIcon}>
+                <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+            </View>
             <View style={styles.waterChart}>
                 <Text style={styles.sleepChartTitle}>Sleep Chart</Text>
                 <View style={styles.waterChartTitles}>

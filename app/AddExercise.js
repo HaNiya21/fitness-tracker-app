@@ -59,7 +59,7 @@ const AddExercise = () => {
 
         if (Object.keys(errors).length === 0) {
             try {
-                const response = await fetch('http://localhost:5000/api/exercise', {
+                const response = await fetch('http://192.168.1.71:5000/api/exercise', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -67,7 +67,18 @@ const AddExercise = () => {
                     body: JSON.stringify(formValues),
                 });
 
-                const data = await response.json();
+                //const data = await response.json();
+
+                // Check if response status is OK (200-299)
+                if (!response.ok) {
+                    console.error('HTTP Error:', response.status, response.statusText);
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                // Attempt to parse the response as JSON
+                const data = await response.json().catch(() => {
+                    throw new Error('Response is not in JSON format.');
+                });
 
                 if (data.success) {
                     console.log('Exercise added successfully.');
@@ -82,100 +93,105 @@ const AddExercise = () => {
     };
 
     return (
-        <View style={styles.content}>
+        <>
             <ImageBackground source={backgroundImage} style={styles.image}>
                 <Menu />
-                <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('ExerciseChart')} />
+                <View style={styles.backIcon}>
+                    <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+                </View>
 
                 <ScrollView>
-                <Text style={styles.exerciseText}>Activity</Text>
-                <TextInput
-                    style={styles.exerciseInput}
-                    value={formValues.activity}
-                    onChangeText={(text) => handleChange('activity', text)}
-                    placeholder="Enter activity"
-                />
-                {formErrors.activity && <Text style={styles.error}>{formErrors.activity}</Text>}
+                    <Text style={styles.exerciseText}>Activity</Text>
+                    <TextInput
+                        style={styles.exerciseInput}
+                        value={formValues.activity}
+                        onChangeText={(text) => handleChange('activity', text)}
+                        placeholder="Enter activity"
+                    />
+                    {formErrors.activity && <Text style={styles.error}>{formErrors.activity}</Text>}
 
-                <Text style={styles.exerciseText}>Date</Text>
-                <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.dateContainer}>
-                    <Text style={styles.dateInput}>{formValues.date || "Select Date"}</Text>
-                </TouchableOpacity>
-                <Modal
+                    <Text style={styles.exerciseText}>Date</Text>
+                    <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.dateContainer}>
+                        <Text style={styles.dateInput}>{formValues.date || "Select Date"}</Text>
+                    </TouchableOpacity>
+                    <Modal
+                        transparent={true}
+                        animationType="slide"
+                        visible={showDatePicker}
+                        onRequestClose={() => setShowDatePicker(false)}
+                    >
+                        <View style={styles.modalContainer}>
+                            <View style={styles.timePickerContainer}>
+                                <DateTimePicker
+                                    value={new Date()}
+                                    mode="date"
+                                    display="default"
+                                    onChange={(event, selectedDate) => {
+                                        setShowDatePicker(false);
+                                        if (selectedDate) handleChange('date', selectedDate.toISOString().split('T')[0]);
+                                    }}
+                                />
+                            </View>
+                        </View>
+                    </Modal>
+                    {formErrors.date && <Text style={styles.error}>{formErrors.date}</Text>}
+
+                    <Text style={styles.exerciseText}>Start Time</Text>
+                    <TouchableOpacity onPress={() => setShowTimePicker(true)} style={styles.dateContainer}>
+                        <Text style={styles.dateInput}>{formValues.startTime || "Select Time"}</Text>
+                    </TouchableOpacity>
+                    <Modal
                     transparent={true}
                     animationType="slide"
-                    visible={showDatePicker}
-                    onRequestClose={() => setShowDatePicker(false)}
-                >
-                    <View style={styles.modalContainer}>
-                        <View style={styles.timePickerContainer}>
-                            <DateTimePicker
-                                value={new Date()}
-                                mode="date"
-                                display="default"
-                                onChange={(event, selectedDate) => {
-                                    setShowDatePicker(false);
-                                    if (selectedDate) handleChange('date', selectedDate.toISOString().split('T')[0]);
-                                }}
-                            />
+                    visible={showTimePicker}
+                    onRequestClose={() => setShowTimePicker(false)}
+                    >
+                        <View style={styles.modalContainer}>
+                            <View style={styles.datePickerContainer}>
+                                <DateTimePicker
+                                    value={new Date()}
+                                    mode="time"
+                                    display="default"
+                                    onChange={(event, selectedTime) => {
+                                        setShowTimePicker(false);
+                                        if (selectedTime) handleChange('startTime', selectedTime.toTimeString().split(' ')[0]);
+                                    }}
+                                />
+                            </View>
                         </View>
-                    </View>
-                </Modal>
-                {formErrors.date && <Text style={styles.error}>{formErrors.date}</Text>}
+                    </Modal>
+                    {formErrors.startTime && <Text style={styles.error}>{formErrors.startTime}</Text>}
 
-                <Text style={styles.exerciseText}>Start Time</Text>
-                <TouchableOpacity onPress={() => setShowTimePicker(true)} style={styles.dateContainer}>
-                    <Text style={styles.dateInput}>{formValues.startTime || "Select Time"}</Text>
-                </TouchableOpacity>
-                <Modal
-                transparent={true}
-                animationType="slide"
-                visible={showTimePicker}
-                onRequestClose={() => setShowTimePicker(false)}
-            >
-                <View style={styles.modalContainer}>
-                    <View style={styles.datePickerContainer}>
-                        <DateTimePicker
-                            value={new Date()}
-                            mode="time"
-                            display="default"
-                            onChange={(event, selectedTime) => {
-                                setShowTimePicker(false);
-                                if (selectedTime) handleChange('startTime', selectedTime.toTimeString().split(' ')[0]);
-                            }}
-                        />
-                    </View>
-                </View>
-            </Modal>
-                {formErrors.startTime && <Text style={styles.error}>{formErrors.startTime}</Text>}
+                    <Text style={styles.exerciseText}>Duration (mins)</Text>
+                    <TextInput
+                        style={styles.exerciseInput}
+                        value={formValues.duration}
+                        onChangeText={(text) => handleChange('duration', text)}
+                        placeholder="Enter duration"
+                        keyboardType="numeric"
+                    />
+                    {formErrors.duration && <Text style={styles.error}>{formErrors.duration}</Text>}
 
-                <Text style={styles.exerciseText}>Duration (mins)</Text>
-                <TextInput
-                    style={styles.exerciseInput}
-                    value={formValues.duration}
-                    onChangeText={(text) => handleChange('duration', text)}
-                    placeholder="Enter duration"
-                    keyboardType="numeric"
-                />
-                {formErrors.duration && <Text style={styles.error}>{formErrors.duration}</Text>}
+                    <Text style={styles.exerciseText}>Distance (km)</Text>
+                    <TextInput
+                        style={styles.exerciseInput}
+                        value={formValues.distance}
+                        onChangeText={(text) => handleChange('distance', text)}
+                        placeholder="Enter distance"
+                        keyboardType="numeric"
+                    />
+                    {formErrors.distance && <Text style={styles.error}>{formErrors.distance}</Text>}
 
-                <Text style={styles.exerciseText}>Distance (km)</Text>
-                <TextInput
-                    style={styles.exerciseInput}
-                    value={formValues.distance}
-                    onChangeText={(text) => handleChange('distance', text)}
-                    placeholder="Enter distance"
-                    keyboardType="numeric"
-                />
-                {formErrors.distance && <Text style={styles.error}>{formErrors.distance}</Text>}
-
-                <TouchableOpacity style={styles.waterSubmitButton} onPress={handleSubmit}>
-                    <Text style={styles.waterButtonText}>Submit</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.waterSubmitButton} onPress={handleSubmit}>
+                        <Text style={styles.waterButtonText}>Submit</Text>
+                    </TouchableOpacity>
                 </ScrollView>
-                </ImageBackground>
+            </ImageBackground>
+
+            {/* <View>
                 <Footer />
-            </View>
+            </View> */}
+        </>
     );
 };
 

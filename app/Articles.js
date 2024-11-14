@@ -3,6 +3,7 @@ import axios from 'axios';
 import { View, ImageBackground, Text, Image, TouchableOpacity, Linking, ScrollView } from "react-native";
 import styles from "./styles";
 import Footer from '../components/Footer';
+import Menu from "../components/Menu";
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -28,6 +29,7 @@ const Articles = () => {
     return (
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
+                <Menu />
                 <Text style={styles.ArticlePageTitle}>Health Spot</Text>
                 
                 <ScrollView contentContainerStyle  ={styles.articleContainer}>

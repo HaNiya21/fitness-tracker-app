@@ -1,71 +1,236 @@
 import React, { useState, useRef } from 'react';
-import { View, ImageBackground, TouchableOpacity, Text, Animated } from 'react-native';
+import { View, ImageBackground, TouchableOpacity, Text, Animated, Pressable } from 'react-native';
 import { Pedometer } from 'expo-sensors';
+import { useNavigation } from '@react-navigation/native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { ScrollView } from 'react-native-virtualized-view';
 import styles from './styles';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import StepCounter from './Pedometer';
 import AddPopup from '../components/AddPopup';
+import dailyExerciseData from '../constants/dailyExercisedata';
+import {yesterdayExerciseData} from '../constants/yesterdayExerciseData';
+
+
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const Dashboard = () => {
+
+  // Popup related states
   const [isPopupVisible, setPopupVisible] = useState(false); // Popup visibility state
-  const [exerciseData, setExerciseData] = useState([
-    { name: 'Push-up', time: '10 min' },
-    { name: 'Sit-up', time: '15 min' },
-    { name: 'Squats', time: '20 min' },
-  ]);
-
-  const flatListRefs = useRef([]);
-
   const openPopup = () => setPopupVisible(true); // Function to open popup
   const closePopup = () => setPopupVisible(false); // Function to close popup
 
-  const addExercise = (exercise) => {
-    setExerciseData((prev) => [...prev, exercise]);
+  // const [exerciseData, setExerciseData] = useState([
+  //   { name: 'Swim', duration: '10 min', distance: '5 yards', icon: 'swim', date: 'today' },
+  //   { name: 'Walk', duration: '45 min', distance: '10 km', icon: 'walk', date:'yesterday' },
+  //   { name: 'Run', duration: '20 min', distance: '2 km', icon: 'run' },
+  // ]);
+
+  // const syncScroll = (index) => (event) => {
+  //   const scrollOffset = event.nativeEvent.contentOffset.y;
+  //   flatListRefs.current.forEach((ref, refIndex) => {
+  //     if (refIndex !== index && ref?.current) {
+  //       ref.current.scrollToOffset({ offset: scrollOffset, animated: false });
+  //     }
+  //   });
+  // };
+
+  // const addExercise = (exercise) => {
+  //   setExerciseData((prev) => [...prev, exercise]);
+  // };
+
+  // const flatListRefs = useRef([]);
+
+  // const [dayIndex, setDayIndex] = useState(0); // Default to the current day
+
+  const navigation = useNavigation();
+
+  const [isYesterday, setIsYesterday] = useState(false);
+
+  const currentDayData = isYesterday ? yesterdayExerciseData : dailyExerciseData;
+
+  // // Function to handle left arrow click
+  const handleLeftArrow = () => {
+    setIsYesterday(true);
   };
 
-  const syncScroll = (index) => (event) => {
-    const scrollOffset = event.nativeEvent.contentOffset.y;
-    flatListRefs.current.forEach((ref, refIndex) => {
-      if (refIndex !== index && ref?.current) {
-        ref.current.scrollToOffset({ offset: scrollOffset, animated: false });
-      }
-    });
+  // Function to handle right arrow click
+  const handleRightArrow = () => {
+    setIsYesterday(false);
   };
 
-  const renderItem = ({ item }, type) => (
-    <View style={styles.item}>
-      {type === 'Exercise' && <Text style={styles.itemText}>{item.name} - {item.time}</Text>}
-    </View>
-  );
+  //const currentDayData = dailyExerciseData;
 
-  const renderList = (data, index, type) => (
+  console.log(yesterdayExerciseData);
+
+  const renderItem = ({ item }) => {
+    
+      return (
+        <View style={styles.item}>
+        
+        <View style={styles.iconContainer}> 
+          <MaterialCommunityIcons name= {item.icon} size= {30} /> 
+        </View>
+        <View style={styles.textContainer}> 
+          <Text style={{fontWeight: '500'}}>{item.name} </Text>
+          <Text>{item.duration} | {item.distance} </Text>
+        </View>
+        
+      </View>
+      )
+};
+  
+
+  const renderList = (data, type) => (
     <Animated.FlatList
-      ref={(ref) => (flatListRefs.current[index] = ref)}
+      //ref={(ref) => (flatListRefs.current[index] = ref)}
       data={data}
       renderItem={(item) => renderItem(item, type)}
-      keyExtractor={(item, index) => index.toString()}
-      style={styles.flatList}
-      onScroll={syncScroll(index)}
-      scrollEventThrottle={16}
+      keyExtractor={(item) => item.name}
+      //style={styles.flatList}
+      //onScroll={syncScroll(index)}
+      //scrollEventThrottle={16}
     />
   );
 
   return (
-    <View style={styles.content}>
-      <ImageBackground source={backgroundImage} style={styles.image}>
+    <>
+    {/* <View style={styles.content}> */}
+      <ImageBackground 
+        source={backgroundImage} 
+        style={styles.image} 
+        resizeMethod='cover'
+      >
         <Menu />
-        <Text style={styles.title}>Dashboard</Text>
-        <StepCounter />
+      {/* Hello, Username */}
+        <Text 
+          style={{
+            fontFamily: 'Roboto', 
+            fontSize: hp(3), 
+            letterSpacing: 1, 
+            paddingTop: 100, 
+            marginTop: 20, 
+            marginHorizontal: 32
+          }}
+        >
+          Hello, <Text style={{fontWeight: 'bold'}}>Justin</Text>
+        </Text>
 
-        <Text style={styles.subtitle}>Exercises:</Text>
-        {renderList(exerciseData, 0, 'Exercise')}
+      {/* Previous arrow button */}
+        <View style= {styles.item}>
+          <View style={styles.prevIcon}>
+              <Ionicons 
+                name="chevron-back-outline" 
+                size={25} color="#000" 
+                onPress={() => handleLeftArrow()} 
+              />
+          </View>
+          <View style={{flex: 1, alignItems: 'center'}}>
+            <Text style={{paddingTop: 35, fontFamily: 'Koulen-Regular', fontSize: hp(3.5)}}>{isYesterday ? 'Yesterday' : 'Today'}</Text>
+          </View>
+          <View style={styles.prevIcon}>
+              <Ionicons 
+                name="chevron-forward-outline" 
+                size={25} color="#000" 
+                onPress={() => handleRightArrow()} 
+              />
+          </View>
+        </View>
+        
+        
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{paddingBottom: 100}}
+        >
+          <StepCounter /> 
+          
+        {/* Sleep data */}
+          <Text style={styles.dashText}> SLEEP</Text>
+          <Pressable onPress={() => navigation.navigate('SleepChart')}>
+          <View style={styles.dashboardContainers}>
+            <View style={styles.dashboardValueContainer}>
+              <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Sleep Duration</Text>
+              <View style= {{width: wp(77), height: 1, backgroundColor: 'black', marginHorizontal: 5}} />
+              <View style={{fontFamily: 'Roboto', fontSize: hp(16), color: 'black'}}>
+                <View style={styles.item}>
+        
+                        <View style={styles.iconContainer}> 
+                          <MaterialCommunityIcons name= "bed" size= {30} /> 
+                        </View>
+                        {isYesterday ? 
+                        <View style={styles.textContainer}> 
+                          <Text style={{fontWeight: '500'}}>Nightly </Text>
+                          <Text>10:30 pm | 8 hrs </Text>
+                        </View>
+                    
+                     :
+                        <View style={styles.textContainer}> 
+                          <Text style={{fontWeight: '500'}}>Nightly </Text>
+                          <Text>12:00 am | 7 hrs </Text>
+                        </View>
+                       }
+                </View>
+              </View>
+            </View>
+          </View>
+          </Pressable>
 
-        <TouchableOpacity style={styles.addButton} onPress={() => addExercise({ name: 'Push-up', time: '10 min' })}>
+        {/* Activity data */}
+          <Text style={styles.dashText}> ACTIVITY</Text>
+          <Pressable onPress={() => {navigation.navigate('ExerciseChart')}}>
+            <View style={styles.dashboardContainers}>
+              <View style={styles.dashboardValueContainer}>
+                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Exercises</Text>
+                <View style= {{width: wp(77), height: 1, backgroundColor: 'black', marginHorizontal: 5}} />
+                <View style={{fontFamily: 'Roboto', fontSize: hp(16), color: 'black'}}>{renderList(currentDayData)}</View>
+              </View>
+            </View>
+          </Pressable>
+          
+
+        {/* Nutrition data */}
+          <Text style={styles.dashText}> NUTRITION</Text>
+          <Pressable onPress={() => {navigation.navigate('WaterChart')}}>
+            <View style={styles.dashboardContainers}>
+              <View style={styles.dashboardValueContainer}>
+                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Water</Text>
+                <View style= {{width: wp(77), height: 1, backgroundColor: 'black', marginHorizontal: 5}} />
+                <View style={{fontFamily: 'Roboto', fontSize: hp(16), color: 'black'}}>
+                  <View style={styles.item}>
+                    <View style={styles.iconContainer}> 
+                      <Ionicons name= "water" size= {30} /> 
+                    </View>
+                  {isYesterday ? 
+                    <View style={styles.textContainer}> 
+                      <Text style={{fontWeight: '500'}}>Total water intake</Text>
+                        <Text>100 oz </Text>
+                      </View>
+                      
+                  :
+                    <View style={styles.textContainer}> 
+                      <Text style={{fontWeight: '500'}}>Total water intake </Text>
+                        <Text>91 oz </Text>
+                      </View>
+                  }
+                  </View>
+                </View>                   
+              </View>
+            </View>
+          </Pressable>
+           
+        </ScrollView>
+        
+
+       
+
+        {/* <TouchableOpacity style={styles.addButton} onPress={() => addExercise({ name: 'Push-up', time: '10 min' })}>
           <Text style={styles.buttonText}>Add Exercise</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/* Floating button to open the popup */}
         <TouchableOpacity style={styles.floatingButton} onPress={openPopup}>
@@ -75,8 +240,10 @@ const Dashboard = () => {
         {/* Popup component */}
         <AddPopup visible={isPopupVisible} onClose={closePopup} />
       </ImageBackground>
-      <Footer />
-    </View>
+      <View>
+        <Footer />
+      </View>
+    </>
   );
 };
 

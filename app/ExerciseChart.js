@@ -76,7 +76,11 @@ export default function ExerciseChart() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+      <ImageBackground source={backgroundImage} style={styles.image}>
+
+      <View style={styles.backIcon}>
+        <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+      </View>
         <Text style={styles.title}>Weekly Details</Text>
         <Text style={styles.weekRange}>{data.weeklyDetails.weekRange}</Text>
         

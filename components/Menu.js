@@ -41,9 +41,9 @@ const Menu = () => {
           <TouchableOpacity onPress={handleProfileClick}>
             <Text style={styles.menuItem}>Profile</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleProgressClick}>
+          {/* <TouchableOpacity onPress={handleProgressClick}>
             <Text style={styles.menuItem}>Progress</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity onPress={handleLogoutClick}>
             <Text style={styles.menuItem}>Logout</Text>
           </TouchableOpacity>

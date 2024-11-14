@@ -51,7 +51,9 @@ export default function WaterIntake() {
   return (
     <View style={styles.content}>
       <ImageBackground source={backgroundImage} style={styles.image}>
-        <AntDesign name="arrowleft" size={30} color="#000" style={styles.backIcon} onPress={() => navigation.navigate('WaterChart')} />
+      <View style={styles.backIcon}>
+        <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+      </View>
         
         <Text style={styles.waterTitle}>Add Water</Text>
         <ScrollView>

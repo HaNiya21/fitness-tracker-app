@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { useFonts, Koulen_400Regular } from '@expo-google-fonts/koulen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './styles'; 
 import ToggleSwitch from '../components/ToggleSwitch';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +17,8 @@ const Profile = () => {
     let [fontsLoaded] = useFonts({
         Koulen_400Regular,
     });
+
+    const navigation = useNavigation();
 
     const initialProfileValues = {
         firstname: "Justin",
@@ -45,6 +48,9 @@ const Profile = () => {
             resizeMode="cover"
         >
             <Menu />
+            <View style={styles.backIcon}>
+                <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 
+            </View>
 
             <View style={styles.profileContainer}>
                 {/* Profile Information Box */}
