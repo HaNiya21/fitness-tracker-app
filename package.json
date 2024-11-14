@@ -1,9 +1,8 @@
 {
   "name": "my-app",
-  "main": "node_modules/expo/AppEntry.js",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npx expo start\" \"node server.js &\"",
+    "start": "expo start --dev-client",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
     "ios": "expo run:ios",
