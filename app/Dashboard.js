@@ -11,8 +11,11 @@ import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import StepCounter from './Pedometer';
 import AddPopup from '../components/AddPopup';
-import {dailyExerciseData} from '../constants/dailyExerciseData';
+import { dailyExerciseData } from '../constants/dailyExerciseData';
 import {yesterdayExerciseData} from '../constants/yesterdayExerciseData';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
+import HeaderLogo from '../components/headerLogo';
 
 
 
@@ -24,6 +27,8 @@ const Dashboard = () => {
   const [isPopupVisible, setPopupVisible] = useState(false); // Popup visibility state
   const openPopup = () => setPopupVisible(true); // Function to open popup
   const closePopup = () => setPopupVisible(false); // Function to close popup
+
+  const { t, i18n } = useTranslation();
 
   // const [exerciseData, setExerciseData] = useState([
   //   { name: 'Swim', duration: '10 min', distance: '5 yards', icon: 'swim', date: 'today' },
@@ -77,7 +82,7 @@ const Dashboard = () => {
           <MaterialCommunityIcons name= {item.icon} size= {30} /> 
         </View>
         <View style={styles.textContainer}> 
-          <Text style={{fontWeight: '500'}}>{item.name} </Text>
+          <Text style={{fontWeight: '500'}}>{t(item.name)} </Text>
           <Text>{item.duration} | {item.distance} </Text>
         </View>
         
@@ -106,6 +111,9 @@ const Dashboard = () => {
         style={styles.image} 
         resizeMethod='cover'
       >
+      <View>
+        <HeaderLogo />  
+      </View>
         <Menu />
       {/* Hello, Username */}
         <Text 
@@ -118,7 +126,7 @@ const Dashboard = () => {
             marginHorizontal: 32
           }}
         >
-          Hello, <Text style={{fontWeight: 'bold'}}>Justin</Text>
+          {t('Hello')}, <Text style={{fontWeight: 'bold'}}>Justin</Text>
         </Text>
 
       {/* Previous arrow button */}
@@ -131,7 +139,7 @@ const Dashboard = () => {
               />
           </View>
           <View style={{flex: 1, alignItems: 'center'}}>
-            <Text style={{paddingTop: 35, fontFamily: 'Koulen-Regular', fontSize: hp(3.5)}}>{isYesterday ? 'Yesterday' : 'Today'}</Text>
+            <Text style={{paddingTop: 35, fontFamily: 'Koulen-Regular', fontSize: hp(3.5)}}>{isYesterday ? t('Yesterday') : t('Today')}</Text>
           </View>
           <View style={styles.prevIcon}>
               <Ionicons 
@@ -150,11 +158,14 @@ const Dashboard = () => {
           <StepCounter /> 
           
         {/* Sleep data */}
-          <Text style={styles.dashText}> SLEEP</Text>
+          <Text style={[styles.dashText ,{ fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular',
+                                           fontSize: i18n.language === 'es' ? 19 : hp(2.3),
+                                           letterSpacing: i18n.language === 'es' ? -1 :  0,
+                                           fontWeight: i18n.language === 'es' ? 'bold' : 'regular'}]}> {t('SLEEP')}</Text>
           <Pressable onPress={() => navigation.navigate('SleepChart')}>
           <View style={styles.dashboardContainers}>
             <View style={styles.dashboardValueContainer}>
-              <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Sleep Duration</Text>
+              <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>{t('Sleep Duration')}</Text>
               <View style= {{width: wp(77), height: 1, backgroundColor: 'black', marginHorizontal: 5}} />
               <View style={{fontFamily: 'Roboto', fontSize: hp(16), color: 'black'}}>
                 <View style={styles.item}>
@@ -164,13 +175,13 @@ const Dashboard = () => {
                         </View>
                         {isYesterday ? 
                         <View style={styles.textContainer}> 
-                          <Text style={{fontWeight: '500'}}>Nightly </Text>
+                          <Text style={{fontWeight: '500'}}>{t('Nightly')}</Text>
                           <Text>10:30 pm | 8 hrs </Text>
                         </View>
                     
                      :
                         <View style={styles.textContainer}> 
-                          <Text style={{fontWeight: '500'}}>Nightly </Text>
+                          <Text style={{fontWeight: '500'}}>{t('Nightly')}</Text>
                           <Text>12:00 am | 7 hrs </Text>
                         </View>
                        }
@@ -181,11 +192,11 @@ const Dashboard = () => {
           </Pressable>
 
         {/* Activity data */}
-          <Text style={styles.dashText}> ACTIVITY</Text>
+          <Text style={styles.dashText}>{t('ACTIVITY')}</Text>
           <Pressable onPress={() => {navigation.navigate('ExerciseChart')}}>
             <View style={styles.dashboardContainers}>
               <View style={styles.dashboardValueContainer}>
-                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Exercises</Text>
+                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>{t('Exercises')}</Text>
                 <View style= {{width: wp(77), height: 1, backgroundColor: 'black', marginHorizontal: 5}} />
                 <View style={{fontFamily: 'Roboto', fontSize: hp(16), color: 'black'}}>{renderList(currentDayData)}</View>
               </View>
@@ -194,11 +205,11 @@ const Dashboard = () => {
           
 
         {/* Nutrition data */}
-          <Text style={styles.dashText}> NUTRITION</Text>
+          <Text style={styles.dashText}>{t('NUTRITION')}</Text>
           <Pressable onPress={() => {navigation.navigate('WaterChart')}}>
             <View style={styles.dashboardContainers}>
               <View style={styles.dashboardValueContainer}>
-                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Water</Text>
+                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>{t('Water')}</Text>
                 <View style= {{width: wp(77), height: 1, backgroundColor: 'black', marginHorizontal: 5}} />
                 <View style={{fontFamily: 'Roboto', fontSize: hp(16), color: 'black'}}>
                   <View style={styles.item}>
@@ -213,7 +224,7 @@ const Dashboard = () => {
                       
                   :
                     <View style={styles.textContainer}> 
-                      <Text style={{fontWeight: '500'}}>Total water intake </Text>
+                      <Text style={{fontWeight: '500'}}>{t('Total water intake')} </Text>
                         <Text>91 oz </Text>
                       </View>
                   }

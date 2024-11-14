@@ -13,6 +13,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { Tab, TabView } from 'react-native-elements';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from '../components/headerLogo';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -31,11 +32,15 @@ const TrainerDetails = () => {
     return(
 
         <>
+
             <ImageBackground 
                     source={backgroundImage} 
                     style={styles.image} 
                     resizeMode="cover"
             > 
+            <View>
+                <HeaderLogo />
+            </View>
 
             <Menu />
                 <View style={styles.backIcon}>

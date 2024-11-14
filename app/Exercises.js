@@ -49,9 +49,11 @@ const Exercises = () => {
                     style={styles.image} 
                     resizeMode="cover"
             > 
-            <View>
-                <HeaderLogo />
-            </View>
+                <View>
+                    <HeaderLogo />
+                </View>
+
+
                 <Menu />
 
                     <View style={styles.backIcon}>

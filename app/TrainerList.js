@@ -8,6 +8,7 @@ import Menu from '../components/Menu';
 import TrainersCard from '../components/TrainersCard';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from '../components/headerLogo';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -21,6 +22,10 @@ export default function TrainerList() {
                 style={styles.image} 
                 resizeMode="cover"
         > 
+        <View>
+            <HeaderLogo />
+        </View>
+        
 
         <Menu />
 

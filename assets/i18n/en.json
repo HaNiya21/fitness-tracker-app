@@ -318,7 +318,22 @@
         "Grasp the cable handle with an overhand grip, palms facing down."  : "Grasp the cable handle with an overhand grip, palms facing down.",
         "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position." : "Pause for a moment at the top, then inhale and slowly lower your wrists back down to the starting position.",
 
-        "Start time is required":"Start time is required"
+        "Start time is required":"Start time is required",
+
+        "Today" : "Today",
+        "Yesterday" : "Yesterday",
+        "Hello" : "Hello",
+        "Sleep" : "Sleep",
+        "Sleep Duration" : "Sleep Duration",
+        "Swim" : "Swim",
+        "Run" : "Run",
+        "Walk" : "Walk",
+        "Nutrition": "Nutrition",
+        "Total water intake": "Total water intake",
+        "ACTIVITY": "ACTIVITY",
+        "SLEEP" : "SLEEP"
+
+
 
 
     }
