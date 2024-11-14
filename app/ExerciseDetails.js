@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import { ScrollView } from 'react-native-gesture-handler';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import HeaderLogo from '../components/headerLogo';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -31,7 +32,10 @@ const ExerciseDetails = () => {
                     style={styles.image} 
                     resizeMode="cover"
             > 
-
+            <View>
+                <HeaderLogo />
+            </View>
+            
             <Menu />
                 <View style={styles.backIcon}>
                     <AntDesign name="arrowleft" size={30} color="#000" onPress={() => navigation.goBack()} /> 

@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import BodyPartCard from '../components/BodyPartCard';
 import { bodyParts } from '../constants/bodyParts';
 import Menu from '../components/Menu';
+import HeaderLogo from '../components/headerLogo';
 
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
@@ -25,6 +26,9 @@ export default function ExerciseBodyPart() {
             style={styles.image} 
             resizeMode="cover"
      > 
+    <View>
+        <HeaderLogo />
+    </View>
      <Menu />
         <Text style={style.exerciseTitle}>{t('Exercises')}</Text>
 
