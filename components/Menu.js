@@ -3,11 +3,22 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../app/styles'; // Assuming you already have a styles file
 import { useNavigation } from '@react-navigation/native';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 import ToggleSwitch from '../components/ToggleSwitch';
 
 const Menu = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const navigation = useNavigation(); // Properly initialize the navigation object here
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = () => {
+    const newLanguage = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLanguage)
+        .then(() => console.log("Language changed to:", newLanguage))
+        .catch(err => console.log(err));
+};
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -39,15 +50,28 @@ const Menu = () => {
       {menuVisible && (
         <View style={styles.menuDropdown}>
           <TouchableOpacity onPress={handleProfileClick}>
-            <Text style={styles.menuItem}>Profile</Text>
+            <Text style={[styles.menuItem, 
+            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
+            {fontSize: i18n.language === 'es' ? 25 : 30 },
+            {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
+            {letterSpacing: i18n.language === 'es' ? -1.5 : 'auto'}]}>{t('Profile')}</Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity onPress={handleProgressClick}>
-            <Text style={styles.menuItem}>Progress</Text>
-          </TouchableOpacity> */}
+          <TouchableOpacity onPress={handleProgressClick}>
+          <Text style={[styles.menuItem, 
+            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
+            {fontSize: i18n.language === 'es' ? 25 : 30 },
+            {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
+            {marginVertical: i18n.language === 'es' ? 25 : 10 },
+            {letterSpacing: i18n.language === 'es' ? -1.5 : 'auto'}]}>{t('Progress')}</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={handleLogoutClick}>
-            <Text style={styles.menuItem}>Logout</Text>
+          <Text style={[styles.menuItem, 
+            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
+            {fontSize: i18n.language === 'es' ? 25 : 30 },
+            {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
+            {letterSpacing: i18n.language === 'es' ? -1.5 : 'auto'}]}>{t('Logout')}</Text>
           </TouchableOpacity>
-          <ToggleSwitch style={styles.bbToggle} />
+          <ToggleSwitch style={{ marginBottom: 300 }} onPress={changeLanguage} />
         </View>
       )}
     </View>

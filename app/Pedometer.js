@@ -3,12 +3,16 @@ import { View, Text } from 'react-native';
 import { Pedometer } from 'expo-sensors';
 import styles from './styles';
 import RingProgress from './RingProgress';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const StepCounter = () => {
     const [isPedometerAvailable, setIsPedometerAvailable] = useState('checking');
     const [stepCount, setStepCount] = useState(0);
     const [calories, setCalories] = useState(0);
     const [distance, setDistance] = useState(0);
+
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         Pedometer.isAvailableAsync().then(
@@ -45,15 +49,15 @@ const StepCounter = () => {
             </View>
             <View style={styles.pedLabelsCont}>
                 <View style={styles.PedometerValueContainer}>
-                    <Text style={[styles.PedometerLabel, { color: '#3C68AA' }]}>Steps</Text>
+                    <Text style={[styles.PedometerLabel, { color: '#3C68AA' }]}>{t('Steps')}</Text>
                     <Text style={styles.PedometerValue}>{stepCount}</Text>
                 </View>
                 <View style={styles.PedometerValueContainer}>
-                    <Text style={[styles.PedometerLabel, { color: '#729DDD' }]}>Calories</Text>
+                    <Text style={[styles.PedometerLabel, { color: '#729DDD' }]}>{t('Calories')}</Text>
                     <Text style={styles.PedometerValue}>{calories.toFixed(2)}</Text>
                 </View>
                 <View style={styles.PedometerValueContainer}>
-                    <Text style={[styles.PedometerLabel, { color: '#72D7DD' }]}>Distance</Text>
+                    <Text style={[styles.PedometerLabel, { color: '#72D7DD' }]}>{t('Distance')}</Text>
                     <Text style={styles.PedometerValue}>{distance.toFixed(2)}</Text>
                 </View>
             </View>

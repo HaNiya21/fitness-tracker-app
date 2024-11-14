@@ -8,6 +8,8 @@ import styles from "./styles";
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import { ScrollView } from 'react-native-gesture-handler';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
@@ -18,6 +20,8 @@ const ExerciseDetails = () => {
     const item = route.params;
     console.log("got item", item);
     console.log(typeof item.instructions);
+
+    const {t, i18n} = useTranslation();
 
     return(
 
@@ -44,33 +48,37 @@ const ExerciseDetails = () => {
                     contentContainerStyle={{paddingBottom: 100, paddingTop: 20, marginHorizontal: 10}}
                     style= {{marginHorizontal: 6, marginTop: 3}}>
 
-                            <Text style = {{fontSize: hp(3.5), fontWeight: 'semibold', fontFamily:'Koulen-Regular', lineHeight: 40}}>
-                                {item.name}
+                            <Text style = {[{fontSize: hp(3.5), fontWeight: 'semibold', fontFamily:'Koulen-Regular', lineHeight: 42},
+                                            {fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
+                                            {fontWeight: i18n.language === 'es' ? 'bold' : 'regular' },
+                                            {fontSize: i18n.language === 'es' ? 25 : hp(3.5) },
+                                            {letterSpacing: i18n.language === 'es' ? -1 : 0 }]}>
+                                {t(item.name)}
                             </Text>
 
                             <Text style = {{fontSize: hp(2), fontFamily:'Roboto'}}>
-                                Equipment: <Text style ={{fontWeight: 'semibold', fontFamily: 'Koulen-Regular'}} >{item.equipment}</Text>
+                                {t('Equipment')}: <Text style ={{fontWeight: 'semibold', fontFamily: 'Koulen-Regular'}} >{t(item.equipment)}</Text>
                             </Text>
 
                             <Text style = {{fontSize: hp(2), fontFamily:'Roboto'}}>
-                                Target Muscle: <Text style ={{fontWeight: 'semibold', fontFamily: 'Koulen-Regular'}} >{item.target}</Text>
+                                {t('Target Muscle')}: <Text style ={{fontWeight: 'semibold', fontFamily: 'Koulen-Regular'}} >{t(item.target)}</Text>
                             </Text>
 
                             <Text style = {{fontSize: hp(2), fontFamily:'Roboto'}}>
-                                Secondary Muscle: {
+                                {t('Secondary Muscle')}: {
                                         item?.secondaryMuscles?.length > 1 ? item.secondaryMuscles.map((secondaryMuscles, index) => (
                                             <Text 
                                                 key={index} 
                                                 style={{fontSize: hp(2), fontFamily: 'Koulen-Regular'}}
                                             >
-                                                {secondaryMuscles} {', '}
+                                                {t(secondaryMuscles)} {', '}
                                             </Text>
-                                        )): <Text style ={{fontWeight: 'semibold', fontFamily: 'Koulen-Regular'}} >{item?.secondaryMuscles}</Text>
+                                        )): <Text style ={{fontWeight: 'semibold', fontFamily: 'Koulen-Regular'}} >{t(item?.secondaryMuscles)}</Text>
                                     }
                             </Text>
 
                             <Text style = {{fontSize: hp(3), fontFamily:'Roboto', fontWeight: 'semibold'}}>
-                                Instructions: 
+                                {t('Instructions')}: 
                             
                             </Text>
                             
@@ -80,7 +88,7 @@ const ExerciseDetails = () => {
                                     key={index} 
                                     style={{fontSize: hp(2), fontFamily: 'Roboto', marginBottom: 5}}
                                 >
-                                    {index + 1}. {instruction}
+                                    {index + 1}. {t(instruction)}
                                 </Text>
                             ))}
                             </View>

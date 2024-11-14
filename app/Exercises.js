@@ -13,10 +13,14 @@ import ExerciseCard from '../components/ExerciseListComponent';
 
 import { FlatList } from 'react-native-gesture-handler';
 import { ScrollView } from 'react-native-virtualized-view';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const backgroundImage = require('../assets/images/GymwolfBackground.jpeg');
 
 const Exercises = () => {
+
+    const {t, i18n} = useTranslation();
 
     const navigation = useNavigation();
     const route = useRoute();
@@ -53,9 +57,9 @@ const Exercises = () => {
                     </View>
                     <ScrollView>
                         <View style = {{marginHorizontal: 4, marginTop: 10, alignItems: 'center'}}>
-                            <Text style= {styles.exerciseTitle}>
-                                {item.name} exercise
-                            </Text>
+                        <Text style={styles.exerciseTitle}>
+                            {t('exerciseTitle', { name: t(item.name) })}
+                        </Text>
                         </View>
 
                         <View style={{marginBottom: 10, marginHorizontal: 20}}>

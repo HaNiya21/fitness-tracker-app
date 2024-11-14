@@ -4,10 +4,13 @@ import {Image} from 'expo-image';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import '../assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 const ExerciseCard = ({ item, index }) => {
 
     const navigation = useNavigation();
+    const {t, i18n} = useTranslation();
 
     return(
         <View>
@@ -41,17 +44,21 @@ const ExerciseCard = ({ item, index }) => {
             </Pressable>
             <View style={{paddingBottom: 10}}> 
             <Text 
-                style={{color: 'black', 
+                style={[{color: 'black', 
                     fontSize: hp(2), 
                     //fontWeight: 'semibold',
                     //lineHeight: 30, 
                     marginBottom: 10,
                     textAlign: 'center', 
-                    letterSpacing: 1, 
-                    fontFamily: 'Koulen-Regular'}}
+                    letterSpacing: 1},
+                    { fontFamily: i18n.language === 'es' ? 'Trebuchet MS' : 'Koulen-Regular' },
+                    { fontSize: i18n.language === 'es' ? 14 : 20 },
+                    { fontWeight: i18n.language === 'es' ? 'bold' : 'regular' } ]}
                 >
                     {
-                        item?.name?.length > 20 ? item.name.slice(0, 15) + '...' : item.name
+                        t(item?.name)?.length > 20 
+                            ? `${t(item?.name).slice(0, 15)}...` 
+                            : t(item?.name)
                     }
             </Text> 
         </View>
