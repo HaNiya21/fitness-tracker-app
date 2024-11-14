@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import '../assets/i18n/i18n';
 import { useTranslation } from "react-i18next";
+import HeaderLogo from "../components/headerLogo";
 
 const backgroundImage = require("../assets/images/GymwolfBackground.jpeg");
 
@@ -23,6 +24,9 @@ export default function SleepChart({ route }) {
     return (
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
+            <View>
+                <HeaderLogo/>
+            </View>
             <Menu/>
             <View style={styles.waterChart}>
                 <Text style={[styles.sleepChartTitle, {

@@ -4,6 +4,7 @@ import { View, ImageBackground, Text, Image, TouchableOpacity, Linking, ScrollVi
 import styles from "./styles";
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
+import HeaderLogo from '../components/headerLogo';
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
 
@@ -35,6 +36,9 @@ const Articles = () => {
     return (
         <View style={styles.content}>
             <ImageBackground source={backgroundImage} style={styles.image}>
+                <View>
+                    <HeaderLogo />
+                </View>
                 <Menu />
                 <Text style={styles.ArticlePageTitle}>{t('Health Spot')}</Text>
                 
