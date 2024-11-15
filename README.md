@@ -87,8 +87,8 @@ Feedback focused on:
 ## 5. Development/Implementation Submission
 
 ### Final Prototype
-- **Figma Link**: [Provide link here]
-- **Video Demonstration**: [Provide video link here]
+- **Figma Link**: https://www.figma.com/proto/w8FjJlElDWPA6LIF1nFPDp/Gymwolf-Mobile-Wireframing-Final?node-id=0-1&t=DfNmNxRoQcAFE6lH-1
+- **Video Demonstration**: File submitted in canvas
 
 ### Feature Implementation
 - **Language Toggle**: Switch between English and Spanish.
@@ -110,11 +110,16 @@ Feedback focused on:
 ### Instructions:
 
 - Clone the repository.
+- Install MongoDB for the login and signup functionality to work
 - Install dependencies using npm install.
-- Run the development server with npm run start or if  expo start used the backed must be started in different terminal Node server.js 
+- Run the development server with npm run start OR run npx expo start in one terminal and the backend must be started in different terminal by running Node server.js
+- If running the project on mobile device the IP address of signup and login api needs to be changed to your system's IP address
+- If running on web need to replace the ID address to the word 'localhost'
+- 
 ## Troubleshooting Tips:
 - Check for proper MongoDB configuration.
 - Ensure Expo is correctly installed for iOS and Android preview.
+- The SDK version of expo go app needs to be 51
 
 # Youtube videos used for dummy data
 
