@@ -39,26 +39,26 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         minlength: [6, 'Password must be at least 6 characters long']
     },
-    confirmPassword: {
-        type: String,
-        validate: {
-            validator: function (value) {
-                return value === this.password;
-            },
-            message: 'Passwords do not match'
-        },
-        required: [true, 'Please confirm your password']
-    },
+    // confirmPassword: {
+    //     type: String,
+    //     validate: {
+    //         validator: function (value) {
+    //             return value === this.password;
+    //         },
+    //         message: 'Passwords do not match'
+    //     },
+    //     required: [true, 'Please confirm your password']
+    // },
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
 
-// Middleware for hashing password before saving (optional)
-UserSchema.pre('save', async function (next) {
-    // Add password hashing logic here if needed
-    next();
-});
+// // Middleware for hashing password before saving (optional)
+// UserSchema.pre('save', async function (next) {
+//     // Add password hashing logic here if needed
+//     next();
+// });
 
 module.exports = mongoose.model('User', UserSchema);

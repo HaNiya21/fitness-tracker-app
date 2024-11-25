@@ -34,6 +34,7 @@ const AddExercise = () => {
     const navigation = useNavigation();
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
+    const [exerciseLogs, setExerciseLogs] = useState([]); 
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [showTimePicker, setShowTimePicker] = useState(false);
 
@@ -62,42 +63,45 @@ const AddExercise = () => {
     };
 
     const handleSubmit = async () => {
-        const errors = validate(formValues);
-        setFormErrors(errors);
+        //if (validate(formValues)) return;
 
-        if (Object.keys(errors).length === 0) {
-            try {
-                const response = await fetch('http://192.168.1.71:5000/api/exercise', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formValues),
-                });
+        const newLog = formValues;
+        setExerciseLogs([...exerciseLogs, newLog]);
+        navigation.navigate('ExerciseChart', { exerciseLogs: [...exerciseLogs, newLog] });
 
-                //const data = await response.json();
+        // if (Object.keys(errors).length === 0) {
+        //     try {
+        //         const response = await fetch('http://192.168.1.71:5000/api/exercise', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify(formValues),
+        //         });
 
-                // Check if response status is OK (200-299)
-                if (!response.ok) {
-                    console.error('HTTP Error:', response.status, response.statusText);
-                    throw new Error(`Server error: ${response.status}`);
-                }
+        //         //const data = await response.json();
 
-                // Attempt to parse the response as JSON
-                const data = await response.json().catch(() => {
-                    throw new Error('Response is not in JSON format.');
-                });
+        //         // Check if response status is OK (200-299)
+        //         if (!response.ok) {
+        //             console.error('HTTP Error:', response.status, response.statusText);
+        //             throw new Error(`Server error: ${response.status}`);
+        //         }
 
-                if (data.success) {
-                    console.log('Exercise added successfully.');
-                    navigation.navigate('Progress'); // Navigate after successful submission
-                } else {
-                    console.error('Error:', data.message || t('Submission failed.'));
-                }
-            } catch (err) {
-                console.error('Error:', err);
-            }
-        }
+        //         // Attempt to parse the response as JSON
+        //         const data = await response.json().catch(() => {
+        //             throw new Error('Response is not in JSON format.');
+        //         });
+
+        //         if (data.success) {
+        //             console.log('Exercise added successfully.');
+        //             navigation.navigate('Progress'); // Navigate after successful submission
+        //         } else {
+        //             console.error('Error:', data.message || t('Submission failed.'));
+        //         }
+        //     } catch (err) {
+        //         console.error('Error:', err);
+        //     }
+        // }
     };
 
     return (

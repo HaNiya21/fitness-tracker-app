@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from "./styles";
 import '../assets/i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import { SafeAreaView } from "react-native-safe-area-context";
 import ToggleSwitch from '../components/ToggleSwitch';
 
 import { err } from "react-native-svg";
@@ -21,7 +22,7 @@ const SignUp = () => {
         lastname: "",
         height: "",
         weight: "",
-        age:``,
+        age: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -53,7 +54,7 @@ const SignUp = () => {
 
         if (Object.keys(errors).length === 0) {
             try {
-                const response = await fetch('http://172.20.9.103:5000/api/SignUp', {
+                const response = await fetch('http://192.168.1.71:5000/api/SignUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -61,27 +62,34 @@ const SignUp = () => {
                     body: JSON.stringify(formValues),
                 });
 
-                const data = await response.json();
+                const responseBody = await response.text();
 
-                if (response.ok) {
-                    console.log('Signup Successful:', data.token);
-                    setSignupSuccess(true);  // Set signup success to true
-                    setTimeout(() => {
-                        navigation.navigate('Login');  // Navigate to Login after a brief delay
-                    }, 1000);  // You can adjust the delay as needed
-                } else {
-                    // Handle server-side error response
-                    console.log('Signup Failed:', data.msg);
-                    setSignupError(data.msg || "Signup failed. Please try again.");
+                try {
+                    const data = JSON.parse(responseBody);
+                    if (response.ok) {
+                        console.log('Signup Successful:', data.token);
+                        setSignupSuccess(true);  // Set signup success to true
+                        setTimeout(() => {
+                            navigation.navigate('Login');  // Navigate to Login after a brief delay
+                        }, 1000);  // You can adjust the delay as needed
+                    } else {
+                        // Handle server-side error response
+                        console.log('Signup Failed:', data.msg);
+                        setSignupError(data.msg || "Signup failed. Please try again.");
+                    }
+                    
+                } catch (jsonError) {
+                    // Response is not JSON
+                    console.error('Unexpected server response:', responseBody);
+                    setSignupError("An unexpected error occurred. Please try again.");
                 }
             } catch (error) {
-                // Handle network or unexpected errors
+            // Handle network or unexpected errors
                 console.log('Network Error:', error);
                 setSignupError('An unexpected error occurred. Please try again later.');
             }
-        }
+        };
     };
-
     const validate = (values) => {
         const errors = {};
         if (!values.firstname) errors.firstname = 'First name is required';
@@ -127,8 +135,8 @@ const SignUp = () => {
                                 style={[styles.input ,{ flex: 1, marginRight: 5 }]}
                                 placeholder={t('First Name')}
                                 placeholderTextColor="#8D8D8D"
-                                value={formValues.firstName}
-                                onChangeText={(text) => handleChange('firstName', text)}
+                                value={formValues.firstname}
+                                onChangeText={(text) => handleChange('firstname', text)}
                             />
                 
                         {/* Last name Field */}
@@ -136,12 +144,12 @@ const SignUp = () => {
                                 style={[styles.input, { flex: 1 }]}
                                 placeholder={t('Last Name')}
                                 placeholderTextColor="#8D8D8D"
-                                value={formValues.lastName}
-                                onChangeText={(text) => handleChange('lastName', text)}
+                                value={formValues.lastname}
+                                onChangeText={(text) => handleChange('lastname', text)}
                             />
                         </View>
-                        {formErrors.firstName && <Text style={styles.error}>{formErrors.firstName}</Text>}
-                        {formErrors.lastName && <Text style={styles.error}>{formErrors.lastName}</Text>}
+                        {formErrors.firstname && <Text style={styles.error}>{formErrors.firstname}</Text>}
+                        {formErrors.lastname && <Text style={styles.error}>{formErrors.lastname}</Text>}
                         
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 15 }}>
                         {/* Height Field */}
@@ -149,8 +157,8 @@ const SignUp = () => {
                                 style={[styles.input, { flex: 1, marginRight: 5 }]}
                                 placeholder={t('Height (cm)')}
                                 placeholderTextColor="#8D8D8D"
-                                value={formValues.heightCm}
-                                onChangeText={(text) => handleChange('heightCm', text)}
+                                value={formValues.height}
+                                onChangeText={(text) => handleChange('height', text)}
                                 keyboardType="numeric"
                             />                        
 
@@ -159,13 +167,13 @@ const SignUp = () => {
                                 style={[styles.input, { flex: 1 }]}
                                 placeholder={t('Weight (kg)')}
                                 placeholderTextColor="#8D8D8D"
-                                value={formValues.weightKg}
-                                onChangeText={(text) => handleChange('weightKg', text)}
+                                value={formValues.weight}
+                                onChangeText={(text) => handleChange('weight', text)}
                                 keyboardType="numeric"
                             />
                         </View>
-                        {formErrors.heightCm && <Text style={styles.error}>{formErrors.heightCm}</Text>}
-                        {formErrors.weightKg && <Text style={styles.error}>{formErrors.weightKg}</Text>}
+                        {formErrors.height && <Text style={styles.error}>{formErrors.height}</Text>}
+                        {formErrors.weight && <Text style={styles.error}>{formErrors.weight}</Text>}
 
                     {/* Age Field */}
                         <TextInput
@@ -196,7 +204,7 @@ const SignUp = () => {
                                     {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                                     {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                                     {letterSpacing: i18n.language === 'es' ? -1: 0},
-                                    {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                                    {fontSize: i18n.language === 'es' ? 12: 14},
                                     {padding: i18n.language === 'es' ? 15: 10 }]}
                                 placeholder={t('Enter Password')}
                                 placeholderTextColor="#8D8D8D"
@@ -213,7 +221,7 @@ const SignUp = () => {
                                 {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                                 {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                                 {letterSpacing: i18n.language === 'es' ? -1: 0},
-                                {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                                {fontSize: i18n.language === 'es' ? 12: 14},
                                 {padding: i18n.language === 'es' ? 15: 10 }]}
                         placeholder={t('Confirm Password')}
                             placeholderTextColor="#8D8D8D"
@@ -243,7 +251,7 @@ const SignUp = () => {
                         {t('Login')}
                     </Text>
                 </TouchableOpacity> 
-            </TouchableOpacity>
+            {/* </TouchableOpacity> */}
             </ScrollView>
             {/* <ToggleSwitch style={{ position: 'absolute', right: 20, bottom: 30 }} onPress={changeLanguage} /> */}
             {/* <TouchableOpacity onPress={changeLanguage} style={{ borderColor:'black', borderWidth: 1 }}>
@@ -251,9 +259,10 @@ const SignUp = () => {
             
             
             <ToggleSwitch style={{ position: 'absolute', right: 20, bottom: 30 }} onPress={changeLanguage} />
-
         </View>
+    </SafeAreaView>
     );
 };
+
 
 export default SignUp;

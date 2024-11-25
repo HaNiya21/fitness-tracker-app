@@ -173,13 +173,14 @@ const Dashboard = () => {
                         <View style={styles.iconContainer}> 
                           <MaterialCommunityIcons name= "bed" size= {30} /> 
                         </View>
+
                         {isYesterday ? 
                         <View style={styles.textContainer}> 
                           <Text style={{fontWeight: '500'}}>{t('Nightly')}</Text>
                           <Text>10:30 pm | 8 hrs </Text>
                         </View>
                     
-                     :
+                        :
                         <View style={styles.textContainer}> 
                           <Text style={{fontWeight: '500'}}>{t('Nightly')}</Text>
                           <Text>12:00 am | 7 hrs </Text>

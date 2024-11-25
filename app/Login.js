@@ -55,9 +55,10 @@ const Login = () => {
     
         if (Object.keys(errors).length === 0) {
             const normalizedEmail = formValues.email.toLowerCase(); // Convert to lowercase
+            console.log(normalizedEmail);
     
             try {
-                const response = await fetch('http://172.20.9.103:5000/api/login', {
+                const response = await fetch('http://192.168.1.71:5000/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -74,17 +75,24 @@ const Login = () => {
                     alert(errorData.msg || t('Login failed. Please try again.'));
                     return;
                 }
-    
-                const data = await response.json();
-                console.log('Response Data:', data);
-    
-                if (data.success) {
-                    console.log('Login Successful:', data.token);
-                    navigation.navigate('Dashboard'); // Navigate to Dashboard on success
-                } else {
-                    console.log('Login Failed:', data.err || 'Unknown error');
-                    alert(data.msg || 'Invalid credentials');
-                }
+
+                const responseBody = await response.text();
+
+                try {
+                    const data = JSON.parse(responseBody);
+                    console.log('Response Data:', data);
+        
+                    if (data.success) {
+                        console.log('Login Successful:', data.token);
+                        navigation.navigate('Dashboard'); // Navigate to Dashboard on success
+                    } else {
+                        console.log('Login Failed:', data.err || 'Unknown error');
+                        alert(data.msg || 'Invalid credentials');
+                    }
+                } catch (jsonError) {
+                    console.error('Unexpected server response:', responseBody);
+                    setSignupError("An unexpected error occurred. Please try again.");
+                 }   
             } catch (error) {
                 console.error('Error during login:', error);
                 alert('Something went wrong. Please try again!');
@@ -117,7 +125,7 @@ const Login = () => {
                         {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
-                        {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                        {fontSize: i18n.language === 'es' ? 12: 14},
                         {padding: i18n.language === 'es' ? 15: 10 }]}
                         placeholder={t('Enter Password')}
                         placeholderTextColor="#8D8D8D"
@@ -130,7 +138,7 @@ const Login = () => {
                         {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                         {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
                         {letterSpacing: i18n.language === 'es' ? -1: 0},
-                        {fontSize: i18n.language === 'es' ? 12: 'auto'},
+                        {fontSize: i18n.language === 'es' ? 12: 14},
                         {margin: i18n.language === 'es' ? 10: 'auto' }]} >{t(formErrors.password)}</Text>}
                 </View>
 

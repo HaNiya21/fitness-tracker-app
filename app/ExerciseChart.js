@@ -61,11 +61,13 @@ const exerciseData = {
   }
 };
 
-export default function ExerciseChart() {
+export default function ExerciseChart({route}) {
 
   const [data, setData] = useState(exerciseData);
   const navigation = useNavigation();
   const [isPrevWeek, setIsPrevWeek] = useState(false);
+
+  const { exerciseLogs = [] } = route.params || {};
 
   //const currentWeekData = isPrevWeek ? yesterdayExerciseData : dailyExerciseData;
 
@@ -124,21 +126,40 @@ export default function ExerciseChart() {
         
         <ScrollView style={{top: 50}} showsVerticalScrollIndicator={false}
           contentContainerStyle={{paddingBottom: 150}} >
-          {data.weeklyDetails.days.map((dayData, index) => (
-            <View key={index} style={[styles.dashboardContainers, {paddingBottom:10}]}>
-              <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>{dayData.day}</Text>
-              {dayData.exercises.map((exercise, exIndex) => (
-                <View key={exIndex} style={{paddingTop: 20, textAlign: 'left'}}> 
-                                 
-                  <View style={styles.textContainer}>   
-                    <Text style={{fontWeight: '500'}}>{exercise.type} </Text>
-                    <Text>Time: {exercise.time} {exercise.distance && `| Distance: ${exercise.distance}`}</Text>
-                    
+
+          {isPrevWeek ? (
+            data.weeklyDetails.days.map((dayData, index) => (
+              <View key={index} style={[styles.dashboardContainers, {paddingBottom:10}]}>
+                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>{dayData.day}</Text>
+                {dayData.exercises.map((exercise, exIndex) => (
+                  <View key={exIndex} style={{paddingTop: 20, textAlign: 'left'}}> 
+                                  
+                    <View style={styles.textContainer}>   
+                      <Text style={{fontWeight: '500'}}>{exercise.type} </Text>
+                      <Text>Time: {exercise.time} {exercise.distance && `| Distance: ${exercise.distance}`}</Text>
+                      
+                    </View>
                   </View>
-                </View>
-              ))}
-            </View>
-          ))}
+                ))}
+              </View>
+          ))   
+          ): (
+            exerciseLogs.map((log, index) => (
+              <View key={index} style={[styles.dashboardContainers, {paddingBottom:10}]}>
+                <Text style={{fontFamily: 'Roboto', fontSize: 18, color: 'black', marginHorizontal: 10}}>Sunday</Text>
+                
+                  <View key={index} style={{paddingTop: 20, textAlign: 'left'}}> 
+                                  
+                    <View style={styles.textContainer}>   
+                      <Text style={{fontWeight: '500'}}>{log.activity} </Text>
+                      <Text>Duration: {log.duration} mins {log.distance && `| Distance: ${log.distance}`} kms</Text>
+                      
+                    </View>
+                  </View>
+             
+              </View>
+            ))
+          )}
           <TouchableOpacity style={styles.waterSubmitButton} onPress={() => navigation.navigate('AddExercise')}>
           <Text style={[styles.waterButtonText, 
                         {fontSize: 20}]}>Add Exercise</Text>

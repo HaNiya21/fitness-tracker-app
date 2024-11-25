@@ -67,12 +67,12 @@ const AddSleep = () => {
                 <Text style={[styles.sleepTitle, 
                             {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                             {fontSize: i18n.language === 'es' ? 35: 45 },
-                            {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
+                            {letterSpacing: i18n.language === 'es' ? -1.5: 1 },
                             {fontWeight: i18n.language === 'es' ? 'bold': 'regular' }]}>{t('Add Sleep')}</Text>
                 <ScrollView>
                     <RadioButton.Group onValueChange={value => setChecked(value)} value={checked}>
                         <Text style={[styles.waterText,
-                                    {letterSpacing: i18n.language === 'es' ? -1.5: 'auto' },
+                                    {letterSpacing: i18n.language === 'es' ? -1.5: 1 },
                                     {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular' },
                                     {fontWeight: i18n.language === 'es' ? 'bold': 'regular', fontSize: 18, marginTop:  20, marginBottom: 20 }]}>{t('Choose Type of Sleep')}</Text>
                         <View style={styles.radioButton}>
@@ -93,8 +93,8 @@ const AddSleep = () => {
                                 {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
                                 {fontSize: i18n.language === 'es' ? 15: 20 },
                                 {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
-                                {letterSpacing: i18n.language === 'es' ? -1: 'auto' },
-                                {marginTop: i18n.language === 'es' ? 10: 'auto' }]}>{t('Duration')}</Text>
+                                {letterSpacing: i18n.language === 'es' ? -1: 1 },
+                                {marginTop: i18n.language === 'es' ? 10: 10 }]}>{t('Duration')}</Text>
                     <View style={styles.inputCont}>
                         <TextInput
                             style={styles.waterInput}
@@ -107,9 +107,9 @@ const AddSleep = () => {
                     </View>
                     {errors.duration && <Text style={[styles.error, 
                                                 {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'},
-                                                {fontSize: i18n.language === 'es' ? 12: 'auto' },
+                                                {fontSize: i18n.language === 'es' ? 12: 14 },
                                                 {fontWeight: i18n.language === 'es' ? 'bold': 'regular'},
-                                                {letterSpacing: i18n.language === 'es' ? -1: 'auto' }]}>{t(errors.duration)}</Text>}
+                                                {letterSpacing: i18n.language === 'es' ? -1: 1 }]}>{t(errors.duration)}</Text>}
 
                     <Text style={styles.sleepInputText}>{t('Time')}</Text>
                     <View style={styles.inputCont}>
