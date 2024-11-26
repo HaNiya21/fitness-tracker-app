@@ -35,14 +35,14 @@ export default function SleepChart({ route }) {
                 <Text style={[styles.sleepChartTitle, {
                     fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular',
                     fontSize: i18n.language === 'es' ? 24 : 30,
-                    letterSpacing: i18n.language === 'es' ? -1.5: 1
+                    letterSpacing: i18n.language === 'es' ? -1.5: 'auto'
                 }]}>{t('Sleep Chart')}</Text>
                 <View style={styles.waterChartTitles}>
                     <Text style={styles.waterChartText}>{t('Type')}</Text>
                     <Text style={[styles.waterChartText, 
                                 {fontFamily: i18n.language === 'es' ? 'Trebuchet MS': 'Koulen-Regular'}, 
                                 {fontSize: i18n.language === 'es' ? 16 : 20}, 
-                                {letterSpacing: i18n.language === 'es' ? -1.5: 1}]}>{t('Duration (hrs)')}</Text>
+                                {letterSpacing: i18n.language === 'es' ? -1.5: 'auto'}]}>{t('Duration (hrs)')}</Text>
                     <Text style={styles.waterChartText}>{t('Time')}</Text>
                 </View>
                     {sleepLogs.map((log, index) => (
